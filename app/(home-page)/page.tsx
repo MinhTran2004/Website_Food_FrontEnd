@@ -5,7 +5,7 @@ import HomeFooter from "./component/Footer";
 import HomeSubscribe from "./component/HomeSubscribe";
 import HomeIntro from "./component/Intro";
 import HomeMenu from "./component/Menu/inex";
-import BannerHomeProduct from "./component/Product/banner";
+import HomeProduct from "./component/Product";
 import HomeStats from "./component/Stats";
 import SwiperSlide from "./component/SwiperSlide";
 
@@ -13,7 +13,7 @@ const HomePageScreen = () => {
   return (
     <div className="h-full space-y-16">
       <SwiperSlide />
-      <BannerHomeProduct />
+      <HomeProduct />
       <HomeMenu />
       <HomeIntro />
       <HomeStats />

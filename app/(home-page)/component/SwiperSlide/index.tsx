@@ -2,7 +2,6 @@ import HomeNavbar from "./Navbar";
 import HomeContent from "./Content";
 import Image from "next/image";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import HomeHeaderSticky from "./HeaderSticky";
 
 const SwiperSlide = () => {
   return (

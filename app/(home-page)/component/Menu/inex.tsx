@@ -1,3 +1,5 @@
+import AppText from "@/component/Text/AppText";
+import { COLOR } from "@/share/contanst/color";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const ItemMenu = ({
@@ -10,13 +12,14 @@ const ItemMenu = ({
   price: string;
 }) => (
   <div>
-    <p className="text-[22px] font-medium pb-1">{title}</p>
-    <p className="text-gray-400 text-lg">{label}</p>
+    <AppText typo="LARGE_B" text={title} />
+    <AppText typo="BASE_LARGE" color={COLOR.gray} text={label} />
     <div className="flex items-end">
       <div className="flex-1 border-b border-dashed border-gray-500 mb-[7px] mr-2" />
-      <p className="text-[#EC5708] font-semibold text-xl">
-        {price} <span className="text-[15px]">VND</span>
-      </p>
+      <div className="flex items-center gap-0.5">
+        <AppText typo="LARGE_MEDIUM_B" color={COLOR.orange} text={price} />
+        <AppText typo="BASE" color={COLOR.orange} text="VND" />
+      </div>
     </div>
   </div>
 );
@@ -24,8 +27,13 @@ const ItemMenu = ({
 const HomeMenu = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <p className="text-center font-medium mb-4">MENU</p>
-      <p className="text-[46px] text-center font-semibold">MENU CỦA NHÀ HÀNG</p>
+      <AppText typo="BASE_LARGE_B" text="MENU" className="mb-2 text-center" />
+      <AppText
+        typo="HEADER_2_B"
+        text="MENU CỦA NHÀ HÀNG"
+        as={"h2"}
+        className="text-center"
+      />
       <MdKeyboardDoubleArrowDown
         size={40}
         className="text-center w-full mb-4"

@@ -1,4 +1,5 @@
 import AppButton from "@/component/Button/AppButton";
+import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import Image from "next/image";
 
@@ -16,13 +17,17 @@ const ItemSaleContent = ({
   <div className="flex p-5 bg-white gap-[10px]">
     <Image src={image} alt="" height={60} width={60} />
     <div className="space-y-1">
-      <p className="text-xl font-semibold">
+      <div className="flex">
         {showmore && (
-          <span className="text-[25px] mr-1.5 text-[#EC5708]">-20%</span>
+          <AppText
+            text="-20%"
+            typo="LARGE_MEDIUM_B"
+            className="mr-1.5 text-[#EC5708]"
+          />
         )}
-        {title}
-      </p>
-      <p className="text-sm">{label}</p>
+        <AppText text={title} typo="LARGE_MEDIUM_B" />
+      </div>
+      <AppText text={label} typo="BASE" />
     </div>
   </div>
 );
@@ -31,15 +36,17 @@ const HomeContent = () => {
   return (
     <div className="max-w-7xl mx-auto mt-20">
       {/* children 1 */}
-      <div className="w-[55%]">
+      <div className="w-[60%]">
         <div className="flex items-center gap-5">
           <div className="h-[2px] w-[30px] bg-black" />
-          <p>THỰC PHẨM THÁI</p>
+          <AppText text="THỰC PHẨM THÁI" typo="BASE" />
         </div>
-        <p className="text-[55px] font-semibold">
-          Bản giao hưởng của gia vị và hương vị
-        </p>
-        <AppButton text="Thực đơn" />
+        <AppText
+          text="Bản giao hưởng của gia vị và hương vị"
+          as={"h1"}
+          typo="HEADER_1_B"
+        />
+        <AppButton text={{ text: "Thực đơn", typo: "LARGE_MEDIUM_B" }} />
       </div>
 
       {/* children 2 */}

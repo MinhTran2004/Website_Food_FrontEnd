@@ -1,7 +1,7 @@
+import AppImage from "@/component/Image/AppImage";
 import TextHoverUnderline from "@/component/Text/TextHoverUnderline";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import { getCurrentPath } from "@/utils/getSeverUrl";
-import Image from "next/image";
 import Link from "next/link";
 import { CiHeart, CiSearch, CiShoppingBasket, CiUser } from "react-icons/ci";
 
@@ -12,16 +12,42 @@ const HomeNavbar = async () => {
     <header className="w-screen">
       <div className="grid grid-cols-3 px-20 justify-between items-center py-4">
         <div className="flex gap-5">
-          <TextHoverUnderline href="#" text="TRANG CHỦ" status={currentPatch === "/"} />
-          <TextHoverUnderline href="#" text="KHUYẾN MÃI" status={currentPatch === "/a"} />
-          <TextHoverUnderline href="#" text="ĐỒ ĂN" status={currentPatch === "/b"} />
-          <TextHoverUnderline href="#" text="TIN TỨC" status={currentPatch === "/c"} />
-          <TextHoverUnderline href="#" text="LIÊN HỆ" status={currentPatch === "/d"} />
+          <TextHoverUnderline
+            href="#"
+            text={{ text: "TRANG CHỦ", typo: "BASE_B" }}
+            status={currentPatch === "/"}
+          />
+          <TextHoverUnderline
+            href="#"
+            text={{ text: "KHUYẾN MÃI", typo: "BASE_B" }}
+            status={currentPatch === "/a"}
+          />
+          <TextHoverUnderline
+            href="#"
+            text={{ text: "ĐỒ ĂN", typo: "BASE_B" }}
+            status={currentPatch === "/b"}
+          />
+          <TextHoverUnderline
+            href="#"
+            text={{ text: "TIN TỨC", typo: "BASE_B" }}
+            status={currentPatch === "/c"}
+          />
+          <TextHoverUnderline
+            href="#"
+            text={{ text: "LIÊN HỆ", typo: "BASE_B" }}
+            status={currentPatch === "/d"}
+          />
         </div>
 
-        <Link href={"#"} className="flex justify-center">
-          <Image src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK} width={86} height={86} alt="" />
-        </Link>
+        <div className="flex justify-center">
+          <Link href={"#"}>
+            <AppImage
+              classNameContainer="h-[90px] w-[90px]"
+              src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
+              alt=""
+            />
+          </Link>
+        </div>
 
         <div className="flex gap-5 justify-end">
           <Link href={"#"}>

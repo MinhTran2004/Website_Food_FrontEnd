@@ -1,10 +1,11 @@
+import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
+import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { COLOR } from "@/share/contanst/color";
 import clsx from "clsx";
 import Link from "next/link";
-import { FaChevronRight } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
-import { MdChevronRight } from "react-icons/md";
 
 const ItemBlog = () => {
   return (
@@ -15,25 +16,41 @@ const ItemBlog = () => {
         alt=""
       />
       <div className="space-y-4 p-5">
-        <p className="text-gray-400 uppercase">29 tháng 10, 2024</p>
+        <AppText
+          typo="BASE"
+          color={COLOR.gray}
+          className="uppercase"
+          text="29 tháng 10, 2024"
+        />
         <Link
           href={"#"}
           className="text-black text-xl font-medium uppercase pb-4 hover:text-orange-500 cursor-pointer duration-300"
         >
           Ẩm thực thái đích thực
         </Link>
-        <p className="line-clamp-2 text-gray-400">
-          Yến mạch là loại thực phẩm có hàm lượng dinh dưỡng cũng như các khoáng
+        <AppText
+          typo="BASE"
+          color={COLOR.gray}
+          className="line-clamp-2"
+          text="Yến mạch là loại thực phẩm có hàm lượng dinh dưỡng cũng như các khoáng
           chất thiết yếu cao. Tất cả những dưỡng chất này đều rất cần thiết
           trong quá trình nâng cao hệ miễn dịch cho bé, đồng thời thúc đẩy hỗ
           trợ hệ tiêu hóa tốt hơn. Bên cạnh đó, yến mạch là loại thực phẩm khá
           lành tính và ít gây dị ứng nên mẹ hoàn toàn có thể nấu cháo yến mạch
-          cho bé khi bước vào giai đoạn ăn dặm.
-        </p>
+          cho bé khi bước vào giai đoạn ăn dặm."
+        />
+
         <div className="group w-fit">
           <Link href={"#"} className="flex items-center">
-            <p className="font-semibold text-base uppercase">Xem thêm</p>
-            <FaAngleRight size={16} />
+            <AppButton
+            buttonDefault
+              text={{
+                text: "Xem thêm",
+                typo: "BASE_LARGE_B",
+                className: "leading-5 uppercase",
+              }}
+              iconRight={<FaAngleRight size={16} />}
+            />
           </Link>
           <div
             className={clsx(
@@ -49,13 +66,18 @@ const ItemBlog = () => {
 const HomeBlog = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="space-y-6 mb-8">
-        <p className="text-center text-lg font-medium uppercase">
-          Blog & Bài viết
-        </p>
-        <p className="text-center text-5xl font-semibold uppercase">
-          Tin tức mới nhất
-        </p>
+      <div className="space-y-3 mb-6">
+        <AppText
+          typo="BASE_LARGE_B"
+          className="text-center uppercase"
+          text="Blog & Bài viết"
+        />
+        <AppText
+          typo="HEADER_2_B"
+          as={"h3"}
+          className="text-center uppercase"
+          text="Tin tức mới nhất"
+        />
       </div>
 
       <div className="flex">

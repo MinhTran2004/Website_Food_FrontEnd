@@ -1,11 +1,13 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
+import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { COLOR } from "@/share/contanst/color";
 
 const ItemSelect = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
-    <p className="text-4xl font-semibold">·</p>
-    <p className="text-lg font-medium">{text}</p>
+    <AppText text="·" typo="HEADER_4_B"/>
+    <AppText text={text} typo="BASE_LARGE_B"/>
   </div>
 );
 
@@ -27,18 +29,29 @@ const HomeExperience = () => {
         />
         <div className="flex flex-col gap-8">
           <div>
-            <p className="font-medium mb-4 uppercase text-lg">Món ngon Thái</p>
-            <p className="text-[42px] font-semibold mb-2.5 uppercase leading-14">
-              Trải nghiệm văn hoá ẩm thực sống động của Thái Lan
-            </p>
-            <p className="text-gray-500 mb-8 text-lg">
-              Khám phá hương vị đậm & cay của ẩm thực Thái, một cuộc phiêu lưu
+            <AppText
+              text="Món ngon Thái"
+              typo="BASE_LARGE_B"
+              className="mb-4 uppercase"
+            />
+            <AppText
+              text="Trải nghiệm văn hoá ẩm thực sống động của Thái Lan"
+              typo="HEADER_3_B"
+              as={"h3"}
+              className="mb-2.5 uppercase leading-14"
+            />
+
+            <AppText
+              text="Khám phá hương vị đậm & cay của ẩm thực Thái, một cuộc phiêu lưu
               ẩm thực đầy màu sắc và đa dạng trong lòng Bangkok sôi động hay
               những ngôi làng truyền thống yên bình. Hãy dấn thân vào thế giới
               ẩm thực Thái Lan để trải nghiệm những khoảnh khắc tinh tế, từ món
               Pad Thai thơm ngon đến cà ri dừa đặc trưng, tạo nên một hành trình
-              đầy thú vị và sâu lắng.
-            </p>
+              đầy thú vị và sâu lắng."
+              typo="BASE_LARGE"
+              color={COLOR.gray}
+              className="mb-8"
+            />
           </div>
 
           <div>
@@ -47,7 +60,7 @@ const HomeExperience = () => {
             <ItemSelect text="ĐẦU BẾP KINH NGHIỆM" />
           </div>
 
-          <AppButton text="LIÊN HỆ" />
+          <AppButton text={{ text: "LIÊN HỆ", typo: "BASE_LARGE_B" }} />
         </div>
       </div>
 

@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { HtmlHTMLAttributes, ReactNode } from "react";
+import AppText, { IAppText } from "../Text/AppText";
 
 interface IAppButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
-  text?: string;
+  text?: IAppText;
   iconRight?: ReactNode;
   iconRightStyle?: string;
   buttonDefault?: boolean;
@@ -26,7 +27,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
         )}
         {...props}
       >
-        {text}
+        <AppText {...text} />
       </button>
       <div className={iconRightStyle}>{iconRight}</div>
     </div>

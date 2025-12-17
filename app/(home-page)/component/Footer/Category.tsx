@@ -1,6 +1,7 @@
 import AppImage from "@/component/Image/AppImage";
 import TextHoverUnderline from "@/component/Text/TextHoverUnderline";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { COLOR } from "@/share/contanst/color";
 import Link from "next/link";
 
 const FooterCategory = () => {
@@ -9,7 +10,7 @@ const FooterCategory = () => {
       <Link href={"#"}>
         <AppImage
           src={IMAGE_SOUCE.IMG_LOGO_APP_WHITE}
-          classNameContainer="w-[86px] h-[86px] bg-white-500"
+          classNameContainer="w-[90px] h-[90px] bg-white-500"
           alt=""
         />
       </Link>
@@ -17,20 +18,25 @@ const FooterCategory = () => {
       <div className="flex gap-5">
         <TextHoverUnderline
           href="#"
-          text="Bài viết của chúng tôi"
-          classNameText="text-white"
+          text={{
+            text: "Bài viết của chúng tôi",
+            color: COLOR.white,
+            typo: "BASE",
+          }}
           classNameLine="bg-white"
         />
         <TextHoverUnderline
           href="#"
-          text="Theo dõi đơn hàng của bạn"
-          classNameText="text-white"
+          text={{
+            text: "Theo dõi đơn hàng của bạn",
+            color: COLOR.white,
+            typo: "BASE",
+          }}
           classNameLine="bg-white"
         />
         <TextHoverUnderline
           href="#"
-          text="Liên hệ"
-          classNameText="text-white"
+          text={{ text: "Liên hệ", color: COLOR.white, typo: "BASE" }}
           classNameLine="bg-white"
         />
       </div>

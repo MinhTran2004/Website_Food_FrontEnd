@@ -5,6 +5,8 @@ import { FaStar } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import AppImage from "../Image/AppImage";
+import AppText from "../Text/AppText";
+import { COLOR } from "@/share/contanst/color";
 
 const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   <div className="w-[40px] h-[40px] flex items-center justify-center p-1 rounded-full bg-[#f3e8d6] text-yellow-500 hover:bg-[#ec5708] hover:text-white">
@@ -41,11 +43,12 @@ const AppProduct = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <p className="text-gray-400">Món chính, Đặc biệt</p>
-        <p className="text-2xl font-medium uppercase">Bánh mì cà ri</p>
-        <p className="text-gray-400 text-[15px] font-medium">
-          200,000 <span className="text-[12px]">VND</span>
-        </p>
+        <AppText color={COLOR.gray} typo="BASE" text="Món chính, Đặc biệt" />
+        <AppText text="Bánh mì cà ri" typo="HEADER_4_B" className="uppercase" />
+        <div className="flex gap-0.5">
+          <AppText color={COLOR.gray} typo="BASE" text="200,000" />
+          <AppText color={COLOR.gray} typo="BASE" text="VND" />
+        </div>
 
         <div className="flex">
           {Array.from({ length: 5 }).map((_, index) => (

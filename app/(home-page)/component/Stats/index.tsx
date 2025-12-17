@@ -1,11 +1,15 @@
+import AppText from "@/component/Text/AppText";
+
 const ItemHomeStats = ({ number, text }: { number: string; text: string }) => (
   <div className="relative">
     <p className="text-center font-medium text-[180px] text-[#f3f3f3]">
       {number}
     </p>
-    <p className="text-center text-3xl font-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-      {text}
-    </p>
+    <AppText
+      typo="HEADER_4_B"
+      className="w-full text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      text={text}
+    />
   </div>
 );
 
