@@ -1,3 +1,4 @@
+import { COLOR } from "@/share/contanst/color";
 import { TEXT_TYPO } from "@/share/contanst/common";
 import { CSSProperties, ElementType, HTMLAttributes, useMemo } from "react";
 
@@ -11,7 +12,7 @@ export interface IAppText extends HTMLAttributes<HTMLElement> {
 const AppText = ({
   as: Component = "p",
   text,
-  color,
+  color = COLOR.black,
   typo,
   ...props
 }: IAppText) => {
@@ -33,6 +34,10 @@ const AppText = ({
         return { fontSize: "26px" };
       case "HEADER_4_B":
         return { fontSize: "26px", fontWeight: 600 };
+      case "HEADER_5":
+        return { fontSize: "24px" };
+      case "HEADER_5_B":
+        return { fontSize: "24px", fontWeight: 600 };
       case "LARGE":
         return { fontSize: "22px" };
       case "LARGE_B":
@@ -58,11 +63,15 @@ const AppText = ({
       case "BASE_SMALL_LEST":
         return { fontSize: "12px", fontWeight: 500 };
       default:
-        return { fontSize: "16px", fontWeight: 500 };
+        return { fontSize: "16px" };
     }
   }, [typo]);
   return (
-    <Component style={{ color: color, ...FONT_SIZE }} {...props}>
+    <Component
+      style={{ ...FONT_SIZE, ...props.style }}
+      className={`text-[${color}]`}
+      {...props}
+    >
       {text}
     </Component>
   );

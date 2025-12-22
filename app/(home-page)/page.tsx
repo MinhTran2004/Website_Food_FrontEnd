@@ -11,7 +11,7 @@ import SwiperSlide from "./component/SwiperSlide";
 
 const HomePageScreen = () => {
   return (
-    <div className="h-full space-y-16">
+    <div className="space-y-16 h-full">
       <SwiperSlide />
       <HomeProduct />
       <HomeMenu />

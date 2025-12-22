@@ -1,0 +1,99 @@
+import React from "react";
+import AppText, { IAppText } from "../Text/AppText";
+import { COLOR } from "@/share/contanst/color";
+
+interface CheckboxProps {
+  id?: string;
+  label?: IAppText;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  className?: string;
+  size?: "sm" | "md" | "lg";
+  error?: string;
+}
+
+const AppCheckBox: React.FC<CheckboxProps> = ({
+  id,
+  label,
+  checked = false,
+  onChange,
+  disabled = false,
+  className = "",
+  size = "md",
+  error,
+}) => {
+  const sizeClasses = {
+    sm: "w-4 h-4",
+    md: "w-5 h-5",
+    lg: "w-6 h-6",
+  };
+
+  const labelSizeClasses = {
+    sm: "text-sm",
+    md: "text-base",
+    lg: "text-lg",
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange && !disabled) {
+      onChange(e.target.checked);
+    }
+  };
+
+  return (
+    <div className={`flex flex-col ${className} w-fit group`}>
+      <label htmlFor={id} className="flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          id={id}
+          checked={checked}
+          onChange={handleChange}
+          disabled={disabled}
+          className={`
+            appearance-none        //Xóa style mặc định
+            ${sizeClasses[size]}
+            rounded-full           
+            border
+            border-gray-300
+            bg-white              
+            cursor-pointer
+            disabled:cursor-not-allowed
+            disabled:opacity-50
+            transition-all
+            
+            // Thêm icon checkmark
+            group-hover:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgNEw0LjUgNy41TDExIDEiIHN0cm9rZT0iI2VjNTcwOCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=')]
+            group-hover:bg-center
+            group-hover:bg-no-repeat
+
+            // Thêm icon checkmark
+            checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgNEw0LjUgNy41TDExIDEiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+')]
+            checked:bg-center
+            checked:bg-no-repeat
+    ${error ? COLOR.orange : ""}
+  `}
+        />
+        {label && (
+          <AppText
+            className={`
+              ml-2
+              hover:text-[#ec5708]
+              ${labelSizeClasses[size]}
+              ${
+                disabled
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-gray-700 cursor-pointer"
+              }
+              select-none
+            `}
+            {...label}
+          />
+        )}
+      </label>
+      {error && <span className="mt-1 ml-7 text-sm text-red-500">{error}</span>}
+    </div>
+  );
+};
+// Xóa style mặc định
+export default AppCheckBox;

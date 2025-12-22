@@ -23,9 +23,9 @@ const HomeNavbar = async () => {
             status={currentPatch === "/a"}
           />
           <TextHoverUnderline
-            href="#"
+            href="/product"
             text={{ text: "ĐỒ ĂN", typo: "BASE_B" }}
-            status={currentPatch === "/b"}
+            status={currentPatch === "/product"}
           />
           <TextHoverUnderline
             href="#"
@@ -39,15 +39,13 @@ const HomeNavbar = async () => {
           />
         </div>
 
-        <div className="flex justify-center">
-          <Link href={"#"}>
-            <AppImage
-              classNameContainer="h-[90px] w-[90px]"
-              src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
-              alt=""
-            />
-          </Link>
-        </div>
+        <Link href={"/"} className="flex justify-center">
+          <AppImage
+            classNameContainer="h-[90px] w-[90px]"
+            src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
+            alt=""
+          />
+        </Link>
 
         <div className="flex gap-5 justify-end">
           <Link href={"#"}>

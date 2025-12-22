@@ -1,13 +1,13 @@
 import FooterCategory from "./Category";
-import FooterConatct from "./Contact";
+import FooterContact from "./Contact";
 import FooterNetWork from "./Network";
 
 const HomeFooter = () => {
   return (
     <div className="bg-[#252525] pt-4 pb-16">
-      <div className="max-w-7xl mx-auto space-y-9">
+      <div className="mx-auto space-y-9 max-w-7xl">
         <FooterCategory />
-        <FooterConatct />
+        <FooterContact />
         <FooterNetWork />
       </div>
     </div>

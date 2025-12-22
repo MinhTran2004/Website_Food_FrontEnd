@@ -1,6 +1,7 @@
 import AppButton from "@/component/Button/AppButton";
 import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { COLOR } from "@/share/contanst/color";
 import Image from "next/image";
 
 const ItemSaleContent = ({
@@ -46,7 +47,13 @@ const HomeContent = () => {
           as={"h1"}
           typo="HEADER_1_B"
         />
-        <AppButton text={{ text: "Thực đơn", typo: "LARGE_MEDIUM_B" }} />
+        <AppButton
+          text={{
+            text: "Thực đơn",
+            typo: "LARGE_MEDIUM_B",
+            color: COLOR.white,
+          }}
+        />
       </div>
 
       {/* children 2 */}

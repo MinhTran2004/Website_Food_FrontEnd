@@ -20,23 +20,27 @@ const FooterCategory = () => {
           href="#"
           text={{
             text: "Bài viết của chúng tôi",
-            color: COLOR.white,
             typo: "BASE",
+            style: { color: COLOR.white },
+          }}
+          classNameLine="bg-white text-"
+        />
+        <TextHoverUnderline
+          href="#"
+          text={{
+            text: "Theo dõi đơn hàng của bạn",
+            typo: "BASE",
+            style: { color: COLOR.white },
           }}
           classNameLine="bg-white"
         />
         <TextHoverUnderline
           href="#"
           text={{
-            text: "Theo dõi đơn hàng của bạn",
-            color: COLOR.white,
+            text: "Liên hệ",
             typo: "BASE",
+            style: { color: COLOR.white },
           }}
-          classNameLine="bg-white"
-        />
-        <TextHoverUnderline
-          href="#"
-          text={{ text: "Liên hệ", color: COLOR.white, typo: "BASE" }}
           classNameLine="bg-white"
         />
       </div>

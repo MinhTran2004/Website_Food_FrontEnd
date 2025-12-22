@@ -21,3 +21,10 @@ export type TEXT_TYPO =
   | "BASE_SMALL_B"
   | "BASE_SMALL_LEST"
   | "BASE_SMALL_LEST_B";
+
+export const PAGE_LIST = {
+  HOME: "",
+  PRODUCT: "/product",
+} as const;
+
+export type TYPE_PAGE_LIST = keyof typeof PAGE_LIST;

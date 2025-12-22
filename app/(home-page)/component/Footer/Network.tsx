@@ -19,16 +19,16 @@ const FooterNetWork = () => {
     <div className="flex justify-between items-center">
       <AppText
         typo="BASE_LARGE"
-        color={COLOR.gray}
+        style={{ color: COLOR.gray }}
         text="Nhan Hoa © 2024. All Rights Reserved."
       />
 
       <div className="flex gap-3">
-        <Item icon={<FaFacebookF className="text-white text-xl" />} />
-        <Item icon={<FaTwitter className="text-white text-xl" />} />
-        <Item icon={<FaInstagram className="text-white text-xl" />} />
-        <Item icon={<FaYoutube className="text-white text-xl" />} />
-        <Item icon={<FaThreads className="text-white text-xl" />} />
+        <Item icon={<FaFacebookF className="text-xl text-white" />} />
+        <Item icon={<FaTwitter className="text-xl text-white" />} />
+        <Item icon={<FaInstagram className="text-xl text-white" />} />
+        <Item icon={<FaYoutube className="text-xl text-white" />} />
+        <Item icon={<FaThreads className="text-xl text-white" />} />
       </div>
     </div>
   );
