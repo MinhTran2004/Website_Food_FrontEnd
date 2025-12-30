@@ -1,4 +1,5 @@
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { COLOR } from "@/share/contanst/color";
 import { ReactNode } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -6,7 +7,6 @@ import { IoEyeOutline } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import AppImage from "../Image/AppImage";
 import AppText from "../Text/AppText";
-import { COLOR } from "@/share/contanst/color";
 
 const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   <div className="w-[40px] h-[40px] flex items-center justify-center p-1 rounded-full bg-[#f3e8d6] text-yellow-500 hover:bg-[#ec5708] hover:text-white">
@@ -43,11 +43,11 @@ const AppProduct = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <AppText color={COLOR.gray} typo="BASE" text="Món chính, Đặc biệt" />
+        <AppText color={COLOR.gray} typo="TEXT_LG" text="Món chính, Đặc biệt" />
         <AppText text="Bánh mì cà ri" typo="HEADER_4_B" className="uppercase" />
         <div className="flex gap-0.5">
-          <AppText color={COLOR.gray} typo="BASE" text="200,000" />
-          <AppText color={COLOR.gray} typo="BASE" text="VND" />
+          <AppText color={COLOR.gray} typo="TEXT_LG" text="200,000" />
+          <AppText color={COLOR.gray} typo="TEXT_LG" text="VND" />
         </div>
 
         <div className="flex">

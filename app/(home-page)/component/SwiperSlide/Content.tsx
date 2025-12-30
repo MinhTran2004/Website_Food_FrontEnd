@@ -22,13 +22,13 @@ const ItemSaleContent = ({
         {showmore && (
           <AppText
             text="-20%"
-            typo="LARGE_MEDIUM_B"
+            typo="HEADER_6_B"
             className="mr-1.5 text-[#EC5708]"
           />
         )}
-        <AppText text={title} typo="LARGE_MEDIUM_B" />
+        <AppText text={title} typo="HEADER_6_B" />
       </div>
-      <AppText text={label} typo="BASE" />
+      <AppText text={label} typo="TEXT_LG" />
     </div>
   </div>
 );
@@ -38,19 +38,20 @@ const HomeContent = () => {
     <div className="max-w-7xl mx-auto mt-20">
       {/* children 1 */}
       <div className="w-[60%]">
-        <div className="flex items-center gap-5">
-          <div className="h-[2px] w-[30px] bg-black" />
-          <AppText text="THỰC PHẨM THÁI" typo="BASE" />
+        <div className="flex items-center gap-3">
+          <div className="h-[2px] w-7 bg-black" />
+          <AppText text="THỰC PHẨM THÁI" typo="TEXT_LG" />
         </div>
         <AppText
           text="Bản giao hưởng của gia vị và hương vị"
           as={"h1"}
-          typo="HEADER_1_B"
+          typo="HEADER_1_XL_B"
+          className="py-8"
         />
         <AppButton
           text={{
             text: "Thực đơn",
-            typo: "LARGE_MEDIUM_B",
+            typo: "HEADER_6",
             color: COLOR.white,
           }}
         />

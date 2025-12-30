@@ -28,4 +28,5 @@ export const IMAGE_SOUCE = {
   IMG_ABOUT_ME_6: "/assets/images/IMG_ABOUT_ME_6.jpg",
   IMG_ABOUT_ME_7: "/assets/images/IMG_ABOUT_ME_7.jpg",
   IMG_ABOUT_ME_8: "/assets/images/IMG_ABOUT_ME_8.jpg",
+  IMG_BACKGROUD_NEWS: "/assets/images/IMG_BACKGROUD_NEWS.jpg"
 };

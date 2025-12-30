@@ -8,7 +8,7 @@ import { FaThreads } from "react-icons/fa6";
 const Item = ({ icon }: { icon: ReactNode }) => (
   <Link
     href={"#"}
-    className="w-[50px] h-[50px] border border-gray-400 flex justify-center items-center hover:bg-[#EC5708] hover:border-[#EC5708]"
+    className="w-[50px] h-[50px] border border-colorGrayLight flex justify-center items-center hover:bg-colorOrange hover:border-colorOrange"
   >
     {icon}
   </Link>
@@ -18,7 +18,7 @@ const FooterNetWork = () => {
   return (
     <div className="flex justify-between items-center">
       <AppText
-        typo="BASE_LARGE"
+        typo="TEXT_LG"
         style={{ color: COLOR.gray }}
         text="Nhan Hoa © 2024. All Rights Reserved."
       />

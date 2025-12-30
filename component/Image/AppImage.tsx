@@ -10,7 +10,7 @@ interface AppImageProps extends ImageProps {
 const AppImage: React.FC<AppImageProps> = ({ classNameContainer, styleContainer, ...props }) => {
   return (
     <div className={clsx("relative", classNameContainer)} style={styleContainer}>
-      <Image fill {...props} />
+      <Image fill {...props} alt="" />
     </div>
   );
 };

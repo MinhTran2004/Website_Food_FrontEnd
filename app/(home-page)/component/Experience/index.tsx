@@ -2,12 +2,11 @@ import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
 import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
 
 const ItemSelect = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
-    <AppText text="·" typo="HEADER_4_B"/>
-    <AppText text={text} typo="BASE_LARGE_B"/>
+    <AppText text="·" typo="HEADER_4_B" />
+    <AppText text={text} typo="HEADER_6_B" />
   </div>
 );
 
@@ -31,12 +30,12 @@ const HomeExperience = () => {
           <div>
             <AppText
               text="Món ngon Thái"
-              typo="BASE_LARGE_B"
+              typo="HEADER_5_B"
               className="mb-4 uppercase"
             />
             <AppText
               text="Trải nghiệm văn hoá ẩm thực sống động của Thái Lan"
-              typo="HEADER_3_B"
+              typo="HEADER_1_B"
               as={"h3"}
               className="mb-2.5 uppercase leading-14"
             />
@@ -48,9 +47,8 @@ const HomeExperience = () => {
               ẩm thực Thái Lan để trải nghiệm những khoảnh khắc tinh tế, từ món
               Pad Thai thơm ngon đến cà ri dừa đặc trưng, tạo nên một hành trình
               đầy thú vị và sâu lắng."
-              typo="BASE_LARGE"
-              color={COLOR.gray}
-              className="mb-8"
+              typo="HEADER_6"
+              className="mb-8 text-colorGray"
             />
           </div>
 
@@ -60,7 +58,7 @@ const HomeExperience = () => {
             <ItemSelect text="ĐẦU BẾP KINH NGHIỆM" />
           </div>
 
-          <AppButton text={{ text: "LIÊN HỆ", typo: "BASE_LARGE_B" }} />
+          <AppButton text={{ text: "LIÊN HỆ", typo: "HEADER_6_B" }} />
         </div>
       </div>
 

@@ -20,7 +20,7 @@ const FooterCategory = () => {
           href="#"
           text={{
             text: "Bài viết của chúng tôi",
-            typo: "BASE",
+            typo: "TEXT_LG",
             style: { color: COLOR.white },
           }}
           classNameLine="bg-white text-"
@@ -29,7 +29,7 @@ const FooterCategory = () => {
           href="#"
           text={{
             text: "Theo dõi đơn hàng của bạn",
-            typo: "BASE",
+            typo: "TEXT_LG",
             style: { color: COLOR.white },
           }}
           classNameLine="bg-white"
@@ -38,7 +38,7 @@ const FooterCategory = () => {
           href="#"
           text={{
             text: "Liên hệ",
-            typo: "BASE",
+            typo: "TEXT_LG",
             style: { color: COLOR.white },
           }}
           classNameLine="bg-white"

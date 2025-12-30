@@ -11,13 +11,13 @@ const FooterContact= () => {
       />
       <div>
         <AppText
-          typo="LARGE_MEDIUM"
+          typo="TEXT_LG"
           className="text-center"
           text="0901191616"
           style={{ color: COLOR.white }}
         />
         <AppText
-          typo="BASE_LARGE"
+          typo="TEXT_LG"
           className="text-center"
           text="contact@sm4s.vn"
           style={{ color: COLOR.gray }}
@@ -25,13 +25,13 @@ const FooterContact= () => {
       </div>
       <div>
         <AppText
-          typo="BASE_LARGE"
+          typo="TEXT_LG"
           className="text-right"
           text="Nhận thông tin cập nhật mới."
           style={{ color: COLOR.gray }}
         />
         <AppText
-          typo="BASE_LARGE"
+          typo="TEXT_LG"
           className="text-right"
           text="Chỉ cần đăng ký"
           style={{ color: COLOR.gray }}

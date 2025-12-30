@@ -1,79 +1,17 @@
-import AppButton from "@/component/Button/AppButton";
-import AppImage from "@/component/Image/AppImage";
+import AppNews from "@/component/News/AppNews";
 import AppText from "@/component/Text/AppText";
-import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
-import clsx from "clsx";
-import Link from "next/link";
-import { FaAngleRight } from "react-icons/fa6";
-
-const ItemBlog = () => {
-  return (
-    <div className="w-full mr-8 bg-[#f9f5ef]">
-      <AppImage
-        src={IMAGE_SOUCE.IMG_ABOUT_ME_1}
-        classNameContainer="h-[280px]"
-        alt=""
-      />
-      <div className="space-y-4 p-5">
-        <AppText
-          typo="BASE"
-          color={COLOR.gray}
-          className="uppercase"
-          text="29 tháng 10, 2024"
-        />
-        <Link
-          href={"#"}
-          className="text-black text-xl font-medium uppercase pb-4 hover:text-orange-500 cursor-pointer duration-300"
-        >
-          Ẩm thực thái đích thực
-        </Link>
-        <AppText
-          typo="BASE"
-          color={COLOR.gray}
-          className="line-clamp-2"
-          text="Yến mạch là loại thực phẩm có hàm lượng dinh dưỡng cũng như các khoáng
-          chất thiết yếu cao. Tất cả những dưỡng chất này đều rất cần thiết
-          trong quá trình nâng cao hệ miễn dịch cho bé, đồng thời thúc đẩy hỗ
-          trợ hệ tiêu hóa tốt hơn. Bên cạnh đó, yến mạch là loại thực phẩm khá
-          lành tính và ít gây dị ứng nên mẹ hoàn toàn có thể nấu cháo yến mạch
-          cho bé khi bước vào giai đoạn ăn dặm."
-        />
-
-        <div className="group w-fit">
-          <Link href={"#"} className="flex items-center">
-            <AppButton
-            buttonDefault
-              text={{
-                text: "Xem thêm",
-                typo: "BASE_LARGE_B",
-                className: "leading-5 uppercase",
-              }}
-              iconRight={<FaAngleRight size={16} />}
-            />
-          </Link>
-          <div
-            className={clsx(
-              "h-[2px] w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-[66%]"
-            )}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const HomeBlog = () => {
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="space-y-3 mb-6">
+    <div className="mx-auto max-w-7xl">
+      <div className="mb-6 space-y-3">
         <AppText
-          typo="BASE_LARGE_B"
+          typo="HEADER_6_B"
           className="text-center uppercase"
           text="Blog & Bài viết"
         />
         <AppText
-          typo="HEADER_2_B"
+          typo="HEADER_1_B"
           as={"h3"}
           className="text-center uppercase"
           text="Tin tức mới nhất"
@@ -81,9 +19,9 @@ const HomeBlog = () => {
       </div>
 
       <div className="flex">
-        <ItemBlog />
-        <ItemBlog />
-        <ItemBlog />
+        {Array.from({ length: 3 }).map((_, index) => (
+          <AppNews key={index} />
+        ))}
       </div>
     </div>
   );

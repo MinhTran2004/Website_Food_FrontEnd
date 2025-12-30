@@ -8,16 +8,16 @@ const HomeSubscribe = () => {
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         <div>
           <AppText
-            typo="BASE_LARGE_B"
+            typo="HEADER_6_B"
             text="Đăng ký bản tin"
             className="uppercase mb-4 text-center"
           />
 
           <AppText
-            typo="HEADER_2_B"
+            typo="HEADER_1_B"
             as={"h3"}
             text="Theo dõi bản tin của chúng tôi"
-            className="uppercase text-center mb-8"
+            className="uppercase text-center mb-10"
           />
         </div>
 
@@ -33,9 +33,9 @@ const HomeSubscribe = () => {
         <div className="flex w-md gap-2">
           <input type="checkbox" />
           <div className="flex gap-1">
-            <AppText typo="BASE" color={COLOR.gray} text="Tôi đồng ý với" />
+            <AppText typo="TEXT_LG" color={COLOR.gray} text="Tôi đồng ý với" />
             <AppText
-              typo="BASE"
+              typo="TEXT_LG"
               color={COLOR.blue}
               text="chính sách và quyền riêng tư"
               className="underline"

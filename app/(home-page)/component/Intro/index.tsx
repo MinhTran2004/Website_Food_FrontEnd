@@ -1,7 +1,6 @@
 import AppImage from "@/component/Image/AppImage";
 import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
 
 const HomeIntro = () => {
   return (
@@ -23,12 +22,12 @@ const HomeIntro = () => {
         <div>
           <AppText
             text="Ẩm thực ngon"
-            typo="BASE_LARGE_B"
+            typo="HEADER_6_B"
             className="mb-4 uppercase"
           />
           <AppText
             text="Khám phá hương vị đậm đà & Cay của ẩm thực thái"
-            typo="HEADER_3_B"
+            typo="HEADER_1_B"
             as={"h3"}
             className="mb-2.5 uppercase leading-14"
           />
@@ -39,9 +38,8 @@ const HomeIntro = () => {
             cay của ẩm thực Thái là một hành trình ngon miệng đưa bạn đến với
             những món ăn quyến rũ, từ sôi động đến dịu dàng, tạo nên một trải
             nghiệm ẩm thực độc đáo và sâu sắc."
-            typo="BASE_LARGE"
-            color={COLOR.gray}
-            className="pb-8 mb-8"
+            typo="HEADER_6"
+            className="pb-8 mb-8 text-colorGray"
           />
 
           <AppImage

@@ -1,24 +1,24 @@
+import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import Link from "next/link";
 import { CiHeart, CiSearch, CiShoppingBasket, CiUser } from "react-icons/ci";
-import AppImage from "../Image/AppImage";
 import Navbar from "../Navbar";
 
-const HeaderMain = async () => {
+const HeaderHome = async () => {
+
   return (
-    <header className="mx-auto w-7xl">
-      <div className="flex justify-between items-center py-4">
-        <div className="flex gap-16 items-center">
+    <header className="w-screen">
+      <div className="grid grid-cols-3 justify-between items-center px-20 py-4">
+        <Navbar />
+        <Link href={"/"} className="flex justify-center">
           <AppImage
+            classNameContainer="h-[90px] w-[90px]"
             src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
-            classNameContainer="h-[96px] w-[96px] cursor-pointer"
             alt=""
           />
+        </Link>
 
-          <Navbar />
-        </div>
-
-        <div className="flex gap-5">
+        <div className="flex gap-5 justify-end">
           <Link href={"#"}>
             <CiSearch className="text-3xl hover:text-white" />
           </Link>
@@ -37,4 +37,4 @@ const HeaderMain = async () => {
   );
 };
 
-export default HeaderMain;
+export default HeaderHome;

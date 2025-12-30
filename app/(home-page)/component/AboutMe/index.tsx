@@ -7,17 +7,6 @@ import clsx from "clsx";
 import Link from "next/link";
 import { GrFormNextLink } from "react-icons/gr";
 
-const DATA = [
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_1, name: "ẨM THỰC THÁI ĐÍCH THỰC" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_2, name: "GÀ CÀ RI ĐỎ" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_3, name: "SÚP THÁI TRUYỀN THỐNG" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_4, name: "CÔNG THỨC THÁI TRUYỀN THỐNG" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_5, name: "MÓN ẨM THỰC THÁI ĐỘC ĐÁO" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_6, name: "CÁ HÙNG THÁI" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_7, name: "CHẢ GIÒ GIÒN" },
-  { image: IMAGE_SOUCE.IMG_ABOUT_ME_8, name: "SALAD THÁI TƯƠI MÁT" },
-];
-
 interface ImageHoverCardProps {
   image: string;
   name: string;
@@ -53,10 +42,10 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
           transition-all duration-600
       "
       >
-        <AppText text={name} typo="BASE_LARGE_B" />
+        <AppText text={name} typo="HEADER_5_B" />
         <AppText
           text="Thư viện ảnh"
-          typo="BASE"
+          typo="HEADER_6"
           color={COLOR.gray}
           className="mt-2"
         />
@@ -68,13 +57,13 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
 const HomeAboutMe = () => {
   return (
     <div className="px-8 py-13">
-      <AppText text="Nói về nhà hàng" typo="BASE_B" className="uppercase" />
+      <AppText text="Nói về nhà hàng" typo="HEADER_6_B" className="uppercase" />
 
-      <div className="flex gap-12 mb-4">
+      <div className="flex gap-12 my-4">
         <AppText
           text="Nhà hàng của chúng tôi"
           as={"h3"}
-          typo="HEADER_2_B"
+          typo="HEADER_1_B"
           className="flex-5 uppercase"
         />
 
@@ -83,9 +72,8 @@ const HomeAboutMe = () => {
           thung lũng từ ngày mai bao giờ hết. Posuere urna nec tincidunt
           praesent semper feugiat nibh sed pulvinar Cả feugiat đều không cho
           bình hay tincidunt vào men."
-          typo="BASE_LARGE"
-          color={COLOR.gray}
-          className="flex-6"
+          typo="HEADER_6"
+          className="flex-6 text-colorGray"
         />
 
         <Link href={"#"} className="flex flex-4  justify-center group">
@@ -93,7 +81,7 @@ const HomeAboutMe = () => {
             buttonDefault
             text={{
               text: "Xem thêm",
-              typo: "BASE_LARGE_B",
+              typo: "HEADER_6_B",
               className: "uppercase",
             }}
             iconRight={
