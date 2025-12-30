@@ -78,7 +78,7 @@ const AppCheckBox: React.FC<CheckboxProps> = ({
           <AppText
             className={`
               ml-2
-              hover:text-[#ec5708]
+              hover:text-colorOrange
               ${labelSizeClasses[size]}
               ${
                 disabled

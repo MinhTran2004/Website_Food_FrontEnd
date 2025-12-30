@@ -23,7 +23,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
           "text-base font-semibold cursor-pointer",
           buttonDefault
             ? "px-0 py-0 bg-transparent rounded-0 text-black"
-            : "px-[50px] py-[15px] bg-[#ec5708] rounded-[10px] text-white"
+            : "px-[50px] py-[15px] bg-colorOrange rounded-[10px] text-white"
         )}
         {...props}
       >

@@ -33,8 +33,8 @@ const NewsPage = () => {
           style={{ backgroundColor: COLOR.grayLight }}
         >
           <div className="flex gap-2 items-center">
-            <AppText text="Hiển thị:" typo="BASE_B" />
-            <AppText text={`12 / 24 / 36`} typo="BASE" />
+            <AppText text="Hiển thị:" typo="TEXT_LG_B" />
+            <AppText text={`12 / 24 / 36`} typo="TEXT_LG" />
           </div>
           <AppDropdown options={OPTIONS} placeholder="Sắp xếp theo" />
         </div>

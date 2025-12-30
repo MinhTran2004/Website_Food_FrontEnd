@@ -57,7 +57,7 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
 const HomeAboutMe = () => {
   return (
     <div className="px-8 py-13">
-      <AppText text="Nói về nhà hàng" typo="HEADER_6_B" className="uppercase" />
+      <AppText text="Nói về nhà hàng" typo="HEADER_6_B" className="uppercase mb-4" />
 
       <div className="flex gap-12 my-4">
         <AppText

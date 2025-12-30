@@ -1,7 +1,6 @@
 import AppDropdown from "@/component/AppDropdown";
 import AppProduct from "@/component/Product";
 import AppText from "@/component/Text/AppText";
-import { COLOR } from "@/share/contanst/color";
 
 const OPTIONS = [
   { value: "NAME", label: "Sắp xếp theo tên" },
@@ -12,13 +11,10 @@ const OPTIONS = [
 const ProductContainer = () => {
   return (
     <div className="px-4">
-      <div
-        className="flex justify-between items-center px-3 py-2 mb-5"
-        style={{ backgroundColor: COLOR.grayLight }}
-      >
+      <div className="flex justify-between items-center px-3 py-2 mb-5 bg-colorGrayLight">
         <div className="flex gap-2 items-center">
-          <AppText text="Hiển thị:" typo="BASE_B" />
-          <AppText text={`12 / 24 / 36`} typo="BASE" />
+          <AppText text="Hiển thị:" typo="TEXT_LG_B" />
+          <AppText text={`12 / 24 / 36`} typo="TEXT_LG" />
         </div>
         <AppDropdown options={OPTIONS} placeholder="Sắp xếp sản phẩm theo" />
       </div>

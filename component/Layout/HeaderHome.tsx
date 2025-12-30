@@ -20,16 +20,16 @@ const HeaderHome = async () => {
 
         <div className="flex gap-5 justify-end">
           <Link href={"#"}>
-            <CiSearch className="text-3xl hover:text-white" />
+            <CiSearch className="text-4xl hover:text-white" />
           </Link>
           <Link href={"#"}>
-            <CiHeart className="text-3xl hover:text-white" />
+            <CiHeart className="text-4xl hover:text-white" />
           </Link>
           <Link href={"#"}>
-            <CiShoppingBasket className="text-3xl hover:text-white" />
+            <CiShoppingBasket className="text-4xl hover:text-white" />
           </Link>
           <Link href={"#"}>
-            <CiUser className="text-3xl hover:text-white" />
+            <CiUser className="text-4xl hover:text-white" />
           </Link>
         </div>
       </div>

@@ -4,11 +4,11 @@ import AppText from "@/component/Text/AppText";
 const ItemCategory = ({ text, isLast }: { text: string; isLast: boolean }) => (
   <div>
     <div className="flex gap-4 items-center py-2">
-      <AppText text={"▪"} typo="LARGE_MEDIUM_B" />
+      <AppText text={"▪"} typo="HEADER_6_B" />
       <AppText
         text={text}
-        typo="BASE"
-        className={`hover:text-[#ec5708] cursor-pointer`}
+        typo="TEXT_LG"
+        className={`hover:text-colorOrange cursor-pointer`}
       />
     </div>
     {!isLast && (
@@ -24,7 +24,7 @@ const DATA = ["Món tráng miệng", "Món chính", "Món khai vị"];
 const ProductCategory = () => {
   return (
     <div>
-      <AppText text="DANH MỤC" typo="LARGE_MEDIUM_B" />
+      <AppText text="DANH MỤC" typo="HEADER_6_B" />
       <AppLine className="my-2 bg-gray-200" />
 
       <div>

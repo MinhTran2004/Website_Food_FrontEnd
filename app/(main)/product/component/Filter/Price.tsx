@@ -48,13 +48,13 @@ const ProductPrice = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <AppText text="GIÁ SẢN PHẨM" typo="LARGE_MEDIUM_B" />
+        <AppText text="GIÁ SẢN PHẨM" typo="HEADER_6_B" />
         {hasChecked && (
           <AppButton
             buttonDefault
             text={{
               text: "Xóa",
-              typo: "BASE_B",
+              typo: "TEXT_LG",
               style: { color: COLOR.orange },
             }}
             onClick={onRemove}
@@ -67,7 +67,7 @@ const ProductPrice = () => {
         {dataSelect.map((item) => (
           <AppCheckBox
             key={item.value}
-            label={{ text: item.label, typo: "BASE" }}
+            label={{ text: item.label, typo: "TEXT_LG" }}
             checked={item.status}
             size="sm"
             className="py-2"

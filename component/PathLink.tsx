@@ -25,10 +25,7 @@ const PathLink = async () => {
 
   return (
     <div
-      style={{
-        background: COLOR.grayLight,
-      }}
-      className="mb-8"
+      className="mb-8 bg-colorGrayLight"
     >
       <div className="w-7xl mx-auto flex py-3">
         {formatPath.map((item, index) => (

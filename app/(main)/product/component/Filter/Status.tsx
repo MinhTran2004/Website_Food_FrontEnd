@@ -3,6 +3,7 @@ import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
 import AppText from "@/component/Text/AppText";
 import { COLOR } from "@/share/contanst/color";
+import clsx from "clsx";
 import { useCallback, useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 
@@ -16,13 +17,13 @@ const ItemStatus = ({
   onClick: () => void;
 }) => (
   <div
-    style={{
-      borderColor: status ? COLOR.orange : COLOR.grayLight,
-    }}
     onClick={onClick}
-    className={`relative px-4 py-2 rounded-t-lg rounded-bl-lg border cursor-pointer hover:border-orange-500`}
+    className={clsx(
+      `relative px-4 py-2 rounded-t-lg rounded-bl-lg border cursor-pointer hover:border-colorOrange`,
+      status ? "border-colorOrange" : "border-colorGrayLight"
+    )}
   >
-    <AppText text={text} typo="BASE_SMALL" />
+    <AppText text={text} typo="TEXT_LG" />
     {status && (
       <div
         style={{
@@ -84,14 +85,14 @@ const ProductStatus = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <AppText text="TRẠNG THÁI" typo="LARGE_MEDIUM_B" />
+        <AppText text="TRẠNG THÁI" typo="HEADER_6_B" />
         {hasChecked && (
           <AppButton
             buttonDefault
             text={{
               text: "Xóa",
-              typo: "BASE_B",
-              style: { color: COLOR.orange },
+              typo: "TEXT_LG",
+              className: "text-colorOrange",
             }}
             onClick={onRemove}
           />

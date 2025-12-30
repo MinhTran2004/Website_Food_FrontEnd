@@ -46,7 +46,7 @@ const HomeContent = () => {
           text="Bản giao hưởng của gia vị và hương vị"
           as={"h1"}
           typo="HEADER_1_XL_B"
-          className="py-8"
+          className="pb-8 pt-4"
         />
         <AppButton
           text={{

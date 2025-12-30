@@ -2,14 +2,13 @@ import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
 import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
 import clsx from "clsx";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
 
 const AppNews = () => {
   return (
-    <div className="w-full mr-8 bg-[#f9f5ef]">
+    <div className="w-full mr-8 bg-colorGrayLight">
       <AppImage
         src={IMAGE_SOUCE.IMG_ABOUT_ME_1}
         classNameContainer="h-[280px]"
@@ -17,9 +16,8 @@ const AppNews = () => {
       />
       <div className="p-5 space-y-4">
         <AppText
-          typo="BASE"
-          color={COLOR.gray}
-          className="uppercase"
+          typo="TEXT_LG"
+          className="uppercase text-colorGray"
           text="29 tháng 10, 2024"
         />
         <Link
@@ -29,9 +27,8 @@ const AppNews = () => {
           Ẩm thực thái đích thực
         </Link>
         <AppText
-          typo="BASE"
-          color={COLOR.gray}
-          className="line-clamp-2"
+          typo="TEXT_LG"
+          className="line-clamp-2 text-colorGray"
           text="Yến mạch là loại thực phẩm có hàm lượng dinh dưỡng cũng như các khoáng
             chất thiết yếu cao. Tất cả những dưỡng chất này đều rất cần thiết
             trong quá trình nâng cao hệ miễn dịch cho bé, đồng thời thúc đẩy hỗ
@@ -46,7 +43,7 @@ const AppNews = () => {
               buttonDefault
               text={{
                 text: "Xem thêm",
-                typo: "BASE_LARGE_B",
+                typo: "TEXT_LG_B",
                 className: "leading-5 uppercase",
               }}
               iconRight={<FaAngleRight size={16} />}

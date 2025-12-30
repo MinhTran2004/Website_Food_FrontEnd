@@ -7,11 +7,11 @@ import { GrFormNextLink } from "react-icons/gr";
 const HomeProduct = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <AppText text="ẨM THỰC THÁI" />
+      <AppText typo="HEADER_6_B" className="mb-4" text="ẨM THỰC THÁI" />
       <div className="flex items-start gap-4 mb-8">
         <AppText
           text="THỰC ĐƠN"
-          typo="HEADER_2_B"
+          typo="HEADER_1_B"
           as={"h3"}
           className="w-[33%]"
         />
