@@ -1,7 +1,6 @@
 "use client";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
-import AppText from "@/component/Text/AppText";
 import { COLOR } from "@/share/contanst/color";
 import clsx from "clsx";
 import { useCallback, useState } from "react";
@@ -23,7 +22,7 @@ const ItemStatus = ({
       status ? "border-colorOrange" : "border-colorGrayLight"
     )}
   >
-    <AppText text={text} typo="TEXT_LG" />
+    <p>{text}</p>
     {status && (
       <div
         style={{
@@ -85,13 +84,12 @@ const ProductStatus = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <AppText text="TRẠNG THÁI" typo="HEADER_6_B" />
+        <p className="text-lg font-medium">TRẠNG THÁI</p>
         {hasChecked && (
           <AppButton
             buttonDefault
             text={{
-              text: "Xóa",
-              typo: "TEXT_LG",
+              children: "Xóa",
               className: "text-colorOrange",
             }}
             onClick={onRemove}

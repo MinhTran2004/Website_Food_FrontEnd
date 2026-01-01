@@ -1,15 +1,10 @@
 import AppLine from "@/component/AppLine";
-import AppText from "@/component/Text/AppText";
 
 const ItemCategory = ({ text, isLast }: { text: string; isLast: boolean }) => (
   <div>
     <div className="flex gap-4 items-center py-2">
-      <AppText text={"▪"} typo="HEADER_6_B" />
-      <AppText
-        text={text}
-        typo="TEXT_LG"
-        className={`hover:text-colorOrange cursor-pointer`}
-      />
+      <p>▪</p>
+      <p className="hover:text-colorOrange cursor-pointer">{text}</p>
     </div>
     {!isLast && (
       <AppLine
@@ -24,7 +19,7 @@ const DATA = ["Món tráng miệng", "Món chính", "Món khai vị"];
 const ProductCategory = () => {
   return (
     <div>
-      <AppText text="DANH MỤC" typo="HEADER_6_B" />
+      <h3 className="text-lg font-medium">DANH MỤC</h3>
       <AppLine className="my-2 bg-gray-200" />
 
       <div>

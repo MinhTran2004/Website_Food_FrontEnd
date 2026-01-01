@@ -1,10 +1,9 @@
-import React from "react";
-import AppText, { IAppText } from "../Text/AppText";
 import { COLOR } from "@/share/contanst/color";
+import React from "react";
 
 interface CheckboxProps {
   id?: string;
-  label?: IAppText;
+  label?: React.HTMLAttributes<HTMLParagraphElement>;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
   disabled?: boolean;
@@ -75,20 +74,22 @@ const AppCheckBox: React.FC<CheckboxProps> = ({
   `}
         />
         {label && (
-          <AppText
+          <p
             className={`
-              ml-2
-              hover:text-colorOrange
-              ${labelSizeClasses[size]}
-              ${
-                disabled
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-gray-700 cursor-pointer"
-              }
-              select-none
-            `}
+            ml-2
+            hover:text-colorOrange
+            ${labelSizeClasses[size]}
+            ${
+              disabled
+                ? "text-gray-400 cursor-not-allowed"
+                : "text-gray-700 cursor-pointer"
+            }
+            select-none
+          `}
             {...label}
-          />
+          >
+            {label.children}
+          </p>
         )}
       </label>
       {error && <span className="mt-1 ml-7 text-sm text-red-500">{error}</span>}

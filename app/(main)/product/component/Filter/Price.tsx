@@ -2,8 +2,6 @@
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
 import AppCheckBox from "@/component/ChekBox/AppCheckBox";
-import AppText from "@/component/Text/AppText";
-import { COLOR } from "@/share/contanst/color";
 import { useCallback, useState } from "react";
 
 const DATA = [
@@ -48,14 +46,13 @@ const ProductPrice = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <AppText text="GIÁ SẢN PHẨM" typo="HEADER_6_B" />
+        <h3 className="text-lg font-medium">GIÁ SẢN PHẨM</h3>
         {hasChecked && (
           <AppButton
             buttonDefault
             text={{
-              text: "Xóa",
-              typo: "TEXT_LG",
-              style: { color: COLOR.orange },
+              children: "Xóa",
+              className: "text-colorOrange",
             }}
             onClick={onRemove}
           />
@@ -67,7 +64,7 @@ const ProductPrice = () => {
         {dataSelect.map((item) => (
           <AppCheckBox
             key={item.value}
-            label={{ text: item.label, typo: "TEXT_LG" }}
+            label={{ children: item.label }}
             checked={item.status}
             size="sm"
             className="py-2"

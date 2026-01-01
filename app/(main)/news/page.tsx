@@ -1,6 +1,5 @@
 import AppDropdown from "@/component/AppDropdown";
 import AppNews from "@/component/News/AppNews";
-import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import { COLOR } from "@/share/contanst/color";
 
@@ -13,7 +12,7 @@ const NewsPage = () => {
   return (
     <div>
       {/* header */}
-      <div className="flex p-3 mx-4 border" style={{ borderColor: COLOR.gray }}>
+      <div className="flex p-3 mx-4 border border-colorGray">
         <div
           className="w-full h-100"
           style={{
@@ -21,7 +20,7 @@ const NewsPage = () => {
           }}
         >
           <div className="flex items-center mx-auto max-w-7xl h-full">
-            <AppText text="TIN TỨC" typo="HEADER_1_B" />
+            <h1 className="text-5xl font-medium">TIN TỨC</h1>
           </div>
         </div>
       </div>
@@ -33,8 +32,8 @@ const NewsPage = () => {
           style={{ backgroundColor: COLOR.grayLight }}
         >
           <div className="flex gap-2 items-center">
-            <AppText text="Hiển thị:" typo="TEXT_LG_B" />
-            <AppText text={`12 / 24 / 36`} typo="TEXT_LG" />
+            <p className="font-medium">Hiển thị:</p>
+            <p>12 / 24 / 36</p>
           </div>
           <AppDropdown options={OPTIONS} placeholder="Sắp xếp theo" />
         </div>
