@@ -1,7 +1,6 @@
 import AppButton from "@/component/Button/AppButton";
 import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
 import Image from "next/image";
 
 const ItemSaleContent = ({
@@ -20,39 +19,31 @@ const ItemSaleContent = ({
     <div className="space-y-1">
       <div className="flex">
         {showmore && (
-          <AppText
-            text="-20%"
-            typo="HEADER_6_B"
-            className="mr-1.5 text-[#EC5708]"
-          />
+          <p className="mr-1.5 text-colorOrange text-xl font-medium">-20%</p>
         )}
-        <AppText text={title} typo="HEADER_6_B" />
+        <p className="text-xl font-medium">{title}</p>
       </div>
-      <AppText text={label} typo="TEXT_LG" />
+      <p className="text-base">{label}</p>
     </div>
   </div>
 );
 
 const HomeContent = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-20">
+    <div className="max-w-7xl mx-auto mt-20 px-14">
       {/* children 1 */}
       <div className="w-[60%]">
         <div className="flex items-center gap-3">
           <div className="h-[2px] w-7 bg-black" />
           <AppText text="THỰC PHẨM THÁI" typo="TEXT_LG" />
         </div>
-        <AppText
-          text="Bản giao hưởng của gia vị và hương vị"
-          as={"h1"}
-          typo="HEADER_1_XL_B"
-          className="pb-8 pt-4"
-        />
+        <h1 className="pb-8 pt-4 text-6xl font-semibold">
+          Bản giao hưởng của gia vị và hương vị
+        </h1>
         <AppButton
           text={{
-            text: "Thực đơn",
-            typo: "HEADER_6",
-            color: COLOR.white,
+            children: "Thực đơn",
+            className: "text-lg font-semibold text-white",
           }}
         />
       </div>

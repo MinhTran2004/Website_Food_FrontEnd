@@ -1,4 +1,3 @@
-import AppText from "@/component/Text/AppText";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const ItemMenu = ({
@@ -11,13 +10,13 @@ const ItemMenu = ({
   price: string;
 }) => (
   <div>
-    <AppText typo="HEADER_5_B" text={title} />
-    <AppText typo="TEXT_LG" className="text-colorGray" text={label} />
+    <p className="text-2xl font-medium">{title}</p>
+    <p className="text-base text-colorGray">{label}</p>
     <div className="flex items-end">
       <div className="flex-1 border-b border-dashed border-gray-500 mb-[7px] mr-2" />
       <div className="flex items-center gap-0.5">
-        <AppText typo="HEADER_5_B" className="text-colorOrange"  text={price} />
-        <AppText typo="TEXT_LG_B" text="VND" className="text-colorOrange" />
+        <p className="text-xl font-medium text-colorOrange">{price}</p>
+        <p className="text-xl font-medium text-colorOrange">VND</p>
       </div>
     </div>
   </div>
@@ -26,19 +25,17 @@ const ItemMenu = ({
 const HomeMenu = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <AppText typo="HEADER_6_B" text="MENU" className="mb-2 text-center" />
-      <AppText
-        typo="HEADER_2_B"
-        text="MENU CỦA NHÀ HÀNG"
-        as={"h2"}
-        className="text-center"
-      />
+      <p className="mb-4 text-lg font-medium text-center">MENU</p>
+      <h2 className="mb-2 text-5xl font-medium text-center">
+        MENU CỦA NHÀ HÀNG
+      </h2>
+
       <MdKeyboardDoubleArrowDown
         size={40}
         className="text-center w-full mb-4"
       />
 
-      <div className="grid grid-cols-2 gap-x-20">
+      <div className="grid grid-cols-2 gap-x-20 gap-y-2 mt-10">
         <ItemMenu
           title="Bít tết bò Fiorentina"
           label="Món ăn là một sự kết hợp tuyệt v..."

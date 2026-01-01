@@ -1,5 +1,3 @@
-import AppText from "@/component/Text/AppText";
-import { COLOR } from "@/share/contanst/color";
 import { VscSend } from "react-icons/vsc";
 
 const HomeSubscribe = () => {
@@ -7,18 +5,12 @@ const HomeSubscribe = () => {
     <div className="bg-[#f9f5ef] py-15">
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         <div>
-          <AppText
-            typo="HEADER_6_B"
-            text="Đăng ký bản tin"
-            className="uppercase mb-4 text-center"
-          />
-
-          <AppText
-            typo="HEADER_1_B"
-            as={"h3"}
-            text="Theo dõi bản tin của chúng tôi"
-            className="uppercase text-center mb-10"
-          />
+          <p className="uppercase text-lg font-medium mb-4 text-center">
+            Đăng ký bản tin
+          </p>
+          <h2 className=" text-5xl font-semibold uppercase text-center mb-10">
+            Theo dõi bản tin của chúng tôi
+          </h2>
         </div>
 
         <div className="w-md flex border-b-2 border-b-[#767676] pb-2 mb-4">
@@ -33,13 +25,10 @@ const HomeSubscribe = () => {
         <div className="flex w-md gap-2">
           <input type="checkbox" />
           <div className="flex gap-1">
-            <AppText typo="TEXT_LG" color={COLOR.gray} text="Tôi đồng ý với" />
-            <AppText
-              typo="TEXT_LG"
-              color={COLOR.blue}
-              text="chính sách và quyền riêng tư"
-              className="underline"
-            />
+            <p className="text-colorGray">Tôi đồng ý với</p>
+            <p className=" underline text-colorBlue">
+              chính sách và quyền riêng tư
+            </p>
           </div>
         </div>
       </div>

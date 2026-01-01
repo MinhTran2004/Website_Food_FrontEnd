@@ -1,5 +1,3 @@
-import AppText from "@/component/Text/AppText";
-import { COLOR } from "@/share/contanst/color";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -17,11 +15,7 @@ const Item = ({ icon }: { icon: ReactNode }) => (
 const FooterNetWork = () => {
   return (
     <div className="flex justify-between items-center">
-      <AppText
-        typo="TEXT_LG"
-        style={{ color: COLOR.gray }}
-        text="Nhan Hoa © 2024. All Rights Reserved."
-      />
+      <p className="text-colorGray">Nhan Hoa © 2024. All Rights Reserved.</p>
 
       <div className="flex gap-3">
         <Item icon={<FaFacebookF className="text-xl text-white" />} />

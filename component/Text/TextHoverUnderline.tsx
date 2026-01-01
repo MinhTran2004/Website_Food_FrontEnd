@@ -1,10 +1,9 @@
 import clsx from "clsx";
 import Link from "next/link";
-import AppText, { IAppText } from "./AppText";
 
 interface Props {
   href?: string;
-  text?: IAppText;
+  text?: string;
   status?: boolean;
   classNameText?: string;
   classNameLine?: string;
@@ -20,9 +19,9 @@ const TextHoverUnderline: React.FC<Props> = ({
   <div className="group">
     <Link
       href={href || "#"}
-      className={clsx("uppercase", classNameText)}
+      className={clsx("uppercase text-base font-medium", classNameText)}
     >
-      <AppText {...text} />
+      {text}
     </Link>
     <div
       className={clsx(

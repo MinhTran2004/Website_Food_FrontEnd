@@ -11,11 +11,7 @@ const Navbar = async () => {
         <TextHoverUnderline
           key={item.href}
           href={item.href}
-          text={{
-            text: item.text,
-            typo: "TEXT_LG_B",
-            className: "uppercase",
-          }}
+          text={item.text}
           status={currentPatch === item.href}
         />
       ))}

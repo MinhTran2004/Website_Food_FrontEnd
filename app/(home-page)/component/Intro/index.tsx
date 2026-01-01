@@ -1,5 +1,4 @@
 import AppImage from "@/component/Image/AppImage";
-import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 
 const HomeIntro = () => {
@@ -20,27 +19,17 @@ const HomeIntro = () => {
         />
 
         <div>
-          <AppText
-            text="Ẩm thực ngon"
-            typo="HEADER_6_B"
-            className="mb-4 uppercase"
-          />
-          <AppText
-            text="Khám phá hương vị đậm đà & Cay của ẩm thực thái"
-            typo="HEADER_1_B"
-            as={"h3"}
-            className="mb-2.5 uppercase leading-14"
-          />
-
-          <AppText
-            text="Với hương vị đậm đà và cay nồng, là điểm đến lý tưởng cho những ai
+          <p className="mb-4 text-lg font-medium uppercase">Ẩm thực ngon</p>
+          <h2 className="text-5xl font-semibold uppercase">
+            Khám phá hương vị đậm đà & Cay của ẩm thực thái
+          </h2>
+          <p className="py-8 text-base text-colorGray">
+            Với hương vị đậm đà và cay nồng, là điểm đến lý tưởng cho những ai
             yêu thích ẩm thực đặc trưng của Đông Nam Á. Khám phá hương vị đậm &
             cay của ẩm thực Thái là một hành trình ngon miệng đưa bạn đến với
             những món ăn quyến rũ, từ sôi động đến dịu dàng, tạo nên một trải
-            nghiệm ẩm thực độc đáo và sâu sắc."
-            typo="HEADER_6"
-            className="pb-8 mb-8 text-colorGray"
-          />
+            nghiệm ẩm thực độc đáo và sâu sắc.
+          </p>
 
           <AppImage
             src={IMAGE_SOUCE.Home_intro_food}

@@ -1,21 +1,11 @@
 import AppNews from "@/component/News/AppNews";
-import AppText from "@/component/Text/AppText";
 
 const HomeBlog = () => {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="mb-6 space-y-3">
-        <AppText
-          typo="HEADER_6_B"
-          className="text-center uppercase"
-          text="Blog & Bài viết"
-        />
-        <AppText
-          typo="HEADER_1_B"
-          as={"h3"}
-          className="text-center uppercase"
-          text="Tin tức mới nhất"
-        />
+      <p className="mb-2 text-lg font-medium text-center uppercase">Blog & Bài viết</p>
+      <h2 className="text-5xl font-semibold text-center uppercase">Tin tức mới nhất</h2>
       </div>
 
       <div className="flex">

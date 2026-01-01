@@ -1,8 +1,6 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
-import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { COLOR } from "@/share/contanst/color";
 import clsx from "clsx";
 import Link from "next/link";
 import { GrFormNextLink } from "react-icons/gr";
@@ -42,13 +40,8 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
           transition-all duration-600
       "
       >
-        <AppText text={name} typo="HEADER_5_B" />
-        <AppText
-          text="Thư viện ảnh"
-          typo="HEADER_6"
-          color={COLOR.gray}
-          className="mt-2"
-        />
+        <p className="text-xl font-medium">{name}</p>
+        <p className="mt-2">Thư viện ảnh</p>
       </div>
     </div>
   );
@@ -57,32 +50,25 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
 const HomeAboutMe = () => {
   return (
     <div className="px-8 py-13">
-      <AppText text="Nói về nhà hàng" typo="HEADER_6_B" className="uppercase mb-4" />
-
+      <p className="mb-4 text-lg font-medium uppercase">Nói về nhà hàng</p>
       <div className="flex gap-12 my-4">
-        <AppText
-          text="Nhà hàng của chúng tôi"
-          as={"h3"}
-          typo="HEADER_1_B"
-          className="flex-5 uppercase"
-        />
+        <h2 className="mb-2.5 flex-5 uppercase leading-14 text-5xl font-semibold">
+          Nhà hàng của chúng tôi
+        </h2>
 
-        <AppText
-          text="Những đứa trẻ nào, thậm chí không có một đứa nào. Cũng không phải
+        <p className="flex-6 text-colorGray">
+          Những đứa trẻ nào, thậm chí không có một đứa nào. Cũng không phải
           thung lũng từ ngày mai bao giờ hết. Posuere urna nec tincidunt
           praesent semper feugiat nibh sed pulvinar Cả feugiat đều không cho
-          bình hay tincidunt vào men."
-          typo="HEADER_6"
-          className="flex-6 text-colorGray"
-        />
+          bình hay tincidunt vào men.
+        </p>
 
-        <Link href={"#"} className="flex flex-4  justify-center group">
+        <Link href={"#"} className="flex flex-4 justify-center group">
           <AppButton
             buttonDefault
             text={{
-              text: "Xem thêm",
-              typo: "HEADER_6_B",
-              className: "uppercase",
+              children: "Xem thêm",
+              className: "text-xl font-medium uppercase",
             }}
             iconRight={
               <GrFormNextLink

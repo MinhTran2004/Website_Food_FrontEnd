@@ -1,12 +1,11 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
-import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 
 const ItemSelect = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
-    <AppText text="·" typo="HEADER_4_B" />
-    <AppText text={text} typo="HEADER_6_B" />
+    <p className="text-2xl font-medium">·</p>
+    <p className="text-lg font-medium">{text}</p>
   </div>
 );
 
@@ -28,28 +27,19 @@ const HomeExperience = () => {
         />
         <div className="flex flex-col gap-8 z-50">
           <div>
-            <AppText
-              text="Món ngon Thái"
-              typo="HEADER_5_B"
-              className="mb-4 uppercase"
-            />
-            <AppText
-              text="Trải nghiệm văn hoá ẩm thực sống động của Thái Lan"
-              typo="HEADER_1_B"
-              as={"h3"}
-              className="mb-2.5 uppercase leading-14"
-            />
+            <p className="mb-4 text-lg font-medium uppercase">Món ngon Thái</p>
+            <h2 className="mb-2.5 uppercase leading-14 text-5xl font-semibold">
+              Trải nghiệm văn hoá ẩm thực sống động của Thái Lan
+            </h2>
 
-            <AppText
-              text="Khám phá hương vị đậm & cay của ẩm thực Thái, một cuộc phiêu lưu
+            <p className="mb-8 text-base text-colorGray">
+              Khám phá hương vị đậm & cay của ẩm thực Thái, một cuộc phiêu lưu
               ẩm thực đầy màu sắc và đa dạng trong lòng Bangkok sôi động hay
               những ngôi làng truyền thống yên bình. Hãy dấn thân vào thế giới
               ẩm thực Thái Lan để trải nghiệm những khoảnh khắc tinh tế, từ món
               Pad Thai thơm ngon đến cà ri dừa đặc trưng, tạo nên một hành trình
-              đầy thú vị và sâu lắng."
-              typo="HEADER_6"
-              className="mb-8 text-colorGray"
-            />
+              đầy thú vị và sâu lắng.
+            </p>
           </div>
 
           <div>
@@ -58,7 +48,9 @@ const HomeExperience = () => {
             <ItemSelect text="ĐẦU BẾP KINH NGHIỆM" />
           </div>
 
-          <AppButton text={{ text: "LIÊN HỆ", typo: "HEADER_6_B" }} />
+          <AppButton
+            text={{ children: "LIÊN HỆ", className: "text-xl font-medium" }}
+          />
         </div>
       </div>
 
