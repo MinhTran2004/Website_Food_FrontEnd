@@ -3,14 +3,25 @@
 @theme {
   /* Custom colors */
   --color-colorBlue: #007bff;
+  --color-colorBlueLight: #eff6ff;
   --color-colorWhite: #ffffff;
   --color-colorBlack: #000000;
   --color-colorGray: #959595;
   --color-colorGrayLight: #f3f3f3;
   --color-colorOrange: #ec5708;
+  --color-colorBeige: #f8f3e9;
+  --color-colorYellowWarning: #eab308;
+  --color-colorYellowLight: #fefce8;
+  --color-colorRedError: #ef4444;
+  --color-colorRedLight: #fef2f2;
   
-  /* System colors */
-  /* --color-background: #ffffff;
+  --color-colorGreenSuccess: #22c55e;
+  --color-colorGreenLight: #f0fdf4;
+  
+  
+  
+    /* System colors */
+    /* --color-background: #ffffff;
   --color-foreground: #171717; */
 }
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
+import { ToastProvider } from "@/component/AppToast";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -20,7 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={robotoCondensed.className}>
-        {children}
+        <ToastProvider>
+          <Providers>
+            {children}
+          </Providers>
+        </ToastProvider>
       </body>
     </html>
   );

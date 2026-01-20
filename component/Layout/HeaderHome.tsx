@@ -19,15 +19,9 @@ const HeaderHome = async () => {
         </Link>
 
         <div className="flex gap-5 justify-end">
-          <Link href={"#"}>
-            <CiSearch className="text-4xl hover:text-white" />
-          </Link>
-          <Link href={"#"}>
-            <CiHeart className="text-4xl hover:text-white" />
-          </Link>
-          <Link href={"#"}>
+          {/* <Link href={"#"}>
             <CiShoppingBasket className="text-4xl hover:text-white" />
-          </Link>
+          </Link> */}
           <Link href={"#"}>
             <CiUser className="text-4xl hover:text-white" />
           </Link>

@@ -1,7 +1,7 @@
 "use client";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
-import AppCheckBox from "@/component/ChekBox/AppCheckBox";
+import AppCheckBox from "@/component/CheckBox/AppCheckBox";
 import { useCallback, useState } from "react";
 
 const DATA = [
