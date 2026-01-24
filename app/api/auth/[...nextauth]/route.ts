@@ -34,11 +34,16 @@ const handler = NextAuth({
             };
         },
         async signIn({ user, account, profile }) {
-            if (profile?.email_verified === false) {
-                console.log("❌ Email not verify");
-                return false;
-            }
+            if (account?.provider === "google") {
+                const googleProfile = profile as {
+                    email_verified?: boolean;
+                };
 
+                if (googleProfile?.email_verified === false) {
+                    console.log("❌ Email not verified");
+                    return false;
+                }
+            }
             try {
 
                 if (account?.provider === 'google') {
