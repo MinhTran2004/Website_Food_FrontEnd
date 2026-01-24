@@ -1,8 +1,7 @@
+import clsx from "clsx";
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "../globals.css";
-import HeaderHome from "@/component/Layout/HeaderHome";
-import clsx from "clsx";
 
 const robotoCondensed = Roboto_Condensed({
     subsets: ["latin"],
@@ -23,7 +22,6 @@ export default function AuthLayout({
         <html lang="en">
             <body className={clsx(`min-h-screen`, robotoCondensed.className)}>
                 <div className="flex flex-col h-screen">
-                    <HeaderHome />
                     <main className="flex-1">
                         {children}
                     </main>

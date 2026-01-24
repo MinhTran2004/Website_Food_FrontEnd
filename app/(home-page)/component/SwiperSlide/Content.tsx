@@ -32,7 +32,7 @@ const HomeContent = () => {
   return (
     <div className="max-w-7xl mx-auto mt-20 px-14">
       {/* children 1 */}
-      <div className="w-[60%]">
+      <div className="w-[60%] flex flex-col items-start">
         <div className="flex items-center gap-3">
           <div className="h-[2px] w-7 bg-black" />
           <AppText text="THỰC PHẨM THÁI" typo="TEXT_LG" />
@@ -43,7 +43,7 @@ const HomeContent = () => {
         <AppButton
           text={{
             children: "Thực đơn",
-            className: "text-lg font-semibold text-white",
+            className: "text-lg font-semibold text-white w-fit",
           }}
         />
       </div>

@@ -1,7 +1,6 @@
 'use client'
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
-import AppCheckBoxFormik from "@/component/CheckBox/AppCheckBoxFormik";
 import AppInput from "@/component/Input/AppInput";
 import { userService } from "@/service/user.service";
 import { ROUTE } from "@/share/contanst/route.constants";
@@ -9,7 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
 import { useRouter } from "next/navigation";
 import { CgPassword } from "react-icons/cg";
-import * as Yup from "yup"
+import * as Yup from "yup";
 
 const FormField = () => {
     const toast = useToast()
@@ -51,7 +50,7 @@ const FormField = () => {
             }}
         >
             {({ handleSubmit }) => (
-                <Form className="space-y-5" onSubmit={handleSubmit}>
+                <Form className="space-y-2" onSubmit={handleSubmit}>
                     <AppInput
                         type="email"
                         name="email"

@@ -5,10 +5,14 @@ export interface IUser extends IBaseResponse {
     user: IUser;
 }
 
-export interface IUser {
-    id: string,
+export interface IBaseUser {
+    avatar: string;
     email: string,
     username: string,
+}
+
+export interface IUser extends IBaseUser {
+    id: string
 }
 
 export interface IBodyLoginRequest {

@@ -16,7 +16,7 @@ const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, ...i
     return (
         <div className={clsx('flex flex-col gap-0.5', viewExtra)}>
             <label className="pl-1 font-medium text-md">{label}</label>
-            <div className={clsx(`border border-colorGray px-4 py-3 rounded-xl flex items-center gap-2`)}>
+            <div className={clsx(`border border-colorGray px-4 py-2.5 rounded-xl flex items-center gap-2 sm:py-3`)}>
                 {iconLeft}
                 <div className="w-full flex justify-between">
                     <input

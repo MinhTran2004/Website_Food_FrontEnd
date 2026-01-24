@@ -29,7 +29,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
           "w-full flex items-center justify-center gap-2 text-base font-semibold cursor-pointer",
           buttonDefault
             ? "px-0 py-0 bg-transparent rounded-0 text-black"
-            : "px-[50px] py-[15px] bg-colorOrange rounded-[10px] text-white",
+            : "px-[50px] min-h-[55px] bg-colorOrange rounded-[10px] text-white",
           `disabled:bg-colorGrayLight disabled:text-colorGray`, props.className)}
       >
         {isLoading && <AppImage src={IMAGE_SOUCE.LOADING} alt="" classNameContainer="h-[20px] w-[20px]" unoptimized />}

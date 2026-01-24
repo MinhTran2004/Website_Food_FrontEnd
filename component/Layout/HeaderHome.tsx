@@ -1,7 +1,7 @@
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import Link from "next/link";
-import { CiHeart, CiSearch, CiShoppingBasket, CiUser } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
 import Navbar from "../Navbar";
 
 const HeaderHome = async () => {
@@ -18,14 +18,9 @@ const HeaderHome = async () => {
           />
         </Link>
 
-        <div className="flex gap-5 justify-end">
-          {/* <Link href={"#"}>
-            <CiShoppingBasket className="text-4xl hover:text-white" />
-          </Link> */}
-          <Link href={"#"}>
-            <CiUser className="text-4xl hover:text-white" />
-          </Link>
-        </div>
+        <Link href={"#"}>
+          <CiUser className="text-4xl hover:text-white" />
+        </Link>
       </div>
     </header>
   );

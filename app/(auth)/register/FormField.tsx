@@ -49,7 +49,7 @@ const FormField = () => {
 
         >
             {({ handleSubmit }) => (
-                <Form className="space-y-5" onSubmit={handleSubmit}>
+                <Form className="space-y-2" onSubmit={handleSubmit}>
                     <AppInput
                         name="username"
                         label="Tên người dùng"
@@ -74,7 +74,9 @@ const FormField = () => {
 
                     <AppCheckBoxFormik
                         name="isCheckBox"
-                        label={{ children: "Tôi đồng ý điều khoản" }} />
+                        label={{ children: "Tôi đồng ý điều khoản" }}
+                        className="my-3" />
+
                     <AppButton
                         disabled={isPending}
                         isLoading={isPending}

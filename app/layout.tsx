@@ -1,8 +1,9 @@
+import { ToastProvider } from "@/component/AppToast";
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-import { ToastProvider } from "@/component/AppToast";
+import AuthNotification from "@/component/AuthNotification";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={robotoCondensed.className}>
         <ToastProvider>
           <Providers>
+            <AuthNotification />
             {children}
           </Providers>
         </ToastProvider>

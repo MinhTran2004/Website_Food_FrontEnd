@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { STATUS_CODE } from "@/share/contanst/api.constant";
+import { IResponse } from "@/share/interface/api.interface";
 import axios, {
     AxiosError,
     AxiosInstance,
     AxiosRequestConfig,
     AxiosResponse,
 } from "axios";
-// import { getLocal } from "./local/store";
-import { IResponse } from "@/share/interface/api.interface";
-import { STATUS_CODE } from "@/share/contanst/api.constant";
+import { getSession } from "next-auth/react";
 
 export const ApiServerURL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -22,23 +22,22 @@ class Axios {
 
     constructor() {
         const instance = axios.create({ baseURL: ApiServerURL, headers });
-        // instance.interceptors.request.use(
-        //   async (config: any) => {
-        //     const { data: accessToken } = await handlePromise(() =>
-        //       getLocal(KEY_STORAGE.TOKEN)
-        //     );
-
-        //     if (config.headers) {
-        //       if (accessToken) {
-        //         config.headers.Authorization = `Bearer ${accessToken}`;
-        //       } else {
-        //         delete config.headers.Authorization;
-        //       }
-        //     }
-        //     return config;
-        //   },
-        //   (error:any) => Promise.reject(error)
-        // );
+        instance.interceptors.request.use(
+            async (config: any) => {
+                const session = await getSession();
+                console.log('session', session);
+                
+                if (config.headers) {
+                    if (session?.accessToken) {
+                        config.headers.Authorization = `Bearer ${session?.accessToken}`;
+                    } else {
+                        delete config.headers.Authorization;
+                    }
+                }
+                return config;
+            },
+            (error: any) => Promise.reject(error)
+        );
         // Config response interceptor
         const interceptor = instance.interceptors.response.use(
             (response: AxiosResponse) => {

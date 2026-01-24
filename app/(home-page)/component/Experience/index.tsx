@@ -25,7 +25,7 @@ const HomeExperience = () => {
           className="object-center"
           alt=""
         />
-        <div className="flex flex-col gap-8 z-50">
+        <div className="flex flex-col items-start gap-8 z-50">
           <div>
             <p className="mb-4 text-lg font-medium uppercase">Món ngon Thái</p>
             <h2 className="mb-2.5 uppercase leading-14 text-5xl font-semibold">

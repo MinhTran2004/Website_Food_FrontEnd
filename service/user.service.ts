@@ -9,7 +9,6 @@ class UserService {
             const response = await HttpClient.post<IBodyLoginRequest, IResponse<IUser>>(URLS.LOGIN, body);
             return response;
         } catch (err) {
-            console.log(err);
             throw err;
         }
     }
@@ -19,7 +18,15 @@ class UserService {
             const response = await HttpClient.post<IBodyRegisterRequest, IResponse<IUser>>(URLS.REGISTER, body);
             return response;
         } catch (err) {
-            console.log(err);
+            throw err;
+        }
+    }
+
+    async loginGoogleService(body: { idToken: string }): Promise<IResponse<IUser>> {
+        try {
+            const response = await HttpClient.post<{ idToken: string }, IResponse<IUser>>(URLS.LOGIN_GOOGLE, body);
+            return response;
+        } catch (err) {
             throw err;
         }
     }
