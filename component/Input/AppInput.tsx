@@ -16,11 +16,12 @@ const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, ...i
     return (
         <div className={clsx('flex flex-col gap-0.5', viewExtra)}>
             <label className="pl-1 font-medium text-md">{label}</label>
-            <div className={clsx(`border border-colorGray px-4 py-2.5 rounded-xl flex items-center gap-2 sm:py-3`)}>
+            <div className="px-4 py-2.5 rounded-xl flex items-center gap-2 bg-white shadow-sm border border-colorGrayLight
+                focus-within:ring-2 focus-within:ring-orange-500/20 transition-all focus-within:border focus-within:border-colorOrange">
                 {iconLeft}
                 <div className="w-full flex justify-between">
                     <input
-                        className="focus-visible:outline-0 w-full"
+                        className="w-full outline-none border-none focus:outline-none focus-visible:outline-none bg-transparent"
                         {...field}
                         {...input}
                     />
@@ -29,7 +30,7 @@ const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, ...i
             </div>
             {/* error message */}
             {meta.touched && meta.error && (
-                <span className="text-sm text-red-500 pl-1">{meta.error}</span>
+                <span className="text-sm text-red-500 pl-1 pt-1">{meta.error}</span>
             )}
         </div>
     )

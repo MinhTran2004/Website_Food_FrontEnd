@@ -20,14 +20,14 @@ export async function middleware(req: NextRequest) {
 
   // ---------- LOGIC LOGIN ----------
   // Chưa login mà vào trang khác /login → đá về /login
-  if (!isLoggedIn && pathname !== ROUTE.LOGIN && pathname !== ROUTE.REGISTER) {
-    return NextResponse.redirect(new URL(ROUTE.LOGIN, req.url));
-  }
+  // if (!isLoggedIn && pathname !== ROUTE.LOGIN && pathname !== ROUTE.REGISTER) {
+  //   return NextResponse.redirect(new URL(ROUTE.LOGIN, req.url));
+  // }
 
-  // Đã login mà vẫn vào /login → đá về /home
-  if (isLoggedIn && (pathname === ROUTE.LOGIN || pathname === ROUTE.REGISTER)) {
-    return NextResponse.redirect(new URL(ROUTE.HOME, req.url));
-  }
+  // // Đã login mà vẫn vào /login → đá về /home
+  // if (isLoggedIn && (pathname === ROUTE.LOGIN || pathname === ROUTE.REGISTER)) {
+  //   return NextResponse.redirect(new URL(ROUTE.HOME, req.url));
+  // }
 
   return res;
 }

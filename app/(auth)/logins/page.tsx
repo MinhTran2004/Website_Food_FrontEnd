@@ -1,12 +1,8 @@
 'use client'
 import AppImage from "@/component/Image/AppImage";
-
+import Button from "./Button";
+import Input from "./Input";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import FormField from "./FormField";
-import Link from "next/link";
-import { ROUTE } from "@/share/contanst/route.constants";
-import AppLine from "@/component/AppLine";
-import ButtonAuth from "@/component/ButtonAuth";
 
 const App: React.FC = () => {
 
@@ -90,8 +86,8 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right Side: Brighter Form */}
-                <div className="flex flex-col p-8 md:p-8 lg:p-20 justify-center bg-white">
-                    <div className="max-w-md w-full mx-auto">
+                <div className="flex flex-col p-8 md:p-20 justify-center bg-white">
+                    <div className="max-w-sm w-full mx-auto">
                         {/* Logo Mobile */}
                         <div className="md:hidden flex items-center gap-3 mb-10">
                             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/30">
@@ -101,23 +97,89 @@ const App: React.FC = () => {
                         </div>
 
                         <div className="mb-10">
-                            <h1 className="text-4xl font-black text-colorBlack mb-3 tracking-tight">Chào mừng trở lại!</h1>
-                            <p className="text-colorGray font-medium leading-relaxed">Đăng nhập để đặt món yêu thích của bạn chỉ trong vài phút</p>
+                            <h1 className="text-4xl font-black text-slate-900 mb-3 tracking-tight">
+                                Welcome Back
+                            </h1>
+                            <p className="text-slate-400 font-medium leading-relaxed">
+
+                                Your next gourmet meal is just a few clicks away.
+
+                            </p>
                         </div>
 
-                        <div className="space-y-3">
-                            <FormField />
-
-                            <div className="flex justify-between items-center gap-2">
-                                <AppLine />
-                                <p className="text-md whitespace-nowrap font-medium text-colorOrange">ĐĂNG NHẬP BẰNG</p>
-                                <AppLine />
+                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                            {/* {view === 'signup' && (
+                                <Input
+                                    label="Full Name"
+                                    placeholder="e.g. Gordon Ramsay"
+                                    icon={
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                    }
+                                />
+                            )} */}
+                            <Input
+                                label="Email Address"
+                                type="email"
+                                placeholder="you@email.com"
+                                icon={
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                }
+                            />
+                            <div className="space-y-2">
+                                <Input
+                                    label="Password"
+                                    type="password"
+                                    placeholder="••••••••"
+                                    icon={
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    }
+                                />
+                                <div className="text-right">
+                                    <button type="button" className="text-xs font-bold text-orange-500 hover:text-rose-500 transition-colors">
+                                        Forgot Password?
+                                    </button>
+                                </div>
                             </div>
 
-                            <ButtonAuth />
-                            <p className="text-center text-slate-400 text-sm font-medium">Bạn chưa có tài khoản? <Link href={ROUTE.REGISTER} className="text-colorOrange font-medium text-[17px] hover:text-rose-500 transition-all ml-1">Tạo tài khoản</Link></p>
-                        </div>
+                            <Button type="button" className="w-full text-lg h-14 bg-orange-500 hover:bg-orange-600 shadow-orange-500/30">
+                                Sign In Now
+                            </Button>
 
+                            <div className="relative py-2">
+                                <div className="absolute inset-0 flex items-center">
+                                    <div className="w-full border-t border-slate-100"></div>
+                                </div>
+                                <div className="relative flex justify-center text-[10px] uppercase font-black tracking-widest text-slate-300">
+                                    <span className="bg-white px-4">Social Login</span>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <button type="button" className="flex items-center justify-center py-3.5 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-all font-bold text-sm text-slate-600 shadow-sm active:scale-95">
+                                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5 mr-3" alt="Google" />
+                                    Google
+                                </button>
+                                <button type="button" className="flex items-center justify-center py-3.5 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-all font-bold text-sm text-slate-600 shadow-sm active:scale-95">
+                                    <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" className="w-5 h-5 mr-3" alt="Facebook" />
+                                    Facebook
+                                </button>
+                            </div>
+                        </form>
+
+                        <p className="mt-10 text-center text-slate-400 text-sm font-medium">
+                            Hungry for a new account?
+                            <button
+                                className="text-orange-500 font-black hover:text-rose-500 transition-all ml-1"
+                            >
+                                Sign Up
+                            </button>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -29,5 +29,6 @@ export const IMAGE_SOUCE = {
   IMG_ABOUT_ME_7: "/assets/images/IMG_ABOUT_ME_7.jpg",
   IMG_ABOUT_ME_8: "/assets/images/IMG_ABOUT_ME_8.jpg",
   IMG_BACKGROUD_NEWS: "/assets/images/IMG_BACKGROUD_NEWS.jpg",
-  LOADING: "/assets/images/loading.gif"
+  LOADING: "/assets/images/loading.gif",
+  IMG_BACKGROUD_AUTH: "/assets/images/IMG_BACKGROUD_AUTH.avif"
 };
