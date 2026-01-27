@@ -22,7 +22,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
   ...props
 }) => {
   return (
-    <div className="flex items-center group w-full">
+    <div className="flex items-center group">
       <button
         {...props}
         className={clsx(

@@ -11,24 +11,24 @@ const ItemSelect = ({ text }: { text: string }) => (
 
 const HomeExperience = () => {
   return (
-    <div className="bg-[#f9f5ef] py-24 relative">
+    <div className="bg-[#f9f5ef] py-10 relative px-6">
       <AppImage
         src={IMAGE_SOUCE.BANNER_EXPERIENCE_LEFT}
         classNameContainer="w-[calc(56%)] !absolute left-0 top-0 bottom-0"
         alt=""
       />
 
-      <div className="grid grid-cols-2 max-w-7xl mx-auto">
+      <div className="grid justify-center items-center lg:grid-cols-2 max-w-7xl mx-auto">
         <AppImage
           src={IMAGE_SOUCE.BANNER_EXPERIENCE_FOOD}
-          classNameContainer="h-[650px] w-[calc(84%)]"
-          className="object-center"
+          classNameContainer="h-[450px] lg:h-[650px] lg:w-[calc(84%)]"
+          className="object-contain"
           alt=""
         />
-        <div className="flex flex-col items-start gap-8 z-50">
+        <div className="flex flex-col items-start gap-2 lg:gap-8 z-50">
           <div>
             <p className="mb-4 text-lg font-medium uppercase">Món ngon Thái</p>
-            <h2 className="mb-2.5 uppercase leading-14 text-5xl font-semibold">
+            <h2 className="mb-2.5 uppercase text-[40px] xl:text-[55px] leading-[40px] xl:leading-[60px] font-semibold">
               Trải nghiệm văn hoá ẩm thực sống động của Thái Lan
             </h2>
 
@@ -56,7 +56,7 @@ const HomeExperience = () => {
 
       <AppImage
         src={IMAGE_SOUCE.BANNER_EXPERIENCE_RIGHT}
-        classNameContainer="w-[calc(26%)] h-[80%] !absolute right-0 top-1/2 -translate-y-1/2"
+        classNameContainer="hidden lg:w-[calc(26%)] h-[80%] !absolute right-0 top-1/2 -translate-y-1/2"
         alt=""
       />
     </div>

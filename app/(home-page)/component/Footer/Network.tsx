@@ -14,9 +14,7 @@ const Item = ({ icon }: { icon: ReactNode }) => (
 
 const FooterNetWork = () => {
   return (
-    <div className="flex justify-between items-center">
-      <p className="text-colorGray">Nhan Hoa © 2024. All Rights Reserved.</p>
-
+    <div className="flex flex-col md:flex-row-reverse gap-4 md:justify-between items-center">
       <div className="flex gap-3">
         <Item icon={<FaFacebookF className="text-xl text-white" />} />
         <Item icon={<FaTwitter className="text-xl text-white" />} />
@@ -24,6 +22,7 @@ const FooterNetWork = () => {
         <Item icon={<FaYoutube className="text-xl text-white" />} />
         <Item icon={<FaThreads className="text-xl text-white" />} />
       </div>
+      <p className="text-colorGray">Nhan Hoa © 2024. All Rights Reserved.</p>
     </div>
   );
 };

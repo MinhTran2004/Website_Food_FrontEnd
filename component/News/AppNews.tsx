@@ -7,7 +7,7 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const AppNews = () => {
   return (
-    <div className="w-full mr-8 bg-colorGrayLight">
+    <div className="w-full bg-colorGrayLight">
       <AppImage
         src={IMAGE_SOUCE.IMG_ABOUT_ME_1}
         classNameContainer="h-[280px]"

@@ -5,10 +5,10 @@ import { GrFormNextLink } from "react-icons/gr";
 
 const HomeProduct = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-6">
       <p className="mb-2 text-lg font-medium">ẨM THỰC THÁI</p>
-      <div className="flex items-start gap-4 mb-8">
-        <h2 className="w-[33%] text-5xl font-semibold">THỰC ĐƠN</h2>
+      <div className="flex flex-col lg:flex-row items-start gap-2 lg:gap-4 mb-8">
+        <h2 className="w-full lg:w-[33%] text-5xl font-semibold">THỰC ĐƠN</h2>
 
         <p className="flex-6 text-base text-colorGray">
           Từ món ăn đường phố đậm đà đến món fine dining tinh tế. Khám phá danh
@@ -30,7 +30,7 @@ const HomeProduct = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
         {Array.from({ length: 4 }).map((_, index) => (
           <AppProduct key={index} />
         ))}

@@ -7,18 +7,18 @@ import Navbar from "../Navbar";
 const HeaderHome = async () => {
 
   return (
-    <header className="w-screen">
+    <header className="hidden lg:block w-screen">
       <div className="grid grid-cols-3 justify-between items-center px-20 py-4">
         <Navbar />
         <Link href={"/"} className="flex justify-center">
           <AppImage
-            classNameContainer="h-[90px] w-[90px]"
+            classNameContainer="h-[80px] w-[80px]"
             src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
             alt=""
           />
         </Link>
 
-        <Link href={"#"}>
+        <Link href={"#"} className="flex justify-end">
           <CiUser className="text-4xl hover:text-white" />
         </Link>
       </div>

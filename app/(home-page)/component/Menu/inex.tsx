@@ -24,7 +24,7 @@ const ItemMenu = ({
 
 const HomeMenu = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-6">
       <p className="mb-4 text-lg font-medium text-center">MENU</p>
       <h2 className="mb-2 text-5xl font-medium text-center">
         MENU CỦA NHÀ HÀNG
@@ -35,7 +35,7 @@ const HomeMenu = () => {
         className="text-center w-full mb-4"
       />
 
-      <div className="grid grid-cols-2 gap-x-20 gap-y-2 mt-10">
+      <div className="grid lg:grid-cols-2 lg:gap-x-20 gap-y-2 mt-10">
         <ItemMenu
           title="Bít tết bò Fiorentina"
           label="Món ăn là một sự kết hợp tuyệt v..."

@@ -2,7 +2,7 @@ import { VscSend } from "react-icons/vsc";
 
 const HomeSubscribe = () => {
   return (
-    <div className="bg-[#f9f5ef] py-15">
+    <div className="bg-[#f9f5ef] py-15 px-6">
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         <div>
           <p className="uppercase text-lg font-medium mb-4 text-center">
@@ -13,7 +13,7 @@ const HomeSubscribe = () => {
           </h2>
         </div>
 
-        <div className="w-md flex border-b-2 border-b-[#767676] pb-2 mb-4">
+        <div className="w-[300px] md:w-[600px] flex border-b-2 border-b-[#767676] pb-2 mb-4">
           <input
             type="text"
             placeholder="Nhập email của bạn*"
@@ -22,7 +22,7 @@ const HomeSubscribe = () => {
           <VscSend size={24} />
         </div>
 
-        <div className="flex w-md gap-2">
+        <div className="flex max-w-md gap-2">
           <input type="checkbox" />
           <div className="flex gap-1">
             <p className="text-colorGray">Tôi đồng ý với</p>

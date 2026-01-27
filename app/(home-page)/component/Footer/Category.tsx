@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const FooterCategory = () => {
   return (
-    <div className="flex justify-between items-center py-5 border-b border-colorGray">
-      <Link href={"#"}>
+    <div className="flex flex-col sm:flex-row sm:justify-between items-center py-5 border-b border-colorGray gap-8">
+      <Link href={"#"} className="flex justify-center">
         <AppImage
           src={IMAGE_SOUCE.IMG_LOGO_APP_WHITE}
           classNameContainer="w-[90px] h-[90px] bg-white-500"
@@ -14,7 +14,7 @@ const FooterCategory = () => {
         />
       </Link>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 flex-wrap">
         <TextHoverUnderline
           href="#"
           text="Bài viết của chúng tôi"

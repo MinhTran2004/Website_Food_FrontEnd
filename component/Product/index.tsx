@@ -15,11 +15,11 @@ const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
 const AppProduct = () => {
   return (
     <div className="cursor-pointer group">
-      <div className="h-[300px] relative">
+      <div className="h-[270px] relative">
         <AppImage
-          classNameContainer="h-[270px]"
+          classNameContainer="h-full"
           src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_1}
-          className="object-cover hover:scale-105 duration-300"
+          className="object-contain hover:scale-105 duration-300"
           alt=""
         />
 

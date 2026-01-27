@@ -1,5 +1,4 @@
 import AppButton from "@/component/Button/AppButton";
-import AppText from "@/component/Text/AppText";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import Image from "next/image";
 
@@ -30,26 +29,26 @@ const ItemSaleContent = ({
 
 const HomeContent = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-20 px-14">
+    <div className="w-full mx-auto mt-15 px-8 lg:mt-20 sm:max-w-7xl sm:px-14 space-y-4">
       {/* children 1 */}
-      <div className="w-[60%] flex flex-col items-start">
+      <div className="sm:max-w-xl flex flex-col items-start space-y-2">
         <div className="flex items-center gap-3">
           <div className="h-[2px] w-7 bg-black" />
-          <AppText text="THỰC PHẨM THÁI" typo="TEXT_LG" />
+          <p>THỰC PHẨM THÁI</p>
         </div>
-        <h1 className="pb-8 pt-4 text-6xl font-semibold">
+        <h1 className="text-[36px] md:text-[40px] xl:text-[55px] leading-[40px] xl:leading-[60px] font-semibold pb-3">
           Bản giao hưởng của gia vị và hương vị
         </h1>
         <AppButton
           text={{
             children: "Thực đơn",
-            className: "text-lg font-semibold text-white w-fit",
+            className: "text-lg font-semibold text-white",
           }}
         />
       </div>
 
       {/* children 2 */}
-      <div className="flex gap-4 mt-14">
+      <div className="hidden md:flex lg:mt-20 gap-4">
         <ItemSaleContent
           image={IMAGE_SOUCE.ICON_SALE_CONTENT_1}
           title="Giao hàng miễn phí"

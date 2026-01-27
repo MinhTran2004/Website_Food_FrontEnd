@@ -49,27 +49,21 @@ const ImageHoverCard: React.FC<ImageHoverCardProps> = ({
 
 const HomeAboutMe = () => {
   return (
-    <div className="px-8 py-13">
+    <div className="px-8 py-13 hidden xl:block">
       <p className="mb-4 text-lg font-medium uppercase">Nói về nhà hàng</p>
-      <div className="flex gap-12 my-4">
-        <h2 className="mb-2.5 flex-5 uppercase leading-14 text-5xl font-semibold">
-          Nhà hàng của chúng tôi
-        </h2>
+      <div className="flex flex-col lg:flex-row items-start gap-2 lg:gap-4 mb-8">
+        <h2 className="w-full lg:w-[33%] text-5xl font-semibold">THỰC ĐƠN</h2>
 
-        <p className="flex-6 text-colorGray">
-          Những đứa trẻ nào, thậm chí không có một đứa nào. Cũng không phải
-          thung lũng từ ngày mai bao giờ hết. Posuere urna nec tincidunt
-          praesent semper feugiat nibh sed pulvinar Cả feugiat đều không cho
-          bình hay tincidunt vào men.
+        <p className="flex-6 text-base text-colorGray">
+          Từ món ăn đường phố đậm đà đến món fine dining tinh tế. Khám phá danh
+          mục món chính, món phụ, tráng miệng, đồ uống và nhiều loại thực phẩm
+          khác, mỗi danh mục ẩn chứa bí quyết và công thức ẩm thực độc đáo.
         </p>
 
-        <Link href={"#"} className="flex flex-4 justify-center group">
+        <Link href={"#"} className="flex group">
           <AppButton
             buttonDefault
-            text={{
-              children: "Xem thêm",
-              className: "text-xl font-medium uppercase",
-            }}
+            text={{ children: "Xem thêm", className: "text-xl font-medium" }}
             iconRight={
               <GrFormNextLink
                 size={24}
@@ -81,7 +75,7 @@ const HomeAboutMe = () => {
       </div>
 
       <div className="grid grid-cols-4 gap-x-6">
-        <div className="h-[720px] space-y-6">
+        <div className="h-[700px] space-y-6">
           <ImageHoverCard
             image={IMAGE_SOUCE.IMG_ABOUT_ME_1}
             name="ẨM THỰC THÁI ĐÍCH THỰC"
@@ -94,7 +88,7 @@ const HomeAboutMe = () => {
           />
         </div>
 
-        <div className="h-[720px] space-y-6">
+        <div className="h-[700px] space-y-6">
           <ImageHoverCard
             image={IMAGE_SOUCE.IMG_ABOUT_ME_2}
             name="GÀ CÀ RI ĐỎ"
@@ -107,7 +101,7 @@ const HomeAboutMe = () => {
           />
         </div>
 
-        <div className="h-[720px] space-y-6">
+        <div className="h-[700px] space-y-6">
           <ImageHoverCard
             image={IMAGE_SOUCE.IMG_ABOUT_ME_3}
             name="CHẢ GIÒ GIÒN"
@@ -120,7 +114,7 @@ const HomeAboutMe = () => {
           />
         </div>
 
-        <div className="h-[720px] space-y-6">
+        <div className="h-[700px] space-y-6">
           <ImageHoverCard
             image={IMAGE_SOUCE.IMG_ABOUT_ME_4}
             name="CÔNG THỨC THÁI TRUYỀN THỐNG"
