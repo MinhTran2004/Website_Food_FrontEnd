@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 
 const HeaderMain = async () => {
   return (
-    <header className="mx-auto w-7xl">
+    <header className="mx-auto max-w-7xl">
       <div className="flex justify-between items-center py-4">
         <div className="flex gap-16 items-center">
           <AppImage

@@ -18,11 +18,11 @@ const ItemStatus = ({
   <div
     onClick={onClick}
     className={clsx(
-      `relative px-4 py-2 rounded-t-lg rounded-bl-lg border cursor-pointer hover:border-colorOrange`,
+      `relative px-3 py-2 rounded-t-lg rounded-bl-lg border cursor-pointer hover:border-colorOrange`,
       status ? "border-colorOrange" : "border-colorGrayLight"
     )}
   >
-    <p>{text}</p>
+    <p className="text-sm">{text}</p>
     {status && (
       <div
         style={{
@@ -98,7 +98,7 @@ const ProductStatus = () => {
       </div>
       <AppLine className="my-2 bg-gray-200" />
 
-      <div className="flex gap-3 mt-4">
+      <div className="flex flex-wrap gap-2 mt-4">
         {status.map((item) => (
           <ItemStatus
             key={item.value}

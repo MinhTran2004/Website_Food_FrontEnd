@@ -22,7 +22,7 @@ const AppDrawer: React.FC<IAppDrawer> = ({ title, open, header, body, footer }) 
     <>
       {/* Button mở Drawer */}
       {open ? (
-        <div onClick={toggleDrawer}>{open}</div>
+        <div onClick={toggleDrawer} className='w-fit'>{open}</div>
       ) : (
         <AppButton
           buttonDefault

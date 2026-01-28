@@ -78,7 +78,7 @@ const AppDropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative rounded-lg ${className}`}>
       {label && (
         <label className="block mb-2 text-sm font-medium text-gray-700">
           {label}

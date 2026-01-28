@@ -25,9 +25,9 @@ const PathLink = async () => {
 
   return (
     <div
-      className="mb-8 bg-colorGrayLight"
+      className="mb-8 bg-colorGrayLight px-4"
     >
-      <div className="w-7xl mx-auto flex py-3">
+      <div className="max-w-7xl mx-auto flex py-3">
         {formatPath.map((item, index) => (
           <div className="flex items-center" key={index}>
             <AppText

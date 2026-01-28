@@ -1,4 +1,5 @@
-import HeaderMain from "@/component/Layout/HeaderMain";
+import HeaderHome from "@/component/Layout/HeaderHome";
+import HeaderHomeMobile from "@/component/Layout/HeaderHomeMobile";
 import { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import HomeFooter from "../(home-page)/component/Footer";
@@ -22,7 +23,8 @@ export default function MainLayout({
     <html lang="en">
       <body>
         <body className={robotoCondensed.className}>
-          <HeaderMain />
+          <HeaderHome />
+          <HeaderHomeMobile />
           {children}
           <div className="mt-20">
             <HomeFooter />
