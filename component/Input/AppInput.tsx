@@ -8,16 +8,17 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
     viewExtra?: string;
     iconLeft?: ReactNode;
     iconRight?: ReactNode;
+    classNameContainerText?: string;
 }
 
-const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, ...input }) => {
+const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, classNameContainerText, ...input }) => {
     const [field, meta] = useField(input.name!);
 
     return (
         <div className={clsx('flex flex-col gap-0.5', viewExtra)}>
             <label className="pl-1 font-medium text-md">{label}</label>
-            <div className="px-4 py-2.5 rounded-xl flex items-center gap-2 bg-white shadow-sm border border-colorGrayLight
-                focus-within:ring-2 focus-within:ring-orange-500/20 transition-all focus-within:border focus-within:border-colorOrange">
+            <div className={clsx(`px-4 py-2.5 rounded-xl flex items-center gap-2 bg-white shadow-sm border border-colorGrayLight
+                focus-within:ring-2 focus-within:ring-orange-500/20 transition-all focus-within:border focus-within:border-colorOrange`, classNameContainerText)}>
                 {iconLeft}
                 <div className="w-full flex justify-between">
                     <input

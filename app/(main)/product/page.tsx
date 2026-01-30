@@ -1,10 +1,10 @@
 import AppDrawer from "@/component/AppDrawer";
 import PathLink from "@/component/PathLink";
 import { RiFilter2Fill } from "react-icons/ri";
-import ProductCategory from "./component/Filter/Category";
 import ProductPrice from "./component/Filter/Price";
 import ProductStatus from "./component/Filter/Status";
 import ProductContainer from "./component/Product";
+import ProductCategory from "@/component/Category";
 
 const ProductPage = () => {
   return (

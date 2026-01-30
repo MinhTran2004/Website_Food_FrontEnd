@@ -1,5 +1,5 @@
 import { COLOR } from "@/share/contanst/color";
-import { TYPE_PAGE_LIST } from "@/share/contanst/common";
+import { TYPE_ROUTE } from "@/share/contanst/route.constants";
 import { getCurrentPath } from "@/utils/getSeverUrl";
 import { FaAngleRight } from "react-icons/fa6";
 import AppText from "./Text/AppText";
@@ -8,18 +8,25 @@ const PathLink = async () => {
   const path = await getCurrentPath();
 
   const splitPath = path.split("/");
+  console.log('splitPath', splitPath);
 
-  const definePath = (key: TYPE_PAGE_LIST) => {
+  const definePath = (key: TYPE_ROUTE) => {
     switch (key) {
       case "PRODUCT":
         return "Đồ ăn";
+      case "PRODUCTID":
+        return "Chi tiết sản phẩm";
+      case "NEWS":
+        return "Tin tức";
+      case "CONTACT":
+        return "Liên hệ";
       default:
         return "Trang chủ";
     }
   };
 
   const formatPath = splitPath.map((item) => {
-    const newPath = definePath(item.toUpperCase() as TYPE_PAGE_LIST);
+    const newPath = definePath(item.toUpperCase() as TYPE_ROUTE);
     return newPath;
   });
 

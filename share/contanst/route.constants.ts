@@ -3,6 +3,7 @@ export const ROUTE = {
     LOGIN: '/login',
     REGISTER: '/register',
     PRODUCT: '/product',
+    PRODUCTID: (id: string) => `/product/${id}`,
     NEWS: '/news',
     CONTACT: '/contact'
 }
@@ -52,3 +53,5 @@ export const NAME_ROUTE = [
         text: "Kết nối"
     }
 ]
+
+export type TYPE_ROUTE = keyof typeof ROUTE;
