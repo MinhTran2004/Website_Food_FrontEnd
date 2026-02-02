@@ -39,9 +39,9 @@ const ReviewProduct = () => {
                 </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex flex-col flex-1 items-center gap-2">
-                    <p className="text-2xl font-medium">Khách hàng đánh giá</p>
+                    <p className="text-2xl font-medium text-center">Khách hàng đánh giá</p>
                     <p className="text-3xl font-medium">5.0</p>
                     <AppStar size={20} />
                 </div>
@@ -52,11 +52,6 @@ const ReviewProduct = () => {
                     <AppRateProgress text="3" progress={0} />
                     <AppRateProgress text="2" progress={0} />
                     <AppRateProgress text="1" progress={0} />
-                </div>
-
-                <div className="flex flex-col flex-1 justify-start items-center gap-2">
-                    <p>Chia sẻ nhận xét về sản phẩm</p>
-                    <AppButton text={{ children: 'Đánh giá và nhận xét' }} className='px-[30px]' />
                 </div>
             </div>
 

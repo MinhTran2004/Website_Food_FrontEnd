@@ -8,15 +8,15 @@ import AppStar from "@/component/RateProduct/AppStar";
 
 const ProductIdPage = () => {
     return (
-        <div className="max-w-7xl flex mx-auto gap-10">
-            <div className="hidden lg:block w-[30%] px-4 space-y-4 h-fit">
+        <div className="max-w-7xl flex mx-auto px-6 gap-10">
+            <div className="hidden lg:block w-[30%] space-y-4 h-fit">
                 <ProductCategory />
                 <ProductSimilar />
             </div>
 
-            <div className="w-full space-y-12">
-                <div className="w-full flex gap-10">
-                    <AppImage src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_2} classNameContainer="h-[400px] w-[400px] border border-colorGrayLight" alt="" />
+            <div className="w-full mx-auto space-y-12">
+                <div className="w-full flex flex-col md:flex-row gap-6">
+                    <AppImage src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_2} classNameContainer="md:h-[400px] md:w-[400px] w-full h-[300px] border border-colorGrayLight" className="object-contain" alt="" />
                     <div className="space-y-3">
                         <h1 className="text-3xl font-medium">Bít tết bò Fiorentina</h1>
                         <AppStar size={20} />

@@ -8,7 +8,7 @@ const Item = () => {
     return (
         <div className="flex gap-2 w-full">
             <Link href={ROUTE.NEWS}>
-                <AppImage src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_1} classNameContainer="h-[80px] w-[80px]" alt="" />
+                <AppImage src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_1} classNameContainer="xl:h-[80px] xl:w-[80px] h-[60px] w-[60px]" alt="" />
             </Link>
 
             <div className="py-1.5">
@@ -17,7 +17,7 @@ const Item = () => {
                 </Link>
                 <AppStar />
 
-                <div className="mt-1.5 flex items-end gap-6">
+                <div className="mt-1.5 flex flex-wrap items-end xl:gap-4">
                     <p className="text-sm font-medium text-colorGray">120,000 <span className="text-xs">VND</span></p>
                     <p className="text-[15px] font-medium text-colorGray line-through">200,000 <span className="text-xs">VND</span></p>
                 </div>

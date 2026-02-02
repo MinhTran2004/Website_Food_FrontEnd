@@ -8,7 +8,7 @@ const HeaderHome = async () => {
 
   return (
     <header className="hidden lg:block w-screen">
-      <div className="grid grid-cols-3 justify-between items-center px-20 py-4">
+      <div className="mx-auto grid grid-cols-3 justify-between items-center px-20 py-4">
         <Navbar />
         <Link href={"/"} className="flex justify-center">
           <AppImage

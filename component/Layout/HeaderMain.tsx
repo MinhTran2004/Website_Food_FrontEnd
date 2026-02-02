@@ -6,32 +6,20 @@ import Navbar from "../Navbar";
 
 const HeaderMain = async () => {
   return (
-    <header className="mx-auto max-w-7xl">
-      <div className="flex justify-between items-center py-4">
-        <div className="flex gap-16 items-center">
+    <header className="hidden lg:block mx-auto max-w-7xl">
+      <div className="max-w-7xl mx-auto grid grid-cols-3 justify-between items-center px-6 py-4">
+        <Navbar />
+        <Link href={"/"} className="flex justify-center">
           <AppImage
+            classNameContainer="h-[80px] w-[80px]"
             src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
-            classNameContainer="h-[96px] w-[96px] cursor-pointer"
             alt=""
           />
+        </Link>
 
-          <Navbar />
-        </div>
-
-        <div className="flex gap-5">
-          <Link href={"#"}>
-            <CiSearch className="text-3xl hover:text-white" />
-          </Link>
-          <Link href={"#"}>
-            <CiHeart className="text-3xl hover:text-white" />
-          </Link>
-          <Link href={"#"}>
-            <CiShoppingBasket className="text-3xl hover:text-white" />
-          </Link>
-          <Link href={"#"}>
-            <CiUser className="text-3xl hover:text-white" />
-          </Link>
-        </div>
+        <Link href={"#"} className="flex justify-end">
+          <CiUser className="text-4xl hover:text-white" />
+        </Link>
       </div>
     </header>
   );

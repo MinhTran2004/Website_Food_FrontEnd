@@ -35,7 +35,7 @@ const PaymentProduct = () => {
 
                     <div className="space-y-4">
                         <AppButton
-                            className="border border-colorOrange hover:bg-colorWhite hover:text-colorOrange"
+                            className="border border-colorOrange hover:bg-colorWhite hover:text-colorOrange sm:w-fit w-full"
                             disabled={isSubmitting}
                             isLoading={isSubmitting}
                             type="submit"
