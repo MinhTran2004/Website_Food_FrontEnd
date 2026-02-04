@@ -1,9 +1,9 @@
 import { ToastProvider } from "@/component/AppToast";
+import AuthNotification from "@/component/AuthNotification";
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-import AuthNotification from "@/component/AuthNotification";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],

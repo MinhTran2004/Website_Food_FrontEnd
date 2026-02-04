@@ -8,7 +8,6 @@ const PathLink = async () => {
   const path = await getCurrentPath();
 
   const splitPath = path.split("/");
-  console.log('splitPath', splitPath);
 
   const definePath = (key: TYPE_ROUTE) => {
     switch (key) {

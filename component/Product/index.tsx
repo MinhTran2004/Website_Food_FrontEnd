@@ -1,10 +1,13 @@
-import { IMAGE_SOUCE } from "@/public/assets/images";
+import { ROUTE } from "@/share/contanst/route.constants";
+import { IProduct } from "@/share/interface/product.interface";
+import { formatVND } from "@/utils/formatVND";
+import Link from "next/link";
 import { ReactNode } from "react";
 import { CiHeart } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import AppImage from "../Image/AppImage";
+import AppStar from "../RateProduct/AppStar";
 
 const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   <div className="w-[40px] h-[40px] flex items-center justify-center p-1 rounded-full bg-[#f3e8d6] text-yellow-500 hover:bg-colorOrange hover:text-white">
@@ -12,13 +15,13 @@ const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   </div>
 );
 
-const AppProduct = () => {
+const AppProduct: React.FC<IProduct> = (props) => {
   return (
-    <div className="cursor-pointer group">
+    <Link href={ROUTE.PRODUCTID(props.id)} className="cursor-pointer group">
       <div className="relative">
         <AppImage
           classNameContainer="h-[170px] sm:h-[270px]"
-          src={IMAGE_SOUCE.IMG_DEMO_PRODUCT_1}
+          src={props.image}
           className="object-contain hover:scale-105 duration-300"
           alt=""
         />
@@ -41,20 +44,13 @@ const AppProduct = () => {
       </div>
 
       <div className="flex flex-col items-center space-y-1">
-        <p className="text-base text-colorGray">Món chính, Đặc biệt</p>
-        <p className="text-2xl font-medium uppercase">Bánh mì cà ri</p>
-        <div className="flex gap-0.5">
-          <p className="text-base text-colorGray">200,000</p>
-          <p className="text-base text-colorGray">VND</p>
-        </div>
+        <p className="text-base text-colorGray">{props.category_id}</p>
+        <p className="text-2xl font-medium uppercase">{props.name}</p>
+        <p className="text-base text-colorGray">{formatVND(props.price)}</p>
 
-        <div className="flex">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <FaStar key={index} className="text-yellow-500" />
-          ))}
-        </div>
+        <AppStar />
       </div>
-    </div>
+    </Link>
   );
 };
 
