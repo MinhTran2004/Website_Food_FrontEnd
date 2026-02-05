@@ -1,7 +1,15 @@
 import AppButton from "@/component/Button/AppButton";
 import ProductCart from "@/component/Product/ProductCart";
+import { ICart } from "@/share/interface/cart.interface";
 
-const ListProduct = () => {
+interface Props {
+  data: ICart[];
+  onAdd?: (cart: ICart) => void;
+  onMinus?: (cart: ICart) => void;
+  onDelete?: (cart: ICart) => void;
+}
+
+const ListProduct: React.FC<Props> = ({ onAdd, onMinus, onDelete, data }) => {
   return (
     <div className="flex-1 min-w-[450px] p-6 rounded-2xl border border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.2)]">
       <div className="space-y-4">
@@ -16,8 +24,15 @@ const ListProduct = () => {
           />
         </div>
 
-        {Array.from({ length: 5 }).map((_, index) => (
-          <ProductCart key={index} lineBottom={index < 4} />
+        {data.map((item, index) => (
+          <ProductCart
+            key={index}
+            lineBottom={index < data.length - 1}
+            onAdd={onAdd}
+            onMinus={onMinus}
+            onDelete={onDelete}
+            {...item}
+          />
         ))}
       </div>
     </div>

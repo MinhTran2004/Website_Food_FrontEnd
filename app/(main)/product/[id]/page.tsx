@@ -22,7 +22,7 @@ const ProductIdPage = async ({
     cache: "no-store",
   });
 
-  const data: IProduct = await res.json();
+  const product: IProduct = await res.json();
 
   return (
     <div className="max-w-7xl flex mx-auto px-6 gap-10">
@@ -34,42 +34,40 @@ const ProductIdPage = async ({
       <div className="w-full mx-auto space-y-12">
         <div className="w-full flex flex-col md:flex-row gap-6">
           <AppImage
-            src={data.image}
+            src={product.image}
             classNameContainer="md:h-[400px] md:w-[400px] w-full h-[300px] border border-colorGrayLight"
             className="object-contain duration-300 hover:scale-105 hover:cursor-pointer"
             alt=""
           />
           <div className="space-y-3">
-            <h1 className="text-3xl font-medium">{data.name}</h1>
+            <h1 className="text-3xl font-medium">{product.name}</h1>
             <AppStar size={20} />
             <div className="flex items-end gap-4">
               <p className="text-2xl font-medium text-colorOrange">
-                {formatVND(data.discount)}
+                {formatVND(product.discount)}
               </p>
 
               <p className="text-xl text-colorGray line-through">
-                {formatVND(data.price)}
+                {formatVND(product.price)}
               </p>
             </div>
 
             <p className="font-medium text-sm">
               Mã sản phẩm:{" "}
-              <span className="font-normal text-[15px]">
-                {data.id}
-              </span>
+              <span className="font-normal text-[15px]">{product._id}</span>
             </p>
             <p className="font-medium text-sm">
               Danh mục:{" "}
               <span className="font-normal text-colorOrange text-[15px]">
-                {data.category_id}
+                {product.category_id}
               </span>
             </p>
 
-            <PaymentProduct />
+            <PaymentProduct key={product._id} {...product} />
           </div>
         </div>
 
-        <ReviewProduct {...data} />
+        <ReviewProduct {...product} />
       </div>
     </div>
   );

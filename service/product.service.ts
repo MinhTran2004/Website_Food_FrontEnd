@@ -13,7 +13,7 @@ class ProductService {
       const response = await HttpClient.get<
         { id: string },
         IResponse<IProduct>
-      >(URLS.GET_PRODUCT_BY_ID);
+      >(URLS.GET_PRODUCT_BY_ID(id));
       return response;
     } catch (err) {
       console.log(err);

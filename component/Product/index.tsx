@@ -17,7 +17,7 @@ const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
 
 const AppProduct: React.FC<IProduct> = (props) => {
   return (
-    <Link href={ROUTE.PRODUCTID(props.id)} className="cursor-pointer group">
+    <Link href={ROUTE.PRODUCTID(props._id)} className="cursor-pointer group">
       <div className="relative">
         <AppImage
           classNameContainer="h-[170px] sm:h-[270px]"

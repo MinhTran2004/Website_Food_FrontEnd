@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import HomeFooter from "../(home-page)/component/Footer";
 import HeaderMain from "@/component/Layout/HeaderMain";
+import clsx from "clsx";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -24,11 +25,15 @@ export default function MainLayout({
     <html lang="en">
       <body>
         <body className={robotoCondensed.className}>
-          <HeaderMain />
-          <HeaderHomeMobile />
-          {children}
-          <div className="mt-20">
-            <HomeFooter />
+          <div className="h-screen flex flex-col">
+            <div>
+              <HeaderMain />
+              <HeaderHomeMobile />
+            </div>
+            <div className="flex-1">{children}</div>
+            <div className="pt-20">
+              <HomeFooter />
+            </div>
           </div>
         </body>
       </body>

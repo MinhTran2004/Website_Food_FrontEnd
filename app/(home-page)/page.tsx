@@ -13,7 +13,7 @@ const HomePageScreen = () => {
   return (
     <div className="space-y-16 h-full">
       <SwiperSlide />
-      <HomeProduct />
+      {/* <HomeProduct /> */}
       <HomeMenu />
       <HomeIntro />
       <HomeStats />

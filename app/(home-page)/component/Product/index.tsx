@@ -30,11 +30,11 @@ const HomeProduct = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
         {Array.from({ length: 4 }).map((_, index) => (
           <AppProduct key={index} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

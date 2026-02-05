@@ -30,7 +30,7 @@ const ProductContainer = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {data?.data?.items &&
           data?.data?.items.length > 0 &&
-          data.data.items.map((item) => <AppProduct key={item.id} {...item} />)}
+          data.data.items.map((item) => <AppProduct key={item._id} {...item} />)}
       </div>
     </div>
   );

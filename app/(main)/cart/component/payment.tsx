@@ -4,14 +4,18 @@ import AppButton from "@/component/Button/AppButton";
 import { formatVND } from "@/utils/formatVND";
 import { CiClock2, CiCreditCard1 } from "react-icons/ci";
 
-const Payment = () => {
+interface Props {
+  totalPrice: number;
+}
+
+const Payment: React.FC<Props> = ({ totalPrice }) => {
   return (
-    <div className="flex flex-col gap-2 border border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.2)] h-fit p-6 rounded-2xl ">
+    <div className="flex flex-col gap-2 flex-1 border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.2)] h-fit p-6 rounded-2xl ">
       <h3 className="text-2xl font-medium">Tóm tắt đơn hàng</h3>
 
       <div className="flex justify-between">
         <p className="text-colorGray">Tạm tính</p>
-        <p className="font-medium">{formatVND(2800000)}</p>
+        <p className="font-medium">{formatVND(totalPrice)}</p>
       </div>
 
       <div className="flex justify-between">
@@ -23,7 +27,9 @@ const Payment = () => {
 
       <div className="flex justify-between mb-1">
         <p className="text-xl font-medium">Tổng cộng</p>
-        <p className="text-2xl font-medium text-colorRedError">{formatVND(2800000)}</p>
+        <p className="text-2xl font-medium text-colorRedError">
+          {formatVND(totalPrice)}
+        </p>
       </div>
 
       <AppButton
