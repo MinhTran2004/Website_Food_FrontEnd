@@ -57,6 +57,7 @@ const CartPage = () => {
     });
   }, []);
 
+  //delete product in cart
   const { mutate: deleteCart } = useMutation({
     mutationFn: cartService.deleteCart,
     onSuccess: () => {

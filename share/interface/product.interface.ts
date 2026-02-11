@@ -6,7 +6,7 @@ export interface IProduct {
   description: string;
   description_detail: string;
   image: string;
-  category_id: string;
+  category_id: number;
   total_star: number;
   rates: {
     star1: number;

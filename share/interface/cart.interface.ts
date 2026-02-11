@@ -6,6 +6,7 @@ export interface ICart {
   product: IProduct;
   quantity: number;
   isActive: boolean;
+  createdAt: string;
 }
 
 export interface IBodyPostCart {

@@ -1,0 +1,33 @@
+[
+  {
+    "_id": "69845a3a929f61d07eb70bfe",
+    "idUser": "697493af334e0ab1944b2c38",
+    "quantity": 1,
+    "isActive": true,
+    "createdAt": "2026-02-05T08:52:10.971Z",
+    "updatedAt": "2026-02-05T08:52:10.971Z",
+    "__v": 0,
+    "product": {
+      "_id": "69773515d150f2350afc148c",
+      "name": "Hổ khóc",
+      "price": 100000,
+      "discount": 80000,
+      "description": "<p><strong>Weeping Tiger (bò khóc)</strong> là món bò nướng kiểu Thái nổi tiếng với thịt bò mềm, nướng xém cạnh, thơm mùi than và ăn kèm nước chấm cay chua mặn ngọt rất đậm đà. Món này hấp dẫn nhờ hương vị mạnh, thơm và hơi cay đặc trưng của ẩm thực Thái Lan.</p>",
+      "description_detail": "<p><strong>Weeping Tiger</strong>, hay còn gọi là <strong>bò khóc</strong>, là một món ăn truyền thống của Thái Lan, thường được làm từ phần thịt bò mềm và có chút mỡ để khi nướng không bị khô. Thịt được ướp đơn giản với muối, tiêu hoặc nước mắm, sau đó nướng trên lửa than cho đến khi bề mặt xém vàng, dậy mùi thơm đặc trưng. Khi chín, bò được cắt lát mỏng, giữ được độ mọng nước bên trong.</p><p>Điểm làm nên “linh hồn” của món Weeping Tiger chính là <strong>nước chấm</strong>: sự kết hợp hài hòa giữa nước mắm, chanh, ớt, thính gạo rang và các loại thảo mộc như hành tím, ngò gai, bạc hà. Khi ăn cùng rau sống và xôi hoặc cơm, món bò khóc mang đến trải nghiệm vị giác trọn vẹn: <strong>mềm – thơm – cay – chua – mặn – ngọt</strong>, rất đặc trưng của ẩm thực Thái. Nếu bạn muốn, mình có thể viết lại theo văn phong “menu nhà hàng” hoặc “bài giới thiệu món ăn” cho bạn.</p>",
+      "image": "https://i.imghippo.com/files/NPsr7899BKM.png",
+      "category_id": 3,
+      "total_star": 0,
+      "rates": {
+        "star1": 0,
+        "star2": 0,
+        "star3": 0,
+        "star4": 0,
+        "star5": 0
+      },
+      "isActive": true,
+      "createdAt": "2026-01-26T09:34:13.707Z",
+      "updatedAt": "2026-01-26T09:34:13.707Z",
+      "__v": 0
+    }
+  }
+]

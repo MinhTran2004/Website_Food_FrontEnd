@@ -21,7 +21,7 @@ const PaymentProduct: React.FC<IProduct> = ({ ...product }) => {
     onSuccess: () => {
       toast.SUCCESS("Thêm vào giỏ hàng thành công");
     },
-    onError: (err) => {
+    onError:  (err) => {
       toast.ERROR(err.message);
     },
   });
@@ -43,16 +43,32 @@ const PaymentProduct: React.FC<IProduct> = ({ ...product }) => {
           idProduct: product._id,
           quantity: countProduct,
         };
-
         mutate(newCart);
       }}
     >
-      {() => (
+      {({ setFieldValue, values }) => (
         <Form className="space-y-4">
           <div className="flex border border-colorGray rounded-full px-5 py-1 gap-2 w-fit">
-            <AppButton buttonDefault iconLeft={<IoMdRemove />} />
+            <AppButton
+              buttonDefault
+              type="button"
+              iconLeft={<IoMdRemove />}
+              onClick={() => {
+                if (values.countProduct > 1) {
+                  setFieldValue("countProduct", values.countProduct - 1);
+                }
+              }}
+            />
             <AppInput name="countProduct" className="w-2 h-4" />
-            <AppButton buttonDefault iconLeft={<FiPlus />} className="pl-1" />
+            <AppButton
+              buttonDefault
+              type="button"
+              iconLeft={<FiPlus />}
+              className="pl-1"
+              onClick={() => {
+                setFieldValue("countProduct", values.countProduct + 1);
+              }}
+            />
           </div>
 
           <div className="space-y-4">

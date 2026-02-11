@@ -9,6 +9,7 @@ import { Form, Formik } from "formik";
 import { useRouter } from "next/navigation";
 import { CgPassword } from "react-icons/cg";
 import * as Yup from "yup";
+import { TfiEmail } from "react-icons/tfi";
 
 const FormField = () => {
     const toast = useToast()
@@ -56,7 +57,7 @@ const FormField = () => {
                         name="email"
                         label="Email"
                         placeholder="example@gmail.com"
-                        iconLeft={<CgPassword className="text-colorGray" size={20} />}
+                        iconLeft={<TfiEmail className="text-colorGray" size={20} />}
                     />
 
                     <AppInput

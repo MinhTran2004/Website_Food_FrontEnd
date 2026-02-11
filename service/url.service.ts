@@ -13,5 +13,9 @@ export const URLS = {
   CART: `/cart`,
   DELETE_CART: (id:string) => `/cart/${id}`,
   PATCH_QUANTITY_CART: `/cart/update-quantity-cart`,
-  GET_LIST_CART : `/cart/get-list-cart`
+  GET_LIST_CART : `/cart/get-list-cart`,
+
+  //adress
+  ADDRESS: `/address`,
+  GET_LIST_ADDRESS: `/address/get-list-address`
 };

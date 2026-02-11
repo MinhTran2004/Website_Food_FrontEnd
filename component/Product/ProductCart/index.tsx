@@ -15,6 +15,8 @@ const ProductCart: React.FC<IProductCart> = ({
   lineBottom = false,
   ...cart
 }) => {
+  console.log('cart', cart.product);
+  
   return (
     <div
       className={clsx(

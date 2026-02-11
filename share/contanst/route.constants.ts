@@ -5,7 +5,11 @@ export const ROUTE = {
     PRODUCT: '/product',
     PRODUCTID: (id: string) => `/product/${id}`,
     NEWS: '/news',
-    CONTACT: '/contact'
+    CONTACT: '/contact',
+    ADDRESS_INFO: 'address-info',
+    ORDER_HISTORY: 'order-history',
+    PERSONAL_INFO: 'personal-info',
+
 }
 
 export const NAME_ROUTE_HOME = [
