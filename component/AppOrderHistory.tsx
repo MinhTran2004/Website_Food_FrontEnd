@@ -8,8 +8,9 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import AppLine from "./AppLine";
 import AppButton from "./Button/AppButton";
 import ProductOrder from "./Product/ProductOrder";
+import { IOrder } from "@/share/interface/order.interface";
 
-const AppOrderHistory: React.FC<ICart> = ({ ...cart }) => {
+const AppOrderHistory: React.FC<IOrder> = (props) => {
   const [isShowBody, setIsShowBody] = useState<boolean>(false);
 
   return (
@@ -20,9 +21,9 @@ const AppOrderHistory: React.FC<ICart> = ({ ...cart }) => {
           <BsBoxSeam size={20} />
 
           <div>
-            <p className="font-medium text-lg">#{cart._id}</p>
+            <p className="font-medium text-lg">#{props._id}</p>
             <p className="text-sm text-colorGray">
-              {formatDate(cart.createdAt)}
+              {formatDate(props.createdAt)}
             </p>
           </div>
         </div>
@@ -57,9 +58,9 @@ const AppOrderHistory: React.FC<ICart> = ({ ...cart }) => {
           <AppLine className="bg-colorGray mb-4" />
           <p className="font-medium text-lg">Chi Tiết Sản Phẩm</p>
 
-          <div className="my-2 space-y-1">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <ProductOrder key={index} {...cart} />
+          <div className="my-2 space-y-1 pb-3">
+            {props.products.map((item) => (
+              <ProductOrder key={item._id} {...item} />
             ))}
           </div>
         </div>

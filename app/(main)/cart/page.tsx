@@ -1,6 +1,7 @@
 "use client";
 
 import { useToast } from "@/component/AppToast";
+import { useLoading } from "@/component/LoadingScreen";
 import EmptyCart from "@/component/Product/ProductCart/EmptyCart";
 import { cartService } from "@/service/cart.service";
 import { ICart } from "@/share/interface/cart.interface";
@@ -9,31 +10,39 @@ import { useCallback, useMemo } from "react";
 import Address from "./component/address";
 import ListProduct from "./component/list-product";
 import Payment from "./component/payment";
-import { useLoading } from "@/component/LoadingScreen";
+import { addressService } from "@/service/address.service";
+import { IAddress } from "@/share/interface/address.interface";
 
 const CartPage = () => {
   const toast = useToast();
   const { SHOW, HIDE } = useLoading();
 
+  //get address
+  const { data: dataAddress, refetch: refetchAddress } = useQuery({
+    queryKey: ["get-address"],
+    queryFn: () => addressService.getAddressByDefault(),
+  });
+  const address: IAddress | null = dataAddress?.data ?? null;
+
   //get list
-  const { data, refetch } = useQuery({
+  const { data: dataCarts, refetch: refetchCart } = useQuery({
     queryKey: ["get-list-cart"],
     queryFn: () => cartService.getListCart(),
   });
 
   const totalPrice = useMemo(
     () =>
-      data?.data?.items?.reduce(
+      dataCarts?.data?.items?.reduce(
         (sum, item) => sum + item.product.price * item.quantity,
         0,
       ) ?? 0,
-    [data],
+    [dataCarts],
   );
 
   //update quantity
   const { mutate: updatdeQuantity } = useMutation({
     mutationFn: cartService.patchQuantityCart,
-    onSuccess: () => refetch(),
+    onSuccess: () => refetchCart(),
     onError: (err) => toast.ERROR(err.message),
     onMutate: () => SHOW(),
     onSettled: () => HIDE(),
@@ -61,7 +70,7 @@ const CartPage = () => {
   const { mutate: deleteCart } = useMutation({
     mutationFn: cartService.deleteCart,
     onSuccess: () => {
-      refetch();
+      refetchCart();
       toast.SUCCESS("Xoá sản phẩm thành công");
     },
     onError: () => toast.ERROR("Xóa sản phẩm thất bại"),
@@ -77,19 +86,25 @@ const CartPage = () => {
     <div className="space-y-6">
       <h1 className="text-center font-medium text-4xl">Giỏ hàng của bạn</h1>
 
-      {data?.data?.items && data?.data?.items?.length > 0 ? (
+      {dataCarts?.data?.items && dataCarts?.data?.items?.length > 0 ? (
         <div className="flex flex-col lg:flex-row max-w-7xl justify-between mx-auto px-4 gap-6">
           <div className="space-y-6 flex-2">
             <ListProduct
-              data={data?.data?.items || []}
+              data={dataCarts?.data?.items || []}
               onAdd={onAdd}
               onMinus={onMinus}
               onDelete={onDelete}
             />
-            <Address />
+            {address && <Address {...address} />}
           </div>
 
-          <Payment totalPrice={totalPrice} />
+          {address && (
+            <Payment
+              address={address}
+              carts={dataCarts.data.items || []}
+              total={totalPrice}
+            />
+          )}
         </div>
       ) : (
         <EmptyCart />

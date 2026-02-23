@@ -1,21 +1,34 @@
 "use client";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
+import { useLoading } from "@/component/LoadingScreen";
+import { orderService } from "@/service/order.interface";
+import { IAddress } from "@/share/interface/address.interface";
+import { ICart } from "@/share/interface/cart.interface";
 import { formatVND } from "@/utils/formatVND";
+import { useMutation } from "@tanstack/react-query";
 import { CiClock2, CiCreditCard1 } from "react-icons/ci";
 
 interface Props {
-  totalPrice: number;
+  address: IAddress;
+  carts: ICart[];
+  total: number;
 }
 
-const Payment: React.FC<Props> = ({ totalPrice }) => {
+const Payment: React.FC<Props> = ({ address, carts, total }) => {
+  const { HIDE, SHOW } = useLoading();
+
+  const { mutate } = useMutation({
+    mutationFn: orderService.paymentMethodCod,
+  });
+
   return (
     <div className="flex flex-col gap-2 flex-1 border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.2)] h-fit p-6 rounded-2xl ">
       <h3 className="text-2xl font-medium">Tóm tắt đơn hàng</h3>
 
       <div className="flex justify-between">
         <p className="text-colorGray">Tạm tính</p>
-        <p className="font-medium">{formatVND(totalPrice)}</p>
+        <p className="font-medium">{formatVND(total)}</p>
       </div>
 
       <div className="flex justify-between">
@@ -28,13 +41,21 @@ const Payment: React.FC<Props> = ({ totalPrice }) => {
       <div className="flex justify-between mb-1">
         <p className="text-xl font-medium">Tổng cộng</p>
         <p className="text-2xl font-medium text-colorRedError">
-          {formatVND(totalPrice)}
+          {formatVND(total)}
         </p>
       </div>
 
       <AppButton
         iconLeft={<CiCreditCard1 />}
         text={{ children: "Thanh toán đơn hàng" }}
+        onClick={() =>
+          mutate({
+            address: address,
+            paymentMethods: "COD",
+            products: carts,
+            total: total,
+          })
+        }
       />
 
       <div className="flex items-center justify-center gap-2 mt-2">

@@ -2,9 +2,16 @@
 
 import AppLine from "@/component/AppLine";
 import AppOrderHistory from "@/component/AppOrderHistory";
-import data from "@/share/contanst/cart.json";
+import { orderService } from "@/service/order.interface";
+// import data from "@/share/contanst/cart.json";
+import { useQuery } from "@tanstack/react-query";
 
 const OrderHistoryPage = () => {
+  const { data } = useQuery({
+    queryKey: ["get-list-order"],
+    queryFn: () => orderService.getListOrder(),
+  });
+
   return (
     <div className="p-6 rounded-lg bg-white">
       <div>
@@ -14,9 +21,12 @@ const OrderHistoryPage = () => {
 
       <AppLine className="my-4" />
 
-      {data.map((item) => (
-        <AppOrderHistory key={item._id} {...item} />
-      ))}
+      <div className="space-y-4">
+        {data?.data?.items &&
+          data?.data?.items.map((item) => (
+            <AppOrderHistory key={item._id} {...item} />
+          ))}
+      </div>
     </div>
   );
 };

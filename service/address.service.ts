@@ -21,6 +21,16 @@ class AddressService {
     }
   }
 
+  async getAddressByDefault(): Promise<IResponse<IAddress>> {
+    try {
+      const response = await HttpClient.get<IResponse<IAddress>>(URLS.GET_ADDRESS_BY_DEFAULT);
+      return response;
+    } catch (err) {
+      console.log(err);
+      throw err;
+    }
+  }
+
   async getListAddress(
     params?: IIRFilterOptions,
   ): Promise<IResponseListData<IAddress>> {

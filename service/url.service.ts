@@ -11,11 +11,15 @@ export const URLS = {
 
   //cart
   CART: `/cart`,
-  DELETE_CART: (id:string) => `/cart/${id}`,
+  DELETE_CART: (id: string) => `/cart/${id}`,
   PATCH_QUANTITY_CART: `/cart/update-quantity-cart`,
-  GET_LIST_CART : `/cart/get-list-cart`,
+  GET_LIST_CART: `/cart/get-list-cart`,
 
   //adress
   ADDRESS: `/address`,
-  GET_LIST_ADDRESS: `/address/get-list-address`
+  GET_LIST_ADDRESS: `/address/get-list-address`,
+  GET_ADDRESS_BY_DEFAULT: `/address/get-address-by-default`,
+  //order
+  GET_LIST_ORDER: `/order/get-list-order`,
+  PAYMENT_METHOD_COD: `/order/payment-method-cod`,
 };
