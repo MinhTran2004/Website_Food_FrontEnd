@@ -23,7 +23,9 @@ class AddressService {
 
   async getAddressByDefault(): Promise<IResponse<IAddress>> {
     try {
-      const response = await HttpClient.get<IResponse<IAddress>>(URLS.GET_ADDRESS_BY_DEFAULT);
+      const response = await HttpClient.get<IResponse<IAddress>>(
+        URLS.GET_ADDRESS_BY_DEFAULT,
+      );
       return response;
     } catch (err) {
       console.log(err);
@@ -52,6 +54,19 @@ class AddressService {
         IBodyPatchAddress,
         IResponse<IAddress>
       >(URLS.ADDRESS, body);
+      return response;
+    } catch (err) {
+      console.log(err);
+      throw err;
+    }
+  }
+
+  async deleteAddress(id: string): Promise<IResponse<IAddress>> {
+    const url = URLS.ADDRESS + "/" + id;
+    try {
+      const response = await HttpClient.delete<string, IResponse<IAddress>>(
+        url,
+      );
       return response;
     } catch (err) {
       console.log(err);

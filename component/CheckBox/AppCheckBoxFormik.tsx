@@ -3,47 +3,48 @@ import React from "react";
 import { useField } from "formik";
 
 interface Props {
-    name: string; // 👈 bắt buộc cho Formik
-    id?: string;
-    label?: React.HTMLAttributes<HTMLParagraphElement>;
-    disabled?: boolean;
-    className?: string;
-    size?: "sm" | "md" | "lg";
+  name: string; // 👈 bắt buộc cho Formik
+  id?: string;
+  label?: React.HTMLAttributes<HTMLParagraphElement>;
+  disabled?: boolean;
+  className?: string;
+  size?: "sm" | "md" | "lg";
 }
 
 const AppCheckBoxFormik: React.FC<Props> = ({
-    name,
-    id,
-    label,
-    disabled = false,
-    className = "",
-    size = "md",
+  name,
+  id,
+  label,
+  disabled = false,
+  className = "",
+  size = "md",
 }) => {
-    const [field, meta, helpers] = useField({ name, type: "checkbox" });
+  const [field, meta, helpers] = useField({ name, type: "checkbox" });
 
-    const sizeClasses = {
-        sm: "w-4 h-4",
-        md: "w-5 h-5",
-        lg: "w-6 h-6",
-    };
+  const sizeClasses = {
+    sm: "w-4 h-4",
+    md: "w-5 h-5",
+    lg: "w-6 h-6",
+  };
 
-    const labelSizeClasses = {
-        sm: "text-sm",
-        md: "text-base",
-        lg: "text-lg",
-    };
+  const labelSizeClasses = {
+    sm: "text-sm",
+    md: "text-base",
+    lg: "text-lg",
+  };
 
-    return (
-        <div className={`flex flex-col ${className} w-fit group`}>
-            <label htmlFor={id || name} className="flex items-center cursor-pointer">
-                <input
-                    type="checkbox"
-                    id={id || name}
-                    disabled={disabled}
-                    checked={field.value}
-                    onChange={(e) => helpers.setValue(e.target.checked)}
-                    onBlur={field.onBlur}
-                    className={`
+  return (
+    <div className={`flex flex-col ${className} w-fit group`}>
+      <label htmlFor={id || name} className="flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          id={id || name}
+          name={name}
+          disabled={disabled}
+          checked={field.value}
+          onChange={(e) => helpers.setValue(e.target.checked)}
+          onBlur={field.onBlur}
+          className={`
             appearance-none
             ${sizeClasses[size]}
             rounded-full
@@ -64,33 +65,32 @@ const AppCheckBoxFormik: React.FC<Props> = ({
             checked:bg-no-repeat
             ${meta.touched && meta.error ? COLOR.orange : ""}
           `}
-                />
+        />
 
-                {label && (
-                    <p
-                        className={`
+        {label && (
+          <p
+            className={`
               ml-2 hover:text-colorOrange
               ${labelSizeClasses[size]}
-              ${disabled
-                                ? "text-gray-400 cursor-not-allowed"
-                                : "text-gray-700 cursor-pointer"
-                            }
+              ${
+                disabled
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-gray-700 cursor-pointer"
+              }
               select-none
             `}
-                        {...label}
-                    >
-                        {label.children}
-                    </p>
-                )}
-            </label>
+            {...label}
+          >
+            {label.children}
+          </p>
+        )}
+      </label>
 
-            {meta.touched && meta.error && (
-                <span className="mt-1 ml-7 text-sm text-red-500">
-                    {meta.error}
-                </span>
-            )}
-        </div>
-    );
+      {meta.touched && meta.error && (
+        <span className="mt-1 ml-7 text-sm text-red-500">{meta.error}</span>
+      )}
+    </div>
+  );
 };
 
 export default AppCheckBoxFormik;

@@ -5,20 +5,40 @@ import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
 import { addressService } from "@/service/address.service";
 import { IAddress } from "@/share/interface/address.interface";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import FormAdd from "./component/FormAdd";
 import FormUpdate from "./component/FormUpdate";
+import { useToast } from "@/component/AppToast";
+import { useLoading } from "@/component/LoadingScreen";
 
 const AddressInfoPage = () => {
+  const toast = useToast();
+  const { HIDE, SHOW } = useLoading();
+
   const [isAddNew, setIsAddNew] = useState<boolean>(false);
   const [isUpdate, setIsUpdate] = useState<boolean>(false);
   const [address, setAdress] = useState<IAddress>();
 
-  const { data, isPending, refetch } = useQuery({
+  // get list address
+  const { data, refetch } = useQuery({
     queryKey: ["get-list-address"],
     queryFn: () => addressService.getListAddress(),
+  });
+
+  //delete address by id
+  const { mutate: onDeleteAddress } = useMutation({
+    mutationFn: addressService.deleteAddress,
+    onSuccess: () => {
+      toast.SUCCESS("Xóa địa chỉ thành công");
+      refetch();
+    },
+    onError: (err) => {
+      toast.ERROR(err.message);
+    },
+    onMutate: () => SHOW(),
+    onSettled: () => HIDE(),
   });
 
   return (
@@ -34,7 +54,10 @@ const AddressInfoPage = () => {
             text={{ children: "Thêm địa chỉ mới", className: "font-normal" }}
             className="px-4 min-h-[40px] bg-colorBlue rounded-md"
             iconLeft={<FiPlus />}
-            onClick={() => setIsAddNew(true)}
+            onClick={() => {
+              setIsUpdate(false);
+              setIsAddNew(true);
+            }}
           />
         )}
       </div>
@@ -43,7 +66,11 @@ const AddressInfoPage = () => {
 
       {isAddNew && <FormAdd onCancel={setIsAddNew} refetch={refetch} />}
       {isUpdate && address && (
-        <FormUpdate dataInit={address} onCancel={setIsUpdate} refetch={refetch} />
+        <FormUpdate
+          dataInit={address}
+          onCancel={setIsUpdate}
+          refetch={refetch}
+        />
       )}
 
       <div className="grid grid-cols-2 gap-6">
@@ -51,7 +78,9 @@ const AddressInfoPage = () => {
           <CardAddress
             key={item._id}
             data={item}
+            onDelete={onDeleteAddress}
             onUpdate={() => {
+              setIsAddNew(false);
               setIsUpdate(true);
               setAdress(item);
             }}

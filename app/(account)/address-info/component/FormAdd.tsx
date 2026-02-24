@@ -38,6 +38,7 @@ const FormAdd: React.FC<Props> = ({ onCancel, refetch }) => {
     district: "",
     nameAddress: "",
     phone: "",
+    isDefault: true,
   };
 
   const validationSchema = Yup.object({

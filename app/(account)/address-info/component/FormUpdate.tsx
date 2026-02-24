@@ -1,6 +1,8 @@
 "use client";
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
+import AppCheckBox from "@/component/CheckBox/AppCheckBox";
+import AppCheckBoxFormik from "@/component/CheckBox/AppCheckBoxFormik";
 import AppInput from "@/component/Input/AppInput";
 import { useLoading } from "@/component/LoadingScreen";
 import { addressService } from "@/service/address.service";
@@ -42,6 +44,7 @@ const FormUpdate: React.FC<Props> = ({ dataInit, onCancel, refetch }) => {
     district: dataInit.district,
     nameAddress: dataInit.nameAddress,
     phone: dataInit.phone,
+    isDefault: dataInit.isDefault,
   };
 
   const validationSchema = Yup.object({
@@ -52,16 +55,16 @@ const FormUpdate: React.FC<Props> = ({ dataInit, onCancel, refetch }) => {
     phone: Yup.string()
       .required("Không để trống ô nhập")
       .matches(/^[0-9]{10}$/, "Số điện thoại phải gồm 10 chữ số"),
+    isDefault: Yup.boolean(),
   });
-
+  
   return (
     <Formik
       initialValues={initValues}
       validationSchema={validationSchema}
       onSubmit={(values) => {
         const payload = {
-            _id: dataInit._id,
-          isDefault: true,
+          _id: dataInit._id,
           ...values,
         };
         mutate(payload);
@@ -105,6 +108,11 @@ const FormUpdate: React.FC<Props> = ({ dataInit, onCancel, refetch }) => {
                   placeholder="Thành phố"
                 />
               </div>
+
+              <AppCheckBoxFormik
+                name="isDefault"
+                label={{ children: "Đặt làm mặc định" }}
+              />
             </div>
 
             <div className="flex gap-4">

@@ -16,6 +16,7 @@ export interface IBodyPostAddress {
   addressDetail: string;
   district: string;
   city: string;
+  isDefault: boolean;
 }
 
 export interface IBodyPatchAddress extends IBodyPostAddress {
