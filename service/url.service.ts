@@ -1,5 +1,6 @@
 export const URLS = {
   // auth
+  USER: `/user`,
   LOGIN: `/auth/login`,
   REGISTER: `/auth/register`,
   LOGIN_GOOGLE: `/auth/login-google`,

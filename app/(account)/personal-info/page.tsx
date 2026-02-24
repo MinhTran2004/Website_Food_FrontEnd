@@ -3,14 +3,26 @@
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
 import AppInput from "@/component/Input/AppInput";
+import { userService } from "@/service/user.service";
+import { IUser } from "@/share/interface/user.interface";
+import { useQuery } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
 import { useState } from "react";
+import { CgImage } from "react-icons/cg";
+import { CiImageOn } from "react-icons/ci";
+import { LuCircleUser } from "react-icons/lu";
 import { TfiEmail } from "react-icons/tfi";
 
 const PersonalInfoPage = () => {
   const [isEdit, setIsEdit] = useState<boolean>(true);
 
-  const initValues = {};
+  const { data } = useQuery({
+    queryKey: ["get-user"],
+    queryFn: () => userService.getUser(),
+  });
+
+  const initValues: Partial<IUser> = data?.data ?? {};
+
   const validationSchema = {};
 
   return (
@@ -49,14 +61,14 @@ const PersonalInfoPage = () => {
               name="username"
               label="Tên người dùng"
               placeholder="example@gmail.com"
-              iconLeft={<TfiEmail className="text-colorGray" size={20} />}
+              iconLeft={<LuCircleUser className="text-colorGray" size={20} />}
             />
 
             <AppInput
               name="avatar"
               label="Avatar"
               placeholder="example@gmail.com"
-              iconLeft={<TfiEmail className="text-colorGray" size={20} />}
+              iconLeft={<CgImage className="text-colorGray" size={20} />}
             />
 
             <AppInput
@@ -82,7 +94,10 @@ const PersonalInfoPage = () => {
                   className="px-6 min-h-[40px] rounded-lg"
                 />
                 <AppButton
-                  text={{ children: "Hủy", className: "text-sm text-colorBlack" }}
+                  text={{
+                    children: "Hủy",
+                    className: "text-sm text-colorBlack",
+                  }}
                   className="px-6 min-h-[40px] rounded-lg bg-white border border-colorGray"
                 />
               </div>

@@ -1,6 +1,6 @@
 import { URLS } from "@/service/url.service";
 import { IResponse } from "@/share/interface/api.interface";
-import { IUser } from "@/share/interface/user.interface";
+import { IUserJWT } from "@/share/interface/user.interface";
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
@@ -53,7 +53,7 @@ const handler = NextAuth({
       }
       try {
         if (account?.provider === "google") {
-          const response: IResponse<IUser> = await fetch(
+          const response: IResponse<IUserJWT> = await fetch(
             `${NEXT_PUBLIC_API_URL}${URLS.LOGIN_GOOGLE}`,
             {
               method: "POST",
@@ -68,7 +68,7 @@ const handler = NextAuth({
           ).then((res) => res.json());
           user.accessToken = response.data?.accessToken;
         } else if (account?.provider === "facebook") {
-          const response: IResponse<IUser> = await fetch(
+          const response: IResponse<IUserJWT> = await fetch(
             `${NEXT_PUBLIC_API_URL}${URLS.LOGIN_FACEBOOK}`,
             {
               method: "POST",
@@ -97,3 +97,4 @@ const handler = NextAuth({
 });
 
 export { handler as GET, handler as POST };
+

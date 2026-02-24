@@ -22,7 +22,7 @@ const AppInput: React.FC<Props> = ({ viewExtra, label, iconLeft, iconRight, clas
                 {iconLeft}
                 <div className="w-full flex justify-between">
                     <input
-                        className="w-full outline-none border-none focus:outline-none focus-visible:outline-none bg-transparent"
+                        className={clsx("w-full outline-none border-none focus:outline-none focus-visible:outline-none bg-transparent", input.disabled && 'text-colorGray' )}
                         {...field}
                         {...input}
                     />

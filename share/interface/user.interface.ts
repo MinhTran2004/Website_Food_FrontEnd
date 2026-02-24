@@ -1,6 +1,6 @@
 import { IBaseResponse } from "./api.interface";
 
-export interface IUser extends IBaseResponse {
+export interface IUserJWT extends IBaseResponse {
     accessToken: string;
     user: IUser;
 }
@@ -12,7 +12,7 @@ export interface IBaseUser {
 }
 
 export interface IUser extends IBaseUser {
-    id: string
+    _id: string
 }
 
 export interface IBodyLoginRequest {
