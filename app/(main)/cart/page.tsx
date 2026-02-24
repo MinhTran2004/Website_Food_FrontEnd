@@ -3,22 +3,23 @@
 import { useToast } from "@/component/AppToast";
 import { useLoading } from "@/component/LoadingScreen";
 import EmptyCart from "@/component/Product/ProductCart/EmptyCart";
+import { addressService } from "@/service/address.service";
 import { cartService } from "@/service/cart.service";
+import { orderService } from "@/service/order.interface";
+import { IAddress } from "@/share/interface/address.interface";
 import { ICart } from "@/share/interface/cart.interface";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useCallback, useMemo } from "react";
 import Address from "./component/address";
 import ListProduct from "./component/list-product";
 import Payment from "./component/payment";
-import { addressService } from "@/service/address.service";
-import { IAddress } from "@/share/interface/address.interface";
 
 const CartPage = () => {
   const toast = useToast();
   const { SHOW, HIDE } = useLoading();
 
   //get address
-  const { data: dataAddress, refetch: refetchAddress } = useQuery({
+  const { data: dataAddress } = useQuery({
     queryKey: ["get-address"],
     queryFn: () => addressService.getAddressByDefault(),
   });
@@ -41,7 +42,7 @@ const CartPage = () => {
 
   //update quantity
   const { mutate: updatdeQuantity } = useMutation({
-    mutationFn: cartService.patchQuantityCart,
+    mutationFn: cartService.patchCart,
     onSuccess: () => refetchCart(),
     onError: (err) => toast.ERROR(err.message),
     onMutate: () => SHOW(),
@@ -82,6 +83,18 @@ const CartPage = () => {
     deleteCart(cart._id);
   }, []);
 
+  //payment
+  const { mutate: onPayment } = useMutation({
+    mutationFn: orderService.paymentMethodCod,
+    onSuccess: () => {
+      refetchCart();
+      toast.SUCCESS("Đặt hàng thành công");
+    },
+    onError: () => toast.ERROR("Đặt hàng thất bại"),
+    onMutate: () => SHOW(),
+    onSettled: () => HIDE(),
+  });
+
   return (
     <div className="space-y-6">
       <h1 className="text-center font-medium text-4xl">Giỏ hàng của bạn</h1>
@@ -100,6 +113,7 @@ const CartPage = () => {
 
           {address && (
             <Payment
+              onPayment={onPayment}
               address={address}
               carts={dataCarts.data.items || []}
               total={totalPrice}

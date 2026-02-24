@@ -14,7 +14,7 @@ export interface IBodyPostCart {
   quantity: number;
 }
 
-export interface IBodyPatchUpdatequantity {
+export interface IBodyPatchUpdate{
   idCart: string;
   idProduct: string;
   quantity: number;

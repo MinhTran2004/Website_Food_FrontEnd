@@ -4,9 +4,9 @@ import {
   IResponseListData,
 } from "@/share/interface/api.interface";
 import {
-  IBodyPatchUpdatequantity,
+  IBodyPatchUpdate,
   IBodyPostCart,
-  ICart,
+  ICart
 } from "@/share/interface/cart.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
@@ -38,14 +38,14 @@ export class CartService {
     }
   }
 
-  async patchQuantityCart(
-    body: IBodyPatchUpdatequantity,
+  async patchCart(
+    body: IBodyPatchUpdate,
   ): Promise<IResponse<ICart>> {
     try {
       const response = await HttpClient.patch<
-        IBodyPatchUpdatequantity,
+      IBodyPatchUpdate,
         IResponse<ICart>
-      >(URLS.PATCH_QUANTITY_CART, body);
+      >(URLS.CART, body);
       return response;
     } catch (err) {
       console.log(err);
