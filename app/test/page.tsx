@@ -1,12 +1,15 @@
-import AppText from "@/component/Text/AppText";
+async function getData() {
+  await new Promise(res => setTimeout(res, 3000)); // giả lập chờ 3s
+  return ["A", "B", "C"];
+}
 
-const TestPage = () => {
+export default async function Page() {
+  const data = await getData();
+
   return (
-    <div className="h-screen w-screen bg-black p-50">
-      <AppText text={"Trang chủ"} className="text-white uppercase" />
-      <AppText text={"Trang chủ"} className="text-white uppercase" />
+    <div>
+      <h1>Data loaded</h1>
+      {data.map(i => <p key={i}>{i}</p>)}
     </div>
   );
-};
-
-export default TestPage;
+}

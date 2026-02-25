@@ -1,6 +1,8 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { ROUTE } from "@/share/contanst/route.constants";
+import Link from "next/link";
 
 const ItemSelect = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
@@ -48,9 +50,11 @@ const HomeExperience = () => {
             <ItemSelect text="ĐẦU BẾP KINH NGHIỆM" />
           </div>
 
-          <AppButton
-            text={{ children: "LIÊN HỆ", className: "text-xl font-medium" }}
-          />
+          <Link href={ROUTE.CONTACT}>
+            <AppButton
+              text={{ children: "LIÊN HỆ", className: "text-xl font-medium" }}
+            />
+          </Link>
         </div>
       </div>
 

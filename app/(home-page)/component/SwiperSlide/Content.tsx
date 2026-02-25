@@ -1,6 +1,8 @@
 import AppButton from "@/component/Button/AppButton";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { ROUTE } from "@/share/contanst/route.constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const ItemSaleContent = ({
   image,
@@ -39,12 +41,14 @@ const HomeContent = () => {
         <h1 className="text-[36px] md:text-[40px] xl:text-[55px] leading-[40px] xl:leading-[60px] font-semibold pb-3">
           Bản giao hưởng của gia vị và hương vị
         </h1>
-        <AppButton
-          text={{
-            children: "Thực đơn",
-            className: "text-lg font-semibold text-white",
-          }}
-        />
+        <Link href={ROUTE.PRODUCT}>
+          <AppButton
+            text={{
+              children: "Thực đơn",
+              className: "text-lg font-semibold text-white",
+            }}
+          />
+        </Link>
       </div>
 
       {/* children 2 */}
