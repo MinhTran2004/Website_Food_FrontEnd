@@ -53,10 +53,3 @@ export type TEXT_TYPO =
   | "CAPTION_B"
   | "CAPTION_SM"
   | "CAPTION_SM_B";
-
-export const PAGE_LIST = {
-  HOME: "",
-  PRODUCT: "/product",
-} as const;
-
-export type TYPE_PAGE_LIST = keyof typeof PAGE_LIST;

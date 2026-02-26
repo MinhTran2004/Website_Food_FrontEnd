@@ -36,7 +36,7 @@ const PersonalInfoPage = () => {
         {isEdit ? (
           <AppButton
             text={{ children: "Chỉnh sửa" }}
-            className="px-4 min-h-[40px] bg-colorGray rounded-md"
+            className="px-4 min-h-[40px] bg-colorGray rounded-md "
             onClick={() => setIsEdit(false)}
           />
         ) : (
@@ -56,7 +56,7 @@ const PersonalInfoPage = () => {
         onSubmit={() => {}}
       >
         {({}) => (
-          <Form className="grid grid-cols-2 gap-x-4 gap-y-8">
+          <Form className="grid md:grid-cols-2 gap-x-4 gap-y-8">
             <AppInput
               name="username"
               label="Tên người dùng"

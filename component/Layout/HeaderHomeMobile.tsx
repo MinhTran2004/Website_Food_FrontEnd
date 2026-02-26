@@ -1,5 +1,5 @@
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { NAME_ROUTE_HOME } from "@/share/contanst/route.constants";
+import { NAME_ROUTE_HOME, ROUTE } from "@/share/contanst/route.constants";
 import Link from "next/link";
 import { CiUser } from "react-icons/ci";
 import AppDrawer from "../AppDrawer";
@@ -19,7 +19,7 @@ const HeaderHomeMobile = async () => {
                         <TextHoverUnderline key={item.href} href={item.href} text={item.text} classNameText={clsx(`py-2 text-sm uppercase hover:text-colorOrange`, pathName === item.href && 'text-colorOrange')} />
                     ))}</div>}
             />
-            <Link href={"/"} className="flex justify-center">
+            <Link href={`${ROUTE.PERSONAL_INFO}`} className="flex justify-center">
                 <AppImage
                     classNameContainer="h-[60px] w-[60px]"
                     src={IMAGE_SOUCE.IMG_LOGO_APP_BLACK}
@@ -27,7 +27,7 @@ const HeaderHomeMobile = async () => {
                 />
             </Link>
 
-            <Link href={"#"} className="flex justify-end">
+            <Link href={`${ROUTE.PERSONAL_INFO}`}  className="flex justify-end">
                 <CiUser className="text-4xl hover:text-white" size={26} />
             </Link>
         </div>

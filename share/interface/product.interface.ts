@@ -1,12 +1,13 @@
+import { IPagination } from "./api.interface";
+
 export interface IProduct {
   _id: string;
   name: string;
   price: number;
   discount: number;
   description: string;
-  description_detail: string;
   image: string;
-  category_id: number;
+  category: TYPE_CATEGORY;
   total_star: number;
   rates: {
     star1: number;
@@ -17,3 +18,9 @@ export interface IProduct {
   };
   isActive: boolean;
 }
+
+export interface IFilterGetListProduct extends IPagination {
+  category: TYPE_CATEGORY;
+}
+
+export type TYPE_CATEGORY = "MAIN_COURES" | "DESSERT" | "APPETIZER";

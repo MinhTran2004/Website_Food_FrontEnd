@@ -3,6 +3,7 @@ import { IMAGE_SOUCE } from "@/public/assets/images";
 import Link from "next/link";
 import { CiUser } from "react-icons/ci";
 import Navbar from "../Navbar";
+import { ROUTE } from "@/share/contanst/route.constants";
 
 const HeaderHome = async () => {
 
@@ -18,7 +19,7 @@ const HeaderHome = async () => {
           />
         </Link>
 
-        <Link href={"#"} className="flex justify-end">
+        <Link href={`${ROUTE.PERSONAL_INFO}`} className="flex justify-end">
           <CiUser className="text-4xl hover:text-white" />
         </Link>
       </div>

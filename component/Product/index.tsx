@@ -8,6 +8,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import AppImage from "../Image/AppImage";
 import AppStar from "../RateProduct/AppStar";
+import { TYPE_CATEGORY_PRODUCT } from "@/share/contanst/product.constants";
 
 const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   <div className="w-[40px] h-[40px] flex items-center justify-center p-1 rounded-full bg-[#f3e8d6] text-yellow-500 hover:bg-colorOrange hover:text-white">
@@ -44,7 +45,9 @@ const AppProduct: React.FC<IProduct> = (props) => {
       </div>
 
       <div className="flex flex-col items-center space-y-1">
-        <p className="text-base text-colorGray">{props.category_id}</p>
+        <p className="text-base text-colorGray">
+          {TYPE_CATEGORY_PRODUCT[props.category]}
+        </p>
         <p className="text-2xl font-medium uppercase">{props.name}</p>
         <p className="text-base text-colorGray">{formatVND(props.price)}</p>
 

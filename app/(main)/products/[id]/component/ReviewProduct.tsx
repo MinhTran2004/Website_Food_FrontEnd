@@ -26,7 +26,7 @@ const ReviewProduct: React.FC<IProduct> = (props) => {
 
         <div
           className="bg-colorGrayLight p-6 space-y-2"
-          dangerouslySetInnerHTML={{ __html: props.description_detail }}
+          dangerouslySetInnerHTML={{ __html: props.description }}
         />
       </div>
 

@@ -8,6 +8,7 @@ import { formatVND } from "@/utils/formatVND";
 import PaymentProduct from "./component/PaymentProduct";
 import ProductSimilar from "./component/ProductSimilar";
 import ReviewProduct from "./component/ReviewProduct";
+import { TYPE_CATEGORY_PRODUCT } from "@/share/contanst/product.constants";
 
 const ProductIdPage = async ({
   params,
@@ -27,7 +28,7 @@ const ProductIdPage = async ({
   return (
     <div className="max-w-7xl flex mx-auto px-6 gap-10">
       <div className="hidden lg:block w-[30%] space-y-4 h-fit">
-        <ProductCategory />
+        {/* <ProductCategory /> */}
         <ProductSimilar />
       </div>
 
@@ -42,15 +43,9 @@ const ProductIdPage = async ({
           <div className="space-y-3">
             <h1 className="text-3xl font-medium">{product.name}</h1>
             <AppStar size={20} />
-            <div className="flex items-end gap-4">
-              <p className="text-2xl font-medium text-colorOrange">
-                {formatVND(product.discount)}
-              </p>
-
-              <p className="text-xl text-colorGray line-through">
-                {formatVND(product.price)}
-              </p>
-            </div>
+            <p className="text-2xl font-medium text-colorOrange">
+              {formatVND(product.price)}
+            </p>
 
             <p className="font-medium text-sm">
               Mã sản phẩm:{" "}
@@ -59,7 +54,7 @@ const ProductIdPage = async ({
             <p className="font-medium text-sm">
               Danh mục:{" "}
               <span className="font-normal text-colorOrange text-[15px]">
-                {product.category_id}
+                {TYPE_CATEGORY_PRODUCT[product.category]}
               </span>
             </p>
 

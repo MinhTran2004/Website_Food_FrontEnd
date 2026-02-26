@@ -45,7 +45,7 @@ const ProductCart: React.FC<IProductCart> = ({
             <p className="text-colorGray text-[14px] flex-1 line-clamp-2">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: cart.product.description_detail,
+                  __html: cart.product.description,
                 }}
               />
             </p>

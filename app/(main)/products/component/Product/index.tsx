@@ -1,9 +1,6 @@
-"use client";
-
 import AppDropdown from "@/component/AppDropdown";
 import AppProduct from "@/component/Product";
-import { productService } from "@/service/product.service";
-import { useQuery } from "@tanstack/react-query";
+import { IProduct } from "@/share/interface/product.interface";
 
 const OPTIONS = [
   { value: "NAME", label: "Sắp xếp theo tên" },
@@ -11,12 +8,14 @@ const OPTIONS = [
   { value: "HIGHT_PRICE", label: "Sắp xếp từ cao đến thấp" },
 ];
 
-const ProductContainer = () => {
-  const { data } = useQuery({
-    queryKey: ["get-all-product"],
-    queryFn: () => productService.getAllProduct(),
-  });
+interface IProps{
+  products: IProduct[]
+}
 
+const ProductContainer: React.FC<IProps> = ({products}) => {
+
+  if (products.length === 0) return;
+  
   return (
     <div className="px-4">
       <div className="flex justify-between items-center px-3 py-2 mb-5 bg-colorGrayLight rounded-md">
@@ -28,9 +27,9 @@ const ProductContainer = () => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {data?.data?.items &&
-          data?.data?.items.length > 0 &&
-          data.data.items.map((item) => <AppProduct key={item._id} {...item} />)}
+        {Array.isArray(products) && products.map((item) => (
+          <AppProduct key={item._id} {...item} />
+        ))}
       </div>
     </div>
   );

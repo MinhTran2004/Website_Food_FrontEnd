@@ -16,7 +16,7 @@ const Tabs = () => {
   const path = usePathname();
 
   return (
-    <div className="w-2xs h-fit bg-white rounded-lg overflow-hidden border border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.1)]">
+    <div className="md:w-3xs h-fit bg-white rounded-lg overflow-hidden border border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.1)]">
       <AppLinkButton
         buttonDefault
         href={ROUTE.PERSONAL_INFO}
@@ -32,7 +32,7 @@ const Tabs = () => {
           className: path === `/${ROUTE.PERSONAL_INFO}` ? textActice : "",
         }}
         className={clsx(
-          `rounded-none justify-start py-3 pl-4`,
+          `rounded-none justify-start py-3 px-4`,
           path === `/${ROUTE.PERSONAL_INFO}` && classnameActice,
         )}
       />

@@ -2,8 +2,9 @@ export const ROUTE = {
     HOME: '/',
     LOGIN: '/login',
     REGISTER: '/register',
-    PRODUCT: '/product',
-    PRODUCTID: (id: string) => `/product/${id}`,
+    PRODUCTS: '/products',
+    PRODUCTID: (id: string) => `/products/${id}`,
+    CART: 'cart',
     NEWS: '/news',
     CONTACT: '/contact',
     ADDRESS_INFO: 'address-info',
@@ -18,7 +19,7 @@ export const NAME_ROUTE_HOME = [
         text: "Trang chủ"
     },
     {
-        href: ROUTE.PRODUCT,
+        href: `${ROUTE.PRODUCTS}?category=MAIN_COURES`,
         text: "Sản phẩm"
     },
     {
@@ -45,7 +46,7 @@ export const NAME_ROUTE = [
         text: "Đăng ký"
     },
     {
-        href: ROUTE.PRODUCT,
+        href: `${ROUTE.PRODUCTS}/MAIN_COURES`,
         text: "Sản phẩm"
     },
     {

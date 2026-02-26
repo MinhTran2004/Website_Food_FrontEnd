@@ -3,7 +3,7 @@ import {
   IResponse,
   IResponseListData,
 } from "@/share/interface/api.interface";
-import { IProduct } from "@/share/interface/product.interface";
+import { IFilterGetListProduct, IProduct } from "@/share/interface/product.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 
@@ -22,11 +22,11 @@ class ProductService {
   }
 
   async getAllProduct(
-    params?: IPagination
+    params?: IFilterGetListProduct
   ): Promise<IResponseListData<IProduct>> {
     try {
       const response = await HttpClient.get<
-        IPagination,
+      IFilterGetListProduct,
         IResponseListData<IProduct>
       >(URLS.GET_LIST_PRODUCT, {
         params: params,

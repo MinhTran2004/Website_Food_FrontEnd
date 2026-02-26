@@ -1,6 +1,8 @@
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { ROUTE } from "@/share/contanst/route.constants";
 import Link from "next/link";
-import { CiHeart, CiSearch, CiShoppingBasket, CiUser } from "react-icons/ci";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoCartOutline } from "react-icons/io5";
 import AppImage from "../Image/AppImage";
 import Navbar from "../Navbar";
 
@@ -17,9 +19,14 @@ const HeaderMain = async () => {
           />
         </Link>
 
-        <Link href={"#"} className="flex justify-end">
-          <CiUser className="text-4xl hover:text-white" />
-        </Link>
+        <div className="flex gap-4 justify-end">
+          <Link href={ROUTE.CART}>
+            <IoCartOutline className="text-[28px] hover:text-colorOrange" />
+          </Link>
+          <Link href={ROUTE.PERSONAL_INFO}>
+            <AiOutlineUser className="text-[28px] hover:text-colorOrange" />
+          </Link>
+        </div>
       </div>
     </header>
   );

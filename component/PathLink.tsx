@@ -11,7 +11,7 @@ const PathLink = async () => {
 
   const definePath = (key: TYPE_ROUTE) => {
     switch (key) {
-      case "PRODUCT":
+      case "PRODUCTS":
         return "Đồ ăn";
       case "PRODUCTID":
         return "Chi tiết sản phẩm";
