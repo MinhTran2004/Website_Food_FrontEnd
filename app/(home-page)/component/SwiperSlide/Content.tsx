@@ -35,7 +35,7 @@ const ItemSaleContent = ({
 
 const HomeContent = () => {
   return (
-    <div className="w-full mx-auto mt-15 px-8 lg:mt-20 sm:max-w-7xl sm:px-14 space-y-4">
+    <div className="w-full mx-auto pt-24 px-8 lg:pt-38 sm:max-w-7xl sm:px-14 space-y-4">
       {/* children 1 */}
       <div className="sm:max-w-xl flex flex-col items-start space-y-2">
         <div className="flex items-center gap-3">

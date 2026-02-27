@@ -52,7 +52,7 @@ const AppDrawer: React.FC<IAppDrawer> = ({ title, open, header, body, footer }) 
             header
           ) : (
             <>
-              <h2 className="text-xl font-medium">{title}</h2>
+              <h2 className="text-2xl font-medium">{title}</h2>
               <AppButton
                 buttonDefault
                 iconLeft={<FiX size={20} />}
@@ -64,7 +64,7 @@ const AppDrawer: React.FC<IAppDrawer> = ({ title, open, header, body, footer }) 
         </div>
 
         {/* Drawer Body */}
-        <div className="flex-1 overflow-y-auto">{body}</div>
+        <div className="flex-1 overflow-y-auto z-999">{body}</div>
 
         {/* Drawer Footer */}
         {footer && <div className="border-t p-4">{footer}</div>}
