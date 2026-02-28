@@ -38,6 +38,7 @@ const AppNews = () => {
                 children: "Xem thêm",
                 className: "leading-5 uppercase",
               }}
+              className="cursor-default"
               iconRight={<FaAngleRight size={16} />}
             />
           </Link>

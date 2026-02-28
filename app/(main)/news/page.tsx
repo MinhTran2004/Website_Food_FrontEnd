@@ -14,20 +14,20 @@ const NewsPage = () => {
       {/* header */}
       <div className="flex p-3 mx-4 border border-colorGray">
         <div
-          className="w-full h-100"
+          className="w-full h-100 px-6"
           style={{
             backgroundImage: `url(${IMAGE_SOUCE.IMG_BACKGROUD_NEWS})`,
           }}
         >
           <div className="flex items-center mx-auto max-w-7xl h-full">
-            <h1 className="text-5xl font-medium">TIN TỨC</h1>
+            <h1 className="text-5xl font-medium pl-6">TIN TỨC</h1>
           </div>
         </div>
       </div>
 
       {/* content */}
       <div className="mx-auto max-w-7xl">
-        <div
+        {/* <div
           className="flex justify-between items-center px-3 py-2 my-5"
           style={{ backgroundColor: COLOR.grayLight }}
         >
@@ -36,10 +36,10 @@ const NewsPage = () => {
             <p>12 / 24 / 36</p>
           </div>
           <AppDropdown options={OPTIONS} placeholder="Sắp xếp theo" />
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-3 gap-8">
-          {Array.from({ length: 12 }).map((_, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 my-12">
+          {Array.from({ length: 3 }).map((_, index) => (
             <AppNews key={index} />
           ))}
         </div>
