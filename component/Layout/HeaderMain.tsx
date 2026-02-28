@@ -8,7 +8,7 @@ import Navbar from "../Navbar";
 
 const HeaderMain = async () => {
   return (
-    <header className="hidden lg:block mx-auto max-w-7xl">
+    <header className="hidden lg:block mx-auto max-w-7xl border-">
       <div className="max-w-7xl mx-auto grid grid-cols-3 justify-between items-center px-6 py-4">
         <Navbar />
         <Link href={"/"} className="flex justify-center">

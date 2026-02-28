@@ -22,10 +22,10 @@ export const NAME_ROUTE_HOME = [
         href: `${ROUTE.PRODUCTS}?category=MAIN_COURES`,
         text: "Sản phẩm"
     },
-    // {
-    //     href: ROUTE.NEWS,
-    //     text: "Tin tức"
-    // },
+    {
+        href: ROUTE.NEWS,
+        text: "Tin tức"
+    },
     {
         href: ROUTE.CONTACT,
         text: "Liên hệ"
@@ -49,10 +49,10 @@ export const NAME_ROUTE = [
         href: `${ROUTE.PRODUCTS}/MAIN_COURES`,
         text: "Sản phẩm"
     },
-    // {
-    //     href: ROUTE.NEWS,
-    //     text: "Tin tức"
-    // },
+    {
+        href: ROUTE.NEWS,
+        text: "Tin tức"
+    },
     {
         href: ROUTE.CONTACT,
         text: "Kết nối"

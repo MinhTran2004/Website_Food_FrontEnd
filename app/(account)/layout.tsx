@@ -24,7 +24,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={robotoCondensed.className}>
-        <div className="bg-colorBlueLight h-screen flex flex-col">
+      <div className="bg-colorBlueLight flex flex-col justify-between">
+
           <div className="bg-white mb-6">
             <HeaderMain />
             <HeaderHomeMobile />

@@ -7,10 +7,10 @@ export const Route = [
         href: "/product",
         text: "Đô ăn",
     },
-    // {
-    //     href: "/news",
-    //     text: "Tin Tức",
-    // },
+    {
+        href: "/news",
+        text: "Tin Tức",
+    },
     {
         href: "/contact",
         text: "Liên hệ",

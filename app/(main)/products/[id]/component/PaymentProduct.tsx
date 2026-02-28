@@ -8,7 +8,6 @@ import { IBodyPostCart } from "@/share/interface/cart.interface";
 import { IProduct } from "@/share/interface/product.interface";
 import { useMutation } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
-import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 import { IoMdRemove } from "react-icons/io";
 import * as Yup from "yup";
