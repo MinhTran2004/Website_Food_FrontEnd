@@ -23,17 +23,17 @@ const Tabs = () => {
         iconLeft={
           <LuUserRound
             className={clsx(
-              path === `/${ROUTE.PERSONAL_INFO}` ? iconActice : "",
+              path === `${ROUTE.PERSONAL_INFO}` ? iconActice : "",
             )}
           />
         }
         text={{
           children: "Thông tin cá nhân",
-          className: path === `/${ROUTE.PERSONAL_INFO}` ? textActice : "",
+          className: path === `${ROUTE.PERSONAL_INFO}` ? textActice : "",
         }}
         className={clsx(
           `rounded-none justify-start py-3 px-4`,
-          path === `/${ROUTE.PERSONAL_INFO}` && classnameActice,
+          path === `${ROUTE.PERSONAL_INFO}` && classnameActice,
         )}
       />
 
@@ -43,17 +43,17 @@ const Tabs = () => {
         iconLeft={
           <GrLocation
             className={clsx(
-              path === `/${ROUTE.ADDRESS_INFO}` ? iconActice : "",
+              path === `${ROUTE.ADDRESS_INFO}` ? iconActice : "",
             )}
           />
         }
         text={{
           children: "Địa chỉ",
-          className: path === `/${ROUTE.ADDRESS_INFO}` ? textActice : "",
+          className: path === `${ROUTE.ADDRESS_INFO}` ? textActice : "",
         }}
         className={clsx(
           `rounded-none justify-start py-3 pl-4`,
-          path === `/${ROUTE.ADDRESS_INFO}` && classnameActice,
+          path === `${ROUTE.ADDRESS_INFO}` && classnameActice,
         )}
       />
 
@@ -63,17 +63,17 @@ const Tabs = () => {
         iconLeft={
           <CgShoppingBag
             className={clsx(
-              path === `/${ROUTE.ORDER_HISTORY}` ? iconActice : "",
+              path === `${ROUTE.ORDER_HISTORY}` ? iconActice : "",
             )}
           />
         }
         text={{
           children: "Lịch sử đơn hàng",
-          className: path === `/${ROUTE.ORDER_HISTORY}` ? textActice : "",
+          className: path === `${ROUTE.ORDER_HISTORY}` ? textActice : "",
         }}
         className={clsx(
           `rounded-none justify-start py-3 pl-4`,
-          path === `/${ROUTE.ORDER_HISTORY}` && classnameActice,
+          path === `${ROUTE.ORDER_HISTORY}` && classnameActice,
         )}
       />
     </div>

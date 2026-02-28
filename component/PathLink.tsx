@@ -12,11 +12,11 @@ const PathLink = async () => {
   const definePath = (key: TYPE_ROUTE) => {
     switch (key) {
       case "PRODUCTS":
-        return "Đồ ăn";
+        return "Sản phẩm";
       case "PRODUCTID":
         return "Chi tiết sản phẩm";
-      case "NEWS":
-        return "Tin tức";
+      // case "NEWS":
+      //   return "Tin tức";
       case "CONTACT":
         return "Liên hệ";
       default:

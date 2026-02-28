@@ -1,11 +1,10 @@
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import Link from "next/link";
-import { CiUser } from "react-icons/ci";
-import Navbar from "../Navbar";
 import { ROUTE } from "@/share/contanst/route.constants";
+import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoCartOutline } from "react-icons/io5";
+import Navbar from "../Navbar";
 
 const HeaderHome = async () => {
   return (

@@ -19,7 +19,7 @@ const ProductPrice: React.FC<IProps> = async ({ category, price }) => {
     <div>
       <div className="flex justify-between">
         <h3 className="text-lg font-medium">GIÁ SẢN PHẨM</h3>
-        {TYPE_FILTER_PRICE && (
+        {price && (
           <Link
             href={{
               pathname: ROUTE.PRODUCTS,

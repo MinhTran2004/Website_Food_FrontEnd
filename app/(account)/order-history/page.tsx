@@ -19,7 +19,7 @@ const OrderHistoryPage = () => {
         <p className="text-colorGray">Xem và quản lý các đơn hàng của bạn</p>
       </div>
 
-      <AppLine className="my-4" />
+      <AppLine className="my-4 bg-gray-200" />
 
       <div className="space-y-4">
         {data?.data?.items &&

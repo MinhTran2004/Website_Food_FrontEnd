@@ -1,4 +1,3 @@
-import AppComment from "@/component/RateProduct/AppComment";
 import AppRateProgress from "@/component/RateProduct/AppRateProgress";
 import AppStar from "@/component/RateProduct/AppStar";
 import { IProduct } from "@/share/interface/product.interface";
@@ -53,13 +52,15 @@ const ReviewProduct: React.FC<IProduct> = (props) => {
           Bình luận
         </p>
 
-        <div className="space-y-3">
+        <p>Chưa có đánh giá nào</p>
+
+        {/* <div className="space-y-3">
           <AppComment />
           <AppComment />
           <AppComment />
           <AppComment />
           <AppComment />
-        </div>
+        </div> */}
       </div>
     </div>
   );

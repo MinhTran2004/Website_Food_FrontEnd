@@ -4,12 +4,12 @@ export const ROUTE = {
     REGISTER: '/register',
     PRODUCTS: '/products',
     PRODUCTID: (id: string) => `/products/${id}`,
-    CART: 'cart',
+    CART: '/cart',
     NEWS: '/news',
     CONTACT: '/contact',
-    ADDRESS_INFO: 'address-info',
-    ORDER_HISTORY: 'order-history',
-    PERSONAL_INFO: 'personal-info',
+    ADDRESS_INFO: '/address-info',
+    ORDER_HISTORY: '/order-history',
+    PERSONAL_INFO: '/personal-info',
 
 }
 
@@ -22,10 +22,10 @@ export const NAME_ROUTE_HOME = [
         href: `${ROUTE.PRODUCTS}?category=MAIN_COURES`,
         text: "Sản phẩm"
     },
-    {
-        href: ROUTE.NEWS,
-        text: "Tin tức"
-    },
+    // {
+    //     href: ROUTE.NEWS,
+    //     text: "Tin tức"
+    // },
     {
         href: ROUTE.CONTACT,
         text: "Liên hệ"
@@ -49,10 +49,10 @@ export const NAME_ROUTE = [
         href: `${ROUTE.PRODUCTS}/MAIN_COURES`,
         text: "Sản phẩm"
     },
-    {
-        href: ROUTE.NEWS,
-        text: "Tin tức"
-    },
+    // {
+    //     href: ROUTE.NEWS,
+    //     text: "Tin tức"
+    // },
     {
         href: ROUTE.CONTACT,
         text: "Kết nối"

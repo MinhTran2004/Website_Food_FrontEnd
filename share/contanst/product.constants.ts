@@ -24,15 +24,15 @@ export const HREF_CATEGORY = [
 export const TYPE_FILTER_PRICE = [
   {
     value: "MIN",
-    label: "Dưới 5 triệu",
+    label: "Dưới 50.000",
   },
   {
     value: "MEDIUM",
-    label: "Từ 5 triệu đến 8 triệu",
+    label: "Từ 50.000 đến 150.000",
   },
   {
     value: "MAX",
-    label: "Trên 8 triệu",
+    label: "Trên 150000",
   },
 ];
 

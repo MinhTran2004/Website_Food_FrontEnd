@@ -9,9 +9,9 @@ import { useQuery } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
 import { useState } from "react";
 import { CgImage } from "react-icons/cg";
-import { CiImageOn } from "react-icons/ci";
 import { LuCircleUser } from "react-icons/lu";
 import { TfiEmail } from "react-icons/tfi";
+import * as Yup from "yup";
 
 const PersonalInfoPage = () => {
   const [isEdit, setIsEdit] = useState<boolean>(true);
@@ -23,7 +23,10 @@ const PersonalInfoPage = () => {
 
   const initValues: Partial<IUser> = data?.data ?? {};
 
-  const validationSchema = {};
+  const validationSchema = Yup.object({
+    avatar: Yup.string().required("Không để trống ô nhập"),
+    username: Yup.string().required("Không để trống ô nhập"),
+  });
 
   return (
     <div className="p-6 rounded-lg bg-white">
@@ -33,7 +36,7 @@ const PersonalInfoPage = () => {
           <p className="text-colorGray">Cập nhật thông tin cá nhân của bạn</p>
         </div>
 
-        {isEdit ? (
+        {/* {isEdit ? (
           <AppButton
             text={{ children: "Chỉnh sửa" }}
             className="px-4 min-h-[40px] bg-colorGray rounded-md "
@@ -45,7 +48,7 @@ const PersonalInfoPage = () => {
             className="px-4 min-h-[40px] bg-colorRedError rounded-md"
             onClick={() => setIsEdit(true)}
           />
-        )}
+        )} */}
       </div>
 
       <AppLine className="my-4" />
@@ -58,6 +61,7 @@ const PersonalInfoPage = () => {
         {({}) => (
           <Form className="grid md:grid-cols-2 gap-x-4 gap-y-8">
             <AppInput
+              disabled={true}
               name="username"
               label="Tên người dùng"
               placeholder="example@gmail.com"
@@ -65,6 +69,7 @@ const PersonalInfoPage = () => {
             />
 
             <AppInput
+              disabled={true}
               name="avatar"
               label="Avatar"
               placeholder="example@gmail.com"
@@ -86,22 +91,24 @@ const PersonalInfoPage = () => {
               placeholder="example@gmail.com"
               iconLeft={<TfiEmail className="text-colorGray" size={20} />}
             />
-
+            {/* 
             {!isEdit && (
               <div className="flex gap-4">
                 <AppButton
                   text={{ children: "Lưu thay đổi", className: "text-sm" }}
                   className="px-6 min-h-[40px] rounded-lg"
+                  onClick={() => setIsEdit(true)}
                 />
                 <AppButton
                   text={{
                     children: "Hủy",
                     className: "text-sm text-colorBlack",
                   }}
+                  onClick={() => setIsEdit(true)}
                   className="px-6 min-h-[40px] rounded-lg bg-white border border-colorGray"
                 />
               </div>
-            )}
+            )} */}
           </Form>
         )}
       </Formik>

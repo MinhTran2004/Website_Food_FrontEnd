@@ -80,14 +80,14 @@ const PaymentProduct: React.FC<IProduct> = ({ ...product }) => {
               text={{ children: "Thêm giỏ hàng" }}
             />
 
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <p className="text-sm font-medium">Chia sẻ: </p>
               <div className="flex gap-4">
                 <AppButton buttonDefault iconLeft={<FaFacebookF />} />
                 <AppButton buttonDefault iconLeft={<FaGoogle />} />
                 <AppButton buttonDefault iconLeft={<FaTwitter />} />
               </div>
-            </div>
+            </div> */}
           </div>
         </Form>
       )}

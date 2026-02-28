@@ -8,7 +8,7 @@ const Address: React.FC<IAddress> = (props) => {
   const address = `${props.addressDetail} ${props.district} ${props.city}`
   return (
     <div className="p-6 rounded-2xl border border-colorGrayLight shadow-[0_0_12px_rgba(149,149,149,0.2)]">
-      <h3 className="text-xl font-medium">Thông tin đơn hàng</h3>
+      <h3 className="text-xl font-medium">Địa chỉ nhận hàng</h3>
 
       <div className="my-3 space-y-1">
         <p>

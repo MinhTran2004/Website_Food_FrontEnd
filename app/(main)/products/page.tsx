@@ -11,7 +11,8 @@ import { notFound } from "next/navigation";
 import { RiFilter2Fill } from "react-icons/ri";
 import ProductPrice from "./component/Filter/Price";
 import ProductStatus from "./component/Filter/Status";
-import ProductContainer from "./component/Product";
+import AppProduct from "@/component/Product";
+import { IProduct } from "@/share/interface/product.interface";
 
 export default async function ProductPage({
   searchParams,
@@ -27,7 +28,6 @@ export default async function ProductPage({
   const data = await fetch(
     `${ApiServerURL}${URLS.GET_LIST_PRODUCT}?category=${category}&price=${price}`,
     {
-      cache: "no-store",
       method: "GET",
     },
   ).then((res) => res.json());
@@ -36,6 +36,7 @@ export default async function ProductPage({
     <div>
       <PathLink />
       <div className="lg:hidden">
+        {/* mobile */}
         <AppDrawer
           open={
             <div className="flex items-center gap-0.5 ml-4 mb-2">
@@ -54,6 +55,7 @@ export default async function ProductPage({
         />
       </div>
 
+      {/* web */}
       <div className="flex mx-auto max-w-7xl">
         <div className="hidden lg:block w-[30%] px-4 space-y-4 h-fit">
           <ProductCategory category={category} price={price} />
@@ -61,8 +63,11 @@ export default async function ProductPage({
           <ProductStatus />
         </div>
 
-        <div className="w-full">
-          <ProductContainer products={data.data.items} />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+          {Array.isArray(data.data.items) &&
+            data.data.items.map((item: IProduct) => (
+              <AppProduct key={item._id} {...item} />
+            ))}
         </div>
       </div>
     </div>
