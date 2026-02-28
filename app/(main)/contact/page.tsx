@@ -7,7 +7,9 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useState } from "react";
-import AppMap from "@/component/AppMap";
+
+import dynamic from "next/dynamic";
+const AppMap = dynamic(() => import("@/component/AppMap"), { ssr: false });
 
 const ContactPage = () => {
   const toast = useToast();
