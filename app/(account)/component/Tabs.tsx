@@ -1,12 +1,15 @@
 "use client";
 
+import AppButton from "@/component/Button/AppButton";
 import AppLinkButton from "@/component/Button/AppLinkButton";
 import { ROUTE } from "@/share/contanst/route.constants";
 import clsx from "clsx";
+import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { CgShoppingBag } from "react-icons/cg";
 import { GrLocation } from "react-icons/gr";
 import { LuUserRound } from "react-icons/lu";
+import { MdLogout } from "react-icons/md";
 
 const classnameActice = "border-l-4 border-colorOrange bg-colorOrangeLight";
 const textActice = "text-colorOrange";
@@ -42,9 +45,7 @@ const Tabs = () => {
         href={ROUTE.ADDRESS_INFO}
         iconLeft={
           <GrLocation
-            className={clsx(
-              path === `${ROUTE.ADDRESS_INFO}` ? iconActice : "",
-            )}
+            className={clsx(path === `${ROUTE.ADDRESS_INFO}` ? iconActice : "")}
           />
         }
         text={{
@@ -75,6 +76,16 @@ const Tabs = () => {
           `rounded-none justify-start py-3 pl-4`,
           path === `${ROUTE.ORDER_HISTORY}` && classnameActice,
         )}
+      />
+
+      <AppButton
+        buttonDefault
+        onClick={async () => await signOut({ callbackUrl: ROUTE.HOME })}
+        iconLeft={<MdLogout />}
+        text={{
+          children: "Đăng xuất",
+        }}
+        className={clsx(`rounded-none justify-start py-3 pl-4`)}
       />
     </div>
   );
