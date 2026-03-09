@@ -5,6 +5,7 @@ import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { LoadingProvider } from "@/component/LoadingScreen";
+import { Analytics } from '@vercel/analytics/react'
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
             <Providers>
               <AuthNotification />
               {children}
+              <Analytics />
             </Providers>
           </LoadingProvider>
         </ToastProvider>
