@@ -2,7 +2,7 @@
 
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { cartService } from "@/service/cart.service";
 import { IBodyPostCart } from "@/share/interface/cart.interface";
 import { IProduct } from "@/share/interface/product.interface";

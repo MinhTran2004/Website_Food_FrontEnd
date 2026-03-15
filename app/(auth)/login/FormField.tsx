@@ -1,7 +1,7 @@
 'use client'
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { userService } from "@/service/user.service";
 import { ROUTE } from "@/share/contanst/route.constants";
 import { useMutation } from "@tanstack/react-query";

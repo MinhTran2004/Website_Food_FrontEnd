@@ -38,6 +38,8 @@ const handler = NextAuth({
       if (session.user) {
         (session.user as typeof session.user & { accessToken?: string }).accessToken = token.accessToken as string;
       }
+      console.log('session', session);
+
       return session;
     },
     async signIn({ user, account, profile }) {

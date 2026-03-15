@@ -1,7 +1,7 @@
 "use client";
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { useLoading } from "@/component/LoadingScreen";
 import { addressService } from "@/service/address.service";
 import { IBodyPostAddress } from "@/share/interface/address.interface";

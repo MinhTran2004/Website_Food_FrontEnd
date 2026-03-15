@@ -22,4 +22,8 @@ export const URLS = {
   //order
   GET_LIST_ORDER: `/order/get-list-order`,
   PAYMENT_METHOD_COD: `/order/payment-method-cod`,
+
+  // mesage
+  GET_LIST_ROOM_USER: `/message/get-list-room-user`,
+  GET_LIST_MESSAGE_ID_RECEIVER: (idReceiver:string) => `/message/get-list-message-by-idReceiver/${idReceiver}`
 };

@@ -3,7 +3,7 @@ import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
 import AppCheckBox from "@/component/CheckBox/AppCheckBox";
 import AppCheckBoxFormik from "@/component/CheckBox/AppCheckBoxFormik";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { useLoading } from "@/component/LoadingScreen";
 import { addressService } from "@/service/address.service";
 import {

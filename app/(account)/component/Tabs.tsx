@@ -4,7 +4,7 @@ import AppButton from "@/component/Button/AppButton";
 import AppLinkButton from "@/component/Button/AppLinkButton";
 import { ROUTE } from "@/share/contanst/route.constants";
 import clsx from "clsx";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { CgShoppingBag } from "react-icons/cg";
 import { GrLocation } from "react-icons/gr";

@@ -2,7 +2,7 @@
 import AppTextarea from "@/component/AppTextarea";
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 

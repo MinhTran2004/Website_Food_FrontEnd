@@ -9,7 +9,7 @@ const AuthNotification = () => {
     const shownRef = useRef(false);
     
     useEffect(() => {
-        if (status === "authenticated" && data?.accessToken) {
+        if (status === "authenticated" && data?.user.accessToken) {
             const fromLogin = sessionStorage.getItem("login");
 
             if (fromLogin === "true") {

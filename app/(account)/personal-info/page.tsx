@@ -2,7 +2,7 @@
 
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
-import AppInput from "@/component/Input/AppInput";
+import AppInput from "@/component/Input/AppInputFormik";
 import { userService } from "@/service/user.service";
 import { IUser } from "@/share/interface/user.interface";
 import { useQuery } from "@tanstack/react-query";
