@@ -108,17 +108,15 @@ const CartPage = () => {
               onMinus={onMinus}
               onDelete={onDelete}
             />
-            {address && <Address {...address} />}
+            <Address addres={address} />
           </div>
 
-          {address && (
             <Payment
               onPayment={onPayment}
               address={address}
               carts={dataCarts.data.items || []}
               total={totalPrice}
             />
-          )}
         </div>
       ) : (
         <EmptyCart />

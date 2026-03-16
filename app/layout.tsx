@@ -30,7 +30,7 @@ export default function RootLayout({
             <Providers>
               <AuthNotification />
               {children}
-              {/* <Analytics /> */}
+              <Analytics />
             </Providers>
           </LoadingProvider>
         </ToastProvider>

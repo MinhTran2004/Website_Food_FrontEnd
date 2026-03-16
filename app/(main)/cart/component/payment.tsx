@@ -8,7 +8,7 @@ import { formatVND } from "@/utils/formatVND";
 import { CiClock2, CiCreditCard1 } from "react-icons/ci";
 
 interface Props {
-  address: IAddress;
+  address?: IAddress | null;
   carts: ICart[];
   total: number;
   onPayment: (body: IBodyPostPaymentMethodCod) => void;
@@ -39,9 +39,11 @@ const Payment: React.FC<Props> = ({ address, carts, total, onPayment }) => {
       </div>
 
       <AppButton
+        disabled={!address}
         iconLeft={<CiCreditCard1 />}
         text={{ children: "Thanh toán đơn hàng" }}
         onClick={() =>
+          address &&
           onPayment({
             address: address,
             paymentMethods: "COD",
