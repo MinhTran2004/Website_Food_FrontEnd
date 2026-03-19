@@ -1,6 +1,6 @@
 import { URLS } from "@/service/url.service";
-import { IResponse } from "@/share/interface/api.interface";
-import { IUserJWT } from "@/share/interface/user.interface";
+import { IResponse } from "@/types/interface/api.interface";
+import { IUserJWT } from "@/types/interface/user.interface";
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";

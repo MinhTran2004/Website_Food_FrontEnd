@@ -30,6 +30,11 @@ export const NAME_ROUTE_HOME = [
         href: ROUTE.CONTACT,
         text: "Liên hệ"
     }
+    ,
+    {
+        href: ROUTE.PERSONAL_INFO,
+        text: "Tài khoản"
+    }
 ]
 
 export const NAME_ROUTE = [

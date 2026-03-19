@@ -1,13 +1,14 @@
 "use client";
 
 import { useToast } from "@/component/AppToast";
+import LayoutSpace from "@/component/LayoutSpace";
 import { useLoading } from "@/component/LoadingScreen";
 import EmptyCart from "@/component/Product/ProductCart/EmptyCart";
 import { addressService } from "@/service/address.service";
 import { cartService } from "@/service/cart.service";
 import { orderService } from "@/service/order.interface";
-import { IAddress } from "@/share/interface/address.interface";
-import { ICart } from "@/share/interface/cart.interface";
+import { IAddress } from "@/types/interface/address.interface";
+import { ICart } from "@/types/interface/cart.interface";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useCallback, useMemo } from "react";
 import Address from "./component/address";
@@ -96,20 +97,21 @@ const CartPage = () => {
   });
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-center font-medium text-4xl">Giỏ hàng của bạn</h1>
+    <LayoutSpace>
+      <div className="space-y-6">
+        <h1 className="text-center font-medium text-4xl">Giỏ hàng của bạn</h1>
 
-      {dataCarts?.data?.items && dataCarts?.data?.items?.length > 0 ? (
-        <div className="flex flex-col lg:flex-row max-w-7xl justify-between mx-auto px-4 gap-6">
-          <div className="space-y-6 flex-2">
-            <ListProduct
-              data={dataCarts?.data?.items || []}
-              onAdd={onAdd}
-              onMinus={onMinus}
-              onDelete={onDelete}
-            />
-            <Address addres={address} />
-          </div>
+        {dataCarts?.data?.items && dataCarts?.data?.items?.length > 0 ? (
+          <div className="flex flex-col lg:flex-row max-w-7xl justify-between mx-auto px-4 gap-6">
+            <div className="space-y-6 flex-2">
+              <ListProduct
+                data={dataCarts?.data?.items || []}
+                onAdd={onAdd}
+                onMinus={onMinus}
+                onDelete={onDelete}
+              />
+              <Address addres={address} />
+            </div>
 
             <Payment
               onPayment={onPayment}
@@ -117,11 +119,12 @@ const CartPage = () => {
               carts={dataCarts.data.items || []}
               total={totalPrice}
             />
-        </div>
-      ) : (
-        <EmptyCart />
-      )}
-    </div>
+          </div>
+        ) : (
+          <EmptyCart />
+        )}
+      </div>
+    </LayoutSpace>
   );
 };
 

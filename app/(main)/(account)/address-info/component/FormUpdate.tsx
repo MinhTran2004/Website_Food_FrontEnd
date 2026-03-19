@@ -9,7 +9,7 @@ import { addressService } from "@/service/address.service";
 import {
   IAddress,
   IBodyPostAddress,
-} from "@/share/interface/address.interface";
+} from "@/types/interface/address.interface";
 import { useMutation } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";

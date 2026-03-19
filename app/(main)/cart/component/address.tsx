@@ -1,7 +1,7 @@
 import AppButton from "@/component/Button/AppButton";
 import AppLinkButton from "@/component/Button/AppLinkButton";
-import { ROUTE } from "@/share/contanst/route.constants";
-import { IAddress } from "@/share/interface/address.interface";
+import { ROUTE } from "@/types/contanst/route.constants";
+import { IAddress } from "@/types/interface/address.interface";
 import Link from "next/link";
 import React from "react";
 

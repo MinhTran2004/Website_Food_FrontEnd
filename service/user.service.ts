@@ -1,9 +1,9 @@
-import { IResponse } from "@/share/interface/api.interface";
+import { IResponse } from "@/types/interface/api.interface";
 import {
   IBodyRegisterRequest,
   IUser,
   IUserJWT
-} from "@/share/interface/user.interface";
+} from "@/types/interface/user.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 

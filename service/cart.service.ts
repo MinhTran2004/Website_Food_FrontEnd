@@ -2,12 +2,12 @@ import {
   IPagination,
   IResponse,
   IResponseListData,
-} from "@/share/interface/api.interface";
+} from "@/types/interface/api.interface";
 import {
   IBodyPatchUpdate,
   IBodyPostCart,
   ICart
-} from "@/share/interface/cart.interface";
+} from "@/types/interface/cart.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 

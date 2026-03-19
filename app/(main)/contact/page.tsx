@@ -8,6 +8,7 @@ import * as Yup from "yup";
 
 import { useState } from "react";
 
+import LayoutSpace from "@/component/LayoutSpace";
 import dynamic from "next/dynamic";
 const AppMap = dynamic(() => import("@/component/AppMap"), { ssr: false });
 
@@ -34,62 +35,64 @@ const ContactPage = () => {
   });
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-4xl font-semibold text-center">
-        Liên hệ với chúng tôi
-      </h1>
+    <LayoutSpace>
+      <div className="space-y-8">
+        <h1 className="text-4xl font-semibold text-center">
+          Liên hệ với chúng tôi
+        </h1>
 
-      <AppMap />
+        <AppMap />
 
-      <div className="max-w-3xl mx-auto">
-        <Formik
-          initialValues={initValues}
-          validationSchema={validationSchema}
-          onSubmit={(values, { resetForm }) => {
-            setIsSubmit(true);
-            setTimeout(() => {
-              toast.SUCCESS("Yêu cầu đã được gửi");
-              resetForm();
-              setIsSubmit(false);
-            }, 2000);
-          }}
-        >
-          <Form>
-            <div className="space-y-4 px-6">
-              <AppInput
-                name="username"
-                label="Tên người dùng"
-                placeholder="Nhập tên của bạn"
-              />
-
-              <AppInput name="email" label="Email" placeholder="Nhập email" />
-
-              <AppInput
-                name="phone"
-                label="Số điện thoại"
-                placeholder="Nhập số diện thoại"
-              />
-
-              <AppTextarea
-                name="content"
-                label="Nội dung"
-                placeholder="Nội dung"
-              />
-
-              <div className="flex">
-                <AppButton
-                  type="submit"
-                  disabled={isSubmit}
-                  isLoading={isSubmit}
-                  text={{ children: "Gửi đi" }}
-                  className=""
+        <div className="max-w-3xl mx-auto">
+          <Formik
+            initialValues={initValues}
+            validationSchema={validationSchema}
+            onSubmit={(values, { resetForm }) => {
+              setIsSubmit(true);
+              setTimeout(() => {
+                toast.SUCCESS("Yêu cầu đã được gửi");
+                resetForm();
+                setIsSubmit(false);
+              }, 2000);
+            }}
+          >
+            <Form>
+              <div className="space-y-4 px-6">
+                <AppInput
+                  name="username"
+                  label="Tên người dùng"
+                  placeholder="Nhập tên của bạn"
                 />
+
+                <AppInput name="email" label="Email" placeholder="Nhập email" />
+
+                <AppInput
+                  name="phone"
+                  label="Số điện thoại"
+                  placeholder="Nhập số diện thoại"
+                />
+
+                <AppTextarea
+                  name="content"
+                  label="Nội dung"
+                  placeholder="Nội dung"
+                />
+
+                <div className="flex">
+                  <AppButton
+                    type="submit"
+                    disabled={isSubmit}
+                    isLoading={isSubmit}
+                    text={{ children: "Gửi đi" }}
+                    className=""
+                  />
+                </div>
               </div>
-            </div>
-          </Form>
-        </Formik>
+            </Form>
+          </Formik>
+        </div>
       </div>
-    </div>
+    </LayoutSpace>
   );
 };
 

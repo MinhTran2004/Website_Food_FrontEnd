@@ -4,7 +4,7 @@ import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
 import FormField from "./FormField";
 import Link from "next/link";
-import { ROUTE } from "@/share/contanst/route.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import AppLine from "@/component/AppLine";
 import ButtonAuth from "@/component/ButtonAuth";
 

@@ -3,8 +3,8 @@ import {
   FILTER_PRICE,
   HREF_CATEGORY,
   TYPE_CATEGORY,
-} from "@/share/contanst/product.constants";
-import { ROUTE } from "@/share/contanst/route.constants";
+} from "@/types/contanst/product.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import clsx from "clsx";
 import Link from "next/link";
 

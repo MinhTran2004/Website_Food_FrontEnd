@@ -1,7 +1,7 @@
 "use client";
 
 import { chatService } from "@/service/chat.service";
-import { IMessage } from "@/share/interface/message.interface";
+import { IMessage } from "@/types/interface/message.interface";
 import { useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { useParams } from "next/navigation";

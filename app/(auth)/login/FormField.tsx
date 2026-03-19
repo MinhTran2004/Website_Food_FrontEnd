@@ -2,7 +2,7 @@
 import { useToast } from "@/component/AppToast";
 import AppButton from "@/component/Button/AppButton";
 import AppInput from "@/component/Input/AppInputFormik";
-import { ROUTE } from "@/share/contanst/route.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import { Form, Formik } from "formik";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";

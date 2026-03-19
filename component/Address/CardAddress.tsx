@@ -1,4 +1,4 @@
-import { IAddress } from "@/share/interface/address.interface";
+import { IAddress } from "@/types/interface/address.interface";
 import clsx from "clsx";
 import { BsTrash } from "react-icons/bs";
 import AppLine from "../AppLine";

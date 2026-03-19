@@ -1,5 +1,5 @@
-import { COLOR } from "@/share/contanst/color";
-import { TYPE_ROUTE } from "@/share/contanst/route.constants";
+import { COLOR } from "@/types/contanst/color";
+import { TYPE_ROUTE } from "@/types/contanst/route.constants";
 import { getCurrentPath } from "@/utils/getSeverUrl";
 import { FaAngleRight } from "react-icons/fa6";
 import AppText from "./Text/AppText";

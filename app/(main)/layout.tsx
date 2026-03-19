@@ -1,22 +1,26 @@
+import HeaderHome from "@/component/Layout/HeaderHome";
 import HeaderHomeMobile from "@/component/Layout/HeaderHomeMobile";
-import HeaderMain from "@/component/Layout/HeaderMain";
-import HomeFooter from "../(home-page)/component/Footer";
+import clsx from "clsx";
+import HomeFooter from "../../component/Layout/Footer";
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div className="h-screen flex flex-col">
-      <div>
-        <HeaderMain />
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <div className="sticky top-0 bg-white z-999">
+        <HeaderHome />
         <HeaderHomeMobile />
       </div>
-      <div className="flex-1">{children}</div>
-      <div className="pt-20">
-        <HomeFooter />
-      </div>
+
+      {/* Content */}
+      <main className={clsx('flex flex-col flex-1')}>{children}</main>
+
+      {/* Footer */}
+      <HomeFooter />
     </div>
   );
 }

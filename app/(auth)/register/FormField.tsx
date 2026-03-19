@@ -4,7 +4,7 @@ import AppButton from "@/component/Button/AppButton";
 import AppCheckBoxFormik from "@/component/CheckBox/AppCheckBoxFormik";
 import AppInput from "@/component/Input/AppInputFormik";
 import { userService } from "@/service/user.service";
-import { IBodyRegisterRequest } from "@/share/interface/user.interface";
+import { IBodyRegisterRequest } from "@/types/interface/user.interface";
 import { useMutation } from "@tanstack/react-query";
 import { Form, Formik, useFormik } from "formik";
 import { CgPassword } from "react-icons/cg";

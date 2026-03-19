@@ -2,10 +2,10 @@ import {
   IAddress,
   IBodyPatchAddress,
   IBodyPostAddress,
-} from "@/share/interface/address.interface";
+} from "@/types/interface/address.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
-import { IResponse, IResponseListData } from "@/share/interface/api.interface";
+import { IResponse, IResponseListData } from "@/types/interface/api.interface";
 
 class AddressService {
   async createAddress(body: IBodyPostAddress): Promise<IResponse<IAddress>> {

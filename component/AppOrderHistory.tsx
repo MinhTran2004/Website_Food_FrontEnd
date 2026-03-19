@@ -1,5 +1,5 @@
 "use client";
-import { IOrder } from "@/share/interface/order.interface";
+import { IOrder } from "@/types/interface/order.interface";
 import { formatDate } from "@/utils/formatDate";
 import { formatVND } from "@/utils/formatVND";
 import { useState } from "react";

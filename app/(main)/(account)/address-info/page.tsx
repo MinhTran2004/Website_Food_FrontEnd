@@ -4,7 +4,7 @@ import CardAddress from "@/component/Address/CardAddress";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
 import { addressService } from "@/service/address.service";
-import { IAddress } from "@/share/interface/address.interface";
+import { IAddress } from "@/types/interface/address.interface";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { FiPlus } from "react-icons/fi";

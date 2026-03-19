@@ -4,8 +4,8 @@ import AppCheckBoxSSR from "@/component/CheckBox/AppCheckBoxSRR";
 import {
   FILTER_PRICE,
   TYPE_FILTER_PRICE,
-} from "@/share/contanst/product.constants";
-import { ROUTE } from "@/share/contanst/route.constants";
+} from "@/types/contanst/product.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import Link from "next/link";
 import React from "react";
 
