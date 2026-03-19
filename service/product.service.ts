@@ -2,8 +2,8 @@ import {
   IPagination,
   IResponse,
   IResponseListData,
-} from "@/share/interface/api.interface";
-import { IFilterGetListProduct, IProduct } from "@/share/interface/product.interface";
+} from "@/types/interface/api.interface";
+import { IFilterGetListProduct, IProduct } from "@/types/interface/product.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 

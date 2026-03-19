@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { STATUS_CODE } from "@/share/contanst/api.constant";
-import { IResponse } from "@/share/interface/api.interface";
+import { STATUS_CODE } from "@/types/contanst/api.constant";
+import { IResponse } from "@/types/interface/api.interface";
 import axios, {
   AxiosError,
   AxiosInstance,

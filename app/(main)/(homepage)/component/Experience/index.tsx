@@ -1,7 +1,7 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { ROUTE } from "@/share/contanst/route.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import Link from "next/link";
 
 const ItemSelect = ({ text }: { text: string }) => (

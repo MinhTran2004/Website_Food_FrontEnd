@@ -1,5 +1,5 @@
-import { ROUTE } from "@/share/contanst/route.constants";
-import { IProduct } from "@/share/interface/product.interface";
+import { ROUTE } from "@/types/contanst/route.constants";
+import { IProduct } from "@/types/interface/product.interface";
 import { formatVND } from "@/utils/formatVND";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -8,7 +8,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import AppImage from "../Image/AppImage";
 import AppStar from "../RateProduct/AppStar";
-import { TYPE_CATEGORY_PRODUCT } from "@/share/contanst/product.constants";
+import { TYPE_CATEGORY_PRODUCT } from "@/types/contanst/product.constants";
 
 const ItemShowIcon = ({ icon }: { icon: ReactNode }) => (
   <div className="w-[40px] h-[40px] flex items-center justify-center p-1 rounded-full bg-[#f3e8d6] text-yellow-500 hover:bg-colorOrange hover:text-white">

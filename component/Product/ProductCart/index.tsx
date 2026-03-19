@@ -1,4 +1,4 @@
-import { ICart } from "@/share/interface/cart.interface";
+import { ICart } from "@/types/interface/cart.interface";
 import { formatVND } from "@/utils/formatVND";
 import clsx from "clsx";
 import AppImage from "../../Image/AppImage";

@@ -1,8 +1,8 @@
-import { IResponse, IResponseListData } from "@/share/interface/api.interface";
+import { IResponse, IResponseListData } from "@/types/interface/api.interface";
 import {
   IMessageFirstRoom,
   IRoomAndMessages
-} from "@/share/interface/message.interface";
+} from "@/types/interface/message.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 

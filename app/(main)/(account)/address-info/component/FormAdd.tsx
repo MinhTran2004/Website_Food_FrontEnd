@@ -4,7 +4,7 @@ import AppButton from "@/component/Button/AppButton";
 import AppInput from "@/component/Input/AppInputFormik";
 import { useLoading } from "@/component/LoadingScreen";
 import { addressService } from "@/service/address.service";
-import { IBodyPostAddress } from "@/share/interface/address.interface";
+import { IBodyPostAddress } from "@/types/interface/address.interface";
 import { useMutation } from "@tanstack/react-query";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";

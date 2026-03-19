@@ -1,6 +1,6 @@
 import AppButton from "@/component/Button/AppButton";
 import ProductCart from "@/component/Product/ProductCart";
-import { ICart } from "@/share/interface/cart.interface";
+import { ICart } from "@/types/interface/cart.interface";
 
 interface Props {
   data: ICart[];

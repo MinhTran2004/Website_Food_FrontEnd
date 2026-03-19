@@ -2,7 +2,7 @@
 
 import AppButton from "@/component/Button/AppButton";
 import AppLinkButton from "@/component/Button/AppLinkButton";
-import { ROUTE } from "@/share/contanst/route.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import clsx from "clsx";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
@@ -15,7 +15,7 @@ const classnameActice = "border-l-4 border-colorOrange bg-colorOrangeLight";
 const textActice = "text-colorOrange";
 const iconActice = "text-colorOrange";
 
-const Tabs = () => {
+const TabAccounts = () => {
   const path = usePathname();
 
   return (
@@ -91,4 +91,4 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;
+export default TabAccounts;

@@ -1,18 +1,18 @@
 import AppDrawer from "@/component/AppDrawer";
 import ProductCategory from "@/component/Category";
-import PathLink from "@/component/PathLink";
+import LayoutSpace from "@/component/LayoutSpace";
+import AppProduct from "@/component/Product";
 import { ApiServerURL } from "@/service/index.service";
 import { URLS } from "@/service/url.service";
 import {
   FILTER_PRICE,
   TYPE_CATEGORY,
-} from "@/share/contanst/product.constants";
+} from "@/types/contanst/product.constants";
+import { IProduct } from "@/types/interface/product.interface";
 import { notFound } from "next/navigation";
 import { RiFilter2Fill } from "react-icons/ri";
 import ProductPrice from "./component/Filter/Price";
 import ProductStatus from "./component/Filter/Status";
-import AppProduct from "@/component/Product";
-import { IProduct } from "@/share/interface/product.interface";
 
 export default async function ProductPage({
   searchParams,
@@ -33,8 +33,7 @@ export default async function ProductPage({
   ).then((res) => res.json());
 
   return (
-    <div>
-      <PathLink />
+    <LayoutSpace>
       <div className="lg:hidden">
         {/* mobile */}
         <AppDrawer
@@ -70,6 +69,6 @@ export default async function ProductPage({
             ))}
         </div>
       </div>
-    </div>
+    </LayoutSpace>
   );
 }

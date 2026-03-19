@@ -1,7 +1,7 @@
 "use client";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
-import { COLOR } from "@/share/contanst/color";
+import { COLOR } from "@/types/contanst/color";
 import clsx from "clsx";
 import { useCallback, useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";

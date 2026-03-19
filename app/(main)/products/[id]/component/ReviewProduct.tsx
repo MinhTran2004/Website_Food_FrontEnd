@@ -1,6 +1,6 @@
 import AppRateProgress from "@/component/RateProduct/AppRateProgress";
 import AppStar from "@/component/RateProduct/AppStar";
-import { IProduct } from "@/share/interface/product.interface";
+import { IProduct } from "@/types/interface/product.interface";
 import clsx from "clsx";
 
 const TAB = ["THÔNG TIN SẢN PHẨM", "ĐÁNH GIÁ", "BÌNH LUẬN"];

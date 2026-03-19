@@ -3,8 +3,8 @@ import { IMAGE_SOUCE } from "@/public/assets/images";
 import {
   TYPE_CATEGORY,
   TYPE_CATEGORY_PRODUCT,
-} from "@/share/contanst/product.constants";
-import { ROUTE } from "@/share/contanst/route.constants";
+} from "@/types/contanst/product.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import Image from "next/image";
 import Link from "next/link";
 

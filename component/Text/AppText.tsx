@@ -1,4 +1,4 @@
-import { TEXT_TYPO } from "@/share/contanst/common";
+import { TEXT_TYPO } from "@/types/contanst/common";
 import { ElementType, HTMLAttributes } from "react";
 
 export interface IAppText extends HTMLAttributes<HTMLElement> {

@@ -1,9 +1,7 @@
-import { NAME_ROUTE_HOME } from "@/share/contanst/route.constants";
-import { getCurrentPath } from "@/utils/getSeverUrl";
+import { NAME_ROUTE_HOME } from "@/types/contanst/route.constants";
 import TextHoverUnderline from "./Text/TextHoverUnderline";
 
 const Navbar = async () => {
-  const currentPatch = await getCurrentPath();
 
   return (
     <div className="flex gap-5">
@@ -12,7 +10,6 @@ const Navbar = async () => {
           key={item.href}
           href={item.href}
           text={item.text}
-          status={currentPatch === item.href}
         />
       ))}
     </div>

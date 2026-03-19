@@ -23,7 +23,7 @@ export default function RootLayout({
           <LoadingProvider>
             <Providers>
               <AuthNotification />
-              {children}
+              <main>{children}</main>
               {/* <Analytics /> */}
             </Providers>
           </LoadingProvider>

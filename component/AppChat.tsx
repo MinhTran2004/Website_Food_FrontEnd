@@ -1,4 +1,4 @@
-import { IMessageFirstRoom } from "@/share/interface/message.interface";
+import { IMessageFirstRoom } from "@/types/interface/message.interface";
 import AppImage from "./Image/AppImage";
 
 

@@ -1,9 +1,9 @@
 "use client";
 import AppLine from "@/component/AppLine";
 import AppButton from "@/component/Button/AppButton";
-import { IAddress } from "@/share/interface/address.interface";
-import { ICart } from "@/share/interface/cart.interface";
-import { IBodyPostPaymentMethodCod } from "@/share/interface/order.interface";
+import { IAddress } from "@/types/interface/address.interface";
+import { ICart } from "@/types/interface/cart.interface";
+import { IBodyPostPaymentMethodCod } from "@/types/interface/order.interface";
 import { formatVND } from "@/utils/formatVND";
 import { CiClock2, CiCreditCard1 } from "react-icons/ci";
 

@@ -1,5 +1,5 @@
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { ROUTE } from "@/share/contanst/route.constants";
+import { ROUTE } from "@/types/contanst/route.constants";
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoCartOutline } from "react-icons/io5";

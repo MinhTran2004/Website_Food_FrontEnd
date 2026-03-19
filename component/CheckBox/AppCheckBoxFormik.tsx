@@ -1,4 +1,4 @@
-import { COLOR } from "@/share/contanst/color";
+import { COLOR } from "@/types/contanst/color";
 import React from "react";
 import { useField } from "formik";
 

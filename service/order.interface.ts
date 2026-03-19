@@ -1,14 +1,14 @@
 import {
   IBodyPostPaymentMethodCod,
   IOrder,
-} from "@/share/interface/order.interface";
+} from "@/types/interface/order.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 import {
   IPagination,
   IResponse,
   IResponseListData,
-} from "@/share/interface/api.interface";
+} from "@/types/interface/api.interface";
 
 export class OrderService {
   async paymentMethodCod(

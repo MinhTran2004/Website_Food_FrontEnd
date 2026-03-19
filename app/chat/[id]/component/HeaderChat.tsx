@@ -1,6 +1,6 @@
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import { IUser } from "@/share/interface/user.interface";
+import { IUser } from "@/types/interface/user.interface";
 import React from "react";
 import { FiPhone } from "react-icons/fi";
 import { IoVideocamOutline } from "react-icons/io5";
