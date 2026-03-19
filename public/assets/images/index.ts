@@ -1,4 +1,5 @@
 export const IMAGE_SOUCE = {
+  LOGO: "/assets/images/logo.png",
   BANNER_1_ICON_1: "/assets/images/banner_1_icon_1.jpg",
   BANNER_1_ICON_2: "/assets/images/banner_1_icon_2.png",
   ICON_SALE_CONTENT_1: "/assets/images/icon_sale_content_1.png",

@@ -34,5 +34,5 @@ export async function middleware(req: NextRequest) {
 
 // Áp middleware cho tất cả page (trừ static, api)
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api|assets).*)"],
 };
