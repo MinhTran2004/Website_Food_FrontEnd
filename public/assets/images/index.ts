@@ -3,7 +3,7 @@ export const IMAGE_SOUCE = {
   BANNER_1_ICON_2: "/assets/images/banner_1_icon_2.png",
   ICON_SALE_CONTENT_1: "/assets/images/icon_sale_content_1.png",
   ICON_SALE_CONTENT_2: "/assets/images/icon_sale_content_2.png",
-  BANNER_1: "/assets/images/banner_1.png",
+  BANNER_1: "/assets/images/banner_1.jpg",
   Home_intro_left: "/assets/images/Home_intro_left.png",
   Home_intro_right: "/assets/images/Home_intro_right.png",
   Home_intro_avatar: "/assets/images/Home_intro_avatar.jpg",

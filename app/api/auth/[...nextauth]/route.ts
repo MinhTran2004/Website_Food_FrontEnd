@@ -4,6 +4,7 @@ import { IUserJWT } from "@/share/interface/user.interface";
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -11,6 +12,37 @@ const handler = NextAuth({
   session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
+    CredentialsProvider({
+      name: "credentials",
+      credentials: {
+        email: {},
+        password: {},
+      },
+      async authorize(credentials) {
+        try {
+          const response: IResponse<IUserJWT> = await fetch(
+            `${NEXT_PUBLIC_API_URL}${URLS.LOGIN}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email: credentials?.email,
+                password: credentials?.password,
+              }),
+            }
+          ).then((res) => res.json());
+    
+          if (!response?.data?.accessToken) return null;
+    
+          return {
+            ...response.data.user,
+            accessToken: response.data.accessToken,
+          };
+        } catch (err) {
+          return null;
+        }
+      },
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,

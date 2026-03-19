@@ -16,7 +16,7 @@ const UsersChat = () => {
     <div>
       {listUser.map((items) => (
         <AppChat
-          key={items.user._id}
+          key={items.user.id}
           user={items.user}
           message={items.message}
         />

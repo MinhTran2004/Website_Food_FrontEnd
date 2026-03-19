@@ -1,27 +1,16 @@
+import { IResponse } from "@/share/interface/api.interface";
 import {
-  IBodyLoginRequest,
   IBodyRegisterRequest,
   IUser,
-  IUserJWT,
+  IUserJWT
 } from "@/share/interface/user.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
-import { IResponse } from "@/share/interface/api.interface";
 
 class UserService {
-  async loginService(body: IBodyLoginRequest): Promise<IResponse<IUserJWT>> {
-    try {
-      const response = await HttpClient.post<
-        IBodyLoginRequest,
-        IResponse<IUserJWT>
-      >(URLS.LOGIN, body);
-      return response;
-    } catch (err) {
-      throw err;
-    }
-  }
-
-  async registerService(body: IBodyRegisterRequest): Promise<IResponse<IUserJWT>> {
+  async registerService(
+    body: IBodyRegisterRequest,
+  ): Promise<IResponse<IUserJWT>> {
     try {
       const response = await HttpClient.post<
         IBodyRegisterRequest,
