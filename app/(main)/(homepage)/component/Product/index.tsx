@@ -1,5 +1,5 @@
 import AppButton from "@/component/Button/AppButton";
-import AppProduct from "@/component/Product";
+import AppProduct from "@/component/Product/AppProduct.tsx";
 import Link from "next/link";
 import { GrFormNextLink } from "react-icons/gr";
 

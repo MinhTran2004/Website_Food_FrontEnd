@@ -1,7 +1,7 @@
 import AppDrawer from "@/component/AppDrawer";
 import ProductCategory from "@/component/Category";
 import LayoutSpace from "@/component/LayoutSpace";
-import AppProduct from "@/component/Product";
+import AppProduct from "@/component/Product/AppProduct.tsx";
 import { ApiServerURL } from "@/service/index.service";
 import { URLS } from "@/service/url.service";
 import {
