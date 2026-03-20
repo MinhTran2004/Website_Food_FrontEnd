@@ -1,5 +1,6 @@
 export const IMAGE_SOUCE = {
   LOGO: "/assets/images/logo.png",
+  URL_IMAGE_OPENGRAPH_SEO: "/assets/images/url_image_opengraph_seo.webp",
   BANNER_1_ICON_1: "/assets/images/banner_1_icon_1.jpg",
   BANNER_1_ICON_2: "/assets/images/banner_1_icon_2.png",
   ICON_SALE_CONTENT_1: "/assets/images/icon_sale_content_1.png",
@@ -31,5 +32,5 @@ export const IMAGE_SOUCE = {
   IMG_ABOUT_ME_8: "/assets/images/IMG_ABOUT_ME_8.jpg",
   IMG_BACKGROUD_NEWS: "/assets/images/IMG_BACKGROUD_NEWS.jpg",
   LOADING: "/assets/images/loading.gif",
-  IMG_BACKGROUD_AUTH: "/assets/images/IMG_BACKGROUD_AUTH.avif"
+  IMG_BACKGROUD_AUTH: "/assets/images/IMG_BACKGROUD_AUTH.avif",
 };

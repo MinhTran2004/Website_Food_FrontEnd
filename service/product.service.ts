@@ -3,17 +3,19 @@ import {
   IResponse,
   IResponseListData,
 } from "@/types/interface/api.interface";
-import { IFilterGetListProduct, IProduct } from "@/types/interface/product.interface";
+import {
+  IFilterGetListProduct,
+  IProduct,
+} from "@/types/interface/product.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
 
 class ProductService {
-  async getProductById({ id }: { id: string }): Promise<IResponse<IProduct>> {
+  async getProductById({ id }: { id: string }): Promise<IProduct> {
     try {
-      const response = await HttpClient.get<
-        { id: string },
-        IResponse<IProduct>
-      >(URLS.GET_PRODUCT_BY_ID(id));
+      const response = await HttpClient.get<{ id: string }, IProduct>(
+        URLS.GET_PRODUCT_BY_ID(id),
+      );
       return response;
     } catch (err) {
       console.log(err);
@@ -22,11 +24,11 @@ class ProductService {
   }
 
   async getAllProduct(
-    params?: IFilterGetListProduct
+    params?: IFilterGetListProduct,
   ): Promise<IResponseListData<IProduct>> {
     try {
       const response = await HttpClient.get<
-      IFilterGetListProduct,
+        IFilterGetListProduct,
         IResponseListData<IProduct>
       >(URLS.GET_LIST_PRODUCT, {
         params: params,

@@ -20,7 +20,7 @@ export interface IProduct {
 }
 
 export interface IFilterGetListProduct extends IPagination {
-  category: TYPE_CATEGORY;
+  category: TYPE_CATEGORY | string;
 }
 
 export type TYPE_CATEGORY = "MAIN_COURES" | "DESSERT" | "APPETIZER";

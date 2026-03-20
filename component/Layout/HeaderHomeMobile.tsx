@@ -10,9 +10,14 @@ import TextHoverUnderline from "../Text/TextHoverUnderline";
 const HeaderHomeMobile = async () => {
   const pathName = await getCurrentPath();
   return (
-    <div className="sm:hidden w-screen flex justify-between items-center px-6 py-4">
-      <Link href={`${ROUTE.PERSONAL_INFO}`} className="flex justify-center">
-        <Image height={80} width={80} src={IMAGE_SOUCE.LOGO} alt="" />
+    <div className="sm:hidden w-screen flex justify-between items-center px-4">
+      <Link href={ROUTE.HOME}>
+        <Image
+          height={65}
+          width={65}
+          src={IMAGE_SOUCE.LOGO}
+          alt={IMAGE_SOUCE.LOGO}
+        />
       </Link>
 
       <AppDrawer
