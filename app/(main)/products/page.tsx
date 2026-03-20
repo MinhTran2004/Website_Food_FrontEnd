@@ -9,10 +9,20 @@ import {
   TYPE_CATEGORY,
 } from "@/types/contanst/product.constants";
 import { IProduct } from "@/types/interface/product.interface";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { RiFilter2Fill } from "react-icons/ri";
 import ProductPrice from "./component/Filter/Price";
 import ProductStatus from "./component/Filter/Status";
+
+export const metadata:Metadata = {
+  title: "Tìm kiếm đồ ăn giao nhanh",
+  description: "Tìm kiếm đồ ăn giao hàng nhanh chóng, tiện lợi.",
+  robots: {
+    index: false,
+    follow: true,
+  }
+}
 
 export default async function ProductPage({
   searchParams,

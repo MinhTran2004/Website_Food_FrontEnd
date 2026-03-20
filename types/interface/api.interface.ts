@@ -4,12 +4,12 @@ export interface IBaseResponse {
 }
 
 export interface IPagination {
-    page: number;
-    pageSize: number;
-    total: number;
-    totalPage: number;
-    nextPage: boolean;
-    previousPage: boolean;
+    page?: number;
+    pageSize?: number;
+    total?: number;
+    totalPage?: number;
+    nextPage?: boolean;
+    previousPage?: boolean;
 }
 
 export interface IResponse<T> extends IBaseResponse {

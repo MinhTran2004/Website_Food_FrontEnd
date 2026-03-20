@@ -3,12 +3,57 @@ import LayoutSpace from "@/component/LayoutSpace";
 import AppStar from "@/component/RateProduct/AppStar";
 import { ApiServerURL } from "@/service/index.service";
 import { URLS } from "@/service/url.service";
+import { BASE_URL } from "@/types/contanst";
 import { TYPE_CATEGORY_PRODUCT } from "@/types/contanst/product.constants";
 import { IProduct } from "@/types/interface/product.interface";
 import { formatVND } from "@/utils/formatVND";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import PaymentProduct from "./component/PaymentProduct";
 import ProductSimilar from "./component/ProductSimilar";
 import ReviewProduct from "./component/ReviewProduct";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/products/[id]">): Promise<Metadata> {
+  const { id } = await params;
+
+  const product = await fetch(`${ApiServerURL}${URLS.GET_PRODUCT_BY_ID(id)}`, {
+    cache: "no-store",
+  }).then((res) => res.json());
+
+  if (!product) return notFound();
+
+  const productName = product.name.toLocaleLowerCase();
+
+  return {
+    title: `${productName}`,
+    description: `${productName} - Giá ${product.price}đ. Đặt ngay tại FastFood, giao hàng nhanh chóng, tiện lợi.`,
+    keywords: [
+      `${productName}`,
+      "đặt đồ ăn",
+      "fastfood",
+      "đồ ăn nhanh",
+      "giao đồ ăn",
+      "ship đồ ăn",
+      "order food online",
+      "FastFood Việt Nam",
+    ],
+    openGraph: {
+      title: `${productName}`,
+      description: `${productName} - Giá ${product.price}đ. Đặt ngay tại FastFood, giao hàng nhanh chóng, tiện lợi.`,
+      url: `${BASE_URL}/products${product._id}`,
+      images: [
+        {
+          url: product.image,
+          width: 1200,
+          height: 630,
+          alt: productName,
+        },
+      ],
+    },
+  };
+}
 
 const ProductIdPage = async ({
   params,
