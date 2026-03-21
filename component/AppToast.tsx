@@ -150,7 +150,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   return (
     <ToastContext.Provider value={toast}>
       {children}
-      <div className="fixed top-4 right-4 z-50 pointer-events-none">
+      <div className="fixed top-4 right-4 z-999 pointer-events-none">
         <div className="pointer-events-auto">
           {toasts.map(item => (
             <AppToast

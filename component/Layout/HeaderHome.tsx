@@ -7,7 +7,7 @@ import Navbar from "../Navbar";
 const HeaderHome = async () => {
   return (
     <header className="hidden sm:block w-screen bg-white shadow-md">
-      <div className="mx-auto max-w-7xl flex justify-between items-center  px-6">
+      <div className="mx-auto max-w-7xl flex justify-between items-center px-6">
         <Link href={ROUTE.HOME}>
           <Image
             height={100}

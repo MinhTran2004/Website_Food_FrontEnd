@@ -2,7 +2,7 @@ import { IResponse } from "@/types/interface/api.interface";
 import {
   IBodyRegisterRequest,
   IUser,
-  IUserJWT
+  IUserJWT,
 } from "@/types/interface/user.interface";
 import HttpClient from "./index.service";
 import { URLS } from "./url.service";
@@ -39,6 +39,16 @@ class UserService {
   async getUser(): Promise<IResponse<IUser>> {
     try {
       const response = await HttpClient.get<IResponse<IUser>>(URLS.USER);
+      return response;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getUserById(id: string) {
+    const url = URLS.USER_BY_ID(id);
+    try {
+      const response = await HttpClient.get(url);
       return response;
     } catch (err) {
       throw err;
