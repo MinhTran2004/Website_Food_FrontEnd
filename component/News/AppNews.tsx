@@ -4,6 +4,7 @@ import { IMAGE_SOUCE } from "@/public/assets/images";
 import clsx from "clsx";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
+import AppLinkButton from "../Button/AppLinkButton";
 
 const AppNews = () => {
   return (
@@ -30,21 +31,20 @@ const AppNews = () => {
           cho bé khi bước vào giai đoạn ăn dặm.
         </p>
 
-        <div className="group w-fit">
-          <Link href={"#"} className="flex items-center">
-            <AppButton
-              buttonDefault
-              text={{
-                children: "Xem thêm",
-                className: "leading-5 uppercase",
-              }}
-              className="cursor-default"
-              iconRight={<FaAngleRight size={16} />}
-            />
-          </Link>
+        <div className="group w-fit cursor-pointer">
+          <AppLinkButton
+            href={"#"}
+            buttonDefault
+            text={{
+              children: "Xem thêm",
+              className: "leading-5 uppercase cursor-pointer",
+            }}
+            className="cursor-default"
+            iconRight={<FaAngleRight size={16} />}
+          />
           <div
             className={clsx(
-              "h-[2px] w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-[66%]"
+              "h-[2px] w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-[66%]",
             )}
           />
         </div>

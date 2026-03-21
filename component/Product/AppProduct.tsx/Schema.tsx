@@ -13,6 +13,7 @@ const AppProductSchema: React.FC<IProduct> = ({ ...product }) => {
       "@type": "Brand",
       name: "FastFood",
     },
+    image: product.image,
     offers: {
       "@type": "Offer",
       url: `${BASE_URL}${ROUTE.PRODUCTID(product._id)}`,

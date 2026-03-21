@@ -7,22 +7,22 @@ import { URLS } from "@/service/url.service";
 import {
   FILTER_PRICE,
   TYPE_CATEGORY,
+  TYPE_CATEGORY_PRODUCT
 } from "@/types/contanst/product.constants";
 import { IProduct } from "@/types/interface/product.interface";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { RiFilter2Fill } from "react-icons/ri";
 import ProductPrice from "./component/Filter/Price";
 import ProductStatus from "./component/Filter/Status";
 
-export const metadata:Metadata = {
+export const metadata: Metadata = {
   title: "Tìm kiếm đồ ăn giao nhanh",
   description: "Tìm kiếm đồ ăn giao hàng nhanh chóng, tiện lợi.",
   robots: {
     index: false,
     follow: true,
-  }
-}
+  },
+};
 
 export default async function ProductPage({
   searchParams,
@@ -31,12 +31,8 @@ export default async function ProductPage({
 }) {
   const { category, price } = await searchParams;
 
-  if (!category || !TYPE_CATEGORY.includes(category)) {
-    notFound();
-  }
-
   const data = await fetch(
-    `${ApiServerURL}${URLS.GET_LIST_PRODUCT}?category=${category}&price=${price}`,
+    `${ApiServerURL}${URLS.GET_LIST_PRODUCT}?category=${category || TYPE_CATEGORY[0]}&price=${price}`,
     {
       method: "GET",
     },

@@ -1,9 +1,5 @@
 import AppButton from "@/component/Button/AppButton";
 import { IMAGE_SOUCE } from "@/public/assets/images";
-import {
-  TYPE_CATEGORY,
-  TYPE_CATEGORY_PRODUCT,
-} from "@/types/contanst/product.constants";
 import { ROUTE } from "@/types/contanst/route.constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,12 +41,7 @@ const HomeContent = () => {
         <h1 className="text-[36px] md:text-[40px] xl:text-[55px] leading-[40px] xl:leading-[60px] font-semibold pb-3">
           Bản giao hưởng của gia vị và hương vị
         </h1>
-        <Link
-          href={{
-            pathname: ROUTE.PRODUCTS,
-            query: { category: TYPE_CATEGORY[0] },
-          }}
-        >
+        <Link href={ROUTE.PRODUCTS}>
           <AppButton
             text={{
               children: "Thực đơn",

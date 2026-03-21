@@ -1,67 +1,65 @@
 export const ROUTE = {
-    HOME: '/',
-    LOGIN: '/login',
-    REGISTER: '/register',
-    PRODUCTS: '/products',
-    PRODUCTID: (id: string) => `/products/${id}`,
-    CART: '/cart',
-    NEWS: '/news',
-    CONTACT: '/contact',
-    ADDRESS_INFO: '/address-info',
-    ORDER_HISTORY: '/order-history',
-    PERSONAL_INFO: '/personal-info',
-
-}
+  HOME: "/",
+  LOGIN: "/login",
+  REGISTER: "/register",
+  PRODUCTS: "/products",
+  PRODUCTID: (id: string) => `/products/${id}`,
+  CART: "/cart",
+  NEWS: "/news",
+  CONTACT: "/contact",
+  ADDRESS_INFO: "/address-info",
+  ORDER_HISTORY: "/order-history",
+  PERSONAL_INFO: "/personal-info",
+};
 
 export const NAME_ROUTE_HOME = [
-    {
-        href: ROUTE.HOME,
-        text: "Trang chủ"
-    },
-    {
-        href: `${ROUTE.PRODUCTS}?category=MAIN_COURES`,
-        text: "Sản phẩm"
-    },
-    {
-        href: ROUTE.NEWS,
-        text: "Tin tức"
-    },
-    {
-        href: ROUTE.CONTACT,
-        text: "Liên hệ"
-    }
-    ,
-    {
-        href: ROUTE.PERSONAL_INFO,
-        text: "Tài khoản"
-    }
-]
+  {
+    href: ROUTE.HOME,
+    text: "Trang chủ",
+  },
+  {
+    href: `${ROUTE.PRODUCTS}?category=MAIN_COURES`,
+    text: "Sản phẩm",
+  },
+  {
+    href: ROUTE.CART,
+    text: "Giỏ hàng",
+  },
+  {
+    href: ROUTE.CONTACT,
+    text: "Liên hệ",
+  },
+  {
+    href: ROUTE.PERSONAL_INFO,
+    text: "Tài khoản",
+  },
+];
 
 export const NAME_ROUTE = [
-    {
-        href: ROUTE.HOME,
-        text: "Trang chủ"
-    },
-    {
-        href: ROUTE.LOGIN,
-        text: "Đăng nhập"
-    },
-    {
-        href: ROUTE.REGISTER,
-        text: "Đăng ký"
-    },
-    {
-        href: `${ROUTE.PRODUCTS}/MAIN_COURES`,
-        text: "Sản phẩm"
-    },
-    {
-        href: ROUTE.NEWS,
-        text: "Tin tức"
-    },
-    {
-        href: ROUTE.CONTACT,
-        text: "Kết nối"
-    }
-]
+  {
+    href: ROUTE.HOME,
+    text: "Trang chủ",
+  },
+  {
+    href: ROUTE.LOGIN,
+    text: "Đăng nhập",
+  },
+  {
+    href: ROUTE.REGISTER,
+    text: "Đăng ký",
+  },
+  {
+    href: `${ROUTE.PRODUCTS}/MAIN_COURES`,
+    text: "Sản phẩm",
+  },
+  {
+    href: ROUTE.NEWS,
+    text: "Tin tức",
+  },
+  {
+    href: ROUTE.CONTACT,
+    text: "Kết nối",
+  },
+];
 
 export type TYPE_ROUTE = keyof typeof ROUTE;

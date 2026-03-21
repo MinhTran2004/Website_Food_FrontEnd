@@ -4,7 +4,7 @@ import { chatService } from "@/service/chat.service";
 import { IMessage } from "@/types/interface/message.interface";
 import { useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { io, Socket } from "socket.io-client";
 import HeaderChat from "./component/HeaderChat";
@@ -12,6 +12,7 @@ import MessengerChat from "./component/MessengerChat";
 import SearchChat from "./component/SearchChat";
 import SendChat from "./component/SendChat";
 import UsersChat from "./component/UsersChat";
+import { userService } from "@/service/user.service";
 
 export default function ChatPage() {
   const { data } = useSession();
@@ -22,11 +23,18 @@ export default function ChatPage() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<IMessage[]>([]);
 
+  //check user receiver
+  const { data: user, isSuccess } = useQuery({
+    queryKey: ["get-user-receiver-by-id"],
+    queryFn: () => userService.getUserById(id as string),
+  });
+  
+  if (!user && isSuccess) return notFound(); 
+
   // ================= GET MESSAGE =================
   const { data: listUserChat } = useQuery({
     queryKey: ["list-user-chat", id],
     queryFn: () => chatService.getListMessageByIdReceiver(id as string),
-    enabled: !!id,
   });
 
   // ================= SOCKET CONNECT =================

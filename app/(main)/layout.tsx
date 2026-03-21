@@ -11,7 +11,7 @@ export default async function MainLayout({
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <div className="sticky top-0 bg-white z-999">
+      <div className="sticky top-0 bg-white z-100">
         <HeaderHome />
         <HeaderHomeMobile />
       </div>

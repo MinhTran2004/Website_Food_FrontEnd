@@ -15,7 +15,7 @@ const NavbarFixed = () => {
       <AppLinkButton
         href={ROUTE.CART}
         buttonDefault
-        className="h-15 w-15 bg-colorOrangeLight rounded-full flex items-center justify-center"
+        className="h-15 w-15 bg-white shadow-md rounded-full flex items-center justify-center"
         iconLeft={<IoCartOutline size={24} className="text-colorOrange"/>}
       />
     </div>

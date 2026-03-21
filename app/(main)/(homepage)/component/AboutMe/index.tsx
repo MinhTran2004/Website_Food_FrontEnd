@@ -1,6 +1,7 @@
 import AppButton from "@/component/Button/AppButton";
 import AppImage from "@/component/Image/AppImage";
 import { IMAGE_SOUCE } from "@/public/assets/images";
+import { ROUTE } from "@/types/contanst/route.constants";
 import clsx from "clsx";
 import Link from "next/link";
 import { GrFormNextLink } from "react-icons/gr";
@@ -60,7 +61,7 @@ const HomeAboutMe = () => {
           khác, mỗi danh mục ẩn chứa bí quyết và công thức ẩm thực độc đáo.
         </p>
 
-        <Link href={"#"} className="flex group">
+        <Link href={ROUTE.PRODUCTS} className="flex group">
           <AppButton
             buttonDefault
             text={{ children: "Xem thêm", className: "text-xl font-medium" }}
