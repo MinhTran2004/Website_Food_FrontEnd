@@ -1,4 +1,4 @@
-import { IResponse } from "@/types/interface/api.interface";
+import { IResponse, IResponseListData } from "@/types/interface/api.interface";
 import {
   IBodyRegisterRequest,
   IUser,
@@ -49,6 +49,22 @@ class UserService {
     const url = URLS.USER_BY_ID(id);
     try {
       const response = await HttpClient.get(url);
+      return response;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getListUserByUserName(params: {
+    username: string;
+  }): Promise<IResponseListData<IUser>> {
+    try {
+      const response = await HttpClient.get<
+        { username: string },
+        IResponseListData<IUser>
+      >(URLS.GET_LIST_USER_BY_USERNAME, {
+        params: params,
+      });
       return response;
     } catch (err) {
       throw err;

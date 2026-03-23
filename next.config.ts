@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   images: {
     domains: ["i.imghippo.com", "www.imghippo.com", "cleverads.vn", "picsum.photos", "lh3.googleusercontent.com"],
   },

@@ -1,6 +1,7 @@
 export const URLS = {
   // auth
   USER: `/user`,
+  GET_LIST_USER_BY_USERNAME: `/user/get-list-user-by-username`,
   USER_BY_ID: (id:string) => `/user/${id}`,
   LOGIN: `/auth/login`,
   REGISTER: `/auth/register`,

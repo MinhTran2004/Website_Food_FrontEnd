@@ -1,22 +1,19 @@
 import AppChat from "@/component/AppChat";
-import { chatService } from "@/service/chat.service";
-import { useQuery } from "@tanstack/react-query";
+import { IMessageFirstRoom } from "@/types/interface/message.interface";
 
-const UsersChat = () => {
-  const { data } = useQuery({
-    queryKey: ["list-room-user"],
-    queryFn: () => chatService.getListRoomUser(),
-  });
+interface Props{
+  rooms: IMessageFirstRoom[];
+} 
 
-  const listUser = data?.data?.items || [];
+const UsersChat:React.FC<Props> = ({rooms}) => {
 
-  if (listUser.length === 0) return;
+  if (rooms.length === 0) return;
 
   return (
     <div>
-      {listUser.map((items) => (
+      {rooms.map((items) => (
         <AppChat
-          key={items.user.id}
+          key={items.message._id}
           user={items.user}
           message={items.message}
         />
