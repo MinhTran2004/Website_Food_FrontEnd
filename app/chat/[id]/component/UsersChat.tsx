@@ -1,21 +1,24 @@
 import AppChat from "@/component/AppChat";
 import { IMessageFirstRoom } from "@/types/interface/message.interface";
+import { useParams } from "next/navigation";
 
-interface Props{
+interface Props {
   rooms: IMessageFirstRoom[];
-} 
+}
 
-const UsersChat:React.FC<Props> = ({rooms}) => {
-
-  if (rooms.length === 0) return;
+const UsersChat: React.FC<Props> = ({ rooms }) => {
+  if (rooms.length !== 0 && rooms[0].message === null) return;
+  console.log();
+  
+  const path = useParams();
 
   return (
     <div>
       {rooms.map((items) => (
         <AppChat
           key={items.message._id}
-          user={items.user}
-          message={items.message}
+          room={items}
+          status={path.id === items.user._id}
         />
       ))}
     </div>

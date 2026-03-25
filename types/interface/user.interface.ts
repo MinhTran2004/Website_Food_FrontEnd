@@ -14,7 +14,7 @@ export interface IBaseUser {
 }
 
 export interface IUser extends IBaseUser {
-  id: string;
+  _id: string;
 }
 
 export interface IBodyLoginRequest {

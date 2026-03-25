@@ -56,11 +56,11 @@ class UserService {
   }
 
   async getListUserByUserName(params: {
-    username: string;
+    userName: string;
   }): Promise<IResponseListData<IUser>> {
     try {
       const response = await HttpClient.get<
-        { username: string },
+        { userName: string },
         IResponseListData<IUser>
       >(URLS.GET_LIST_USER_BY_USERNAME, {
         params: params,

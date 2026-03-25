@@ -6,6 +6,7 @@ export interface IMessage {
   senderId: string;
   message: string;
   isActive: boolean;
+  createdAt: Date;
 }
 
 export interface IRoom {

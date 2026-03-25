@@ -7,6 +7,7 @@ export const ROUTE = {
   CART: "/cart",
   NEWS: "/news",
   CONTACT: "/contact",
+  CHAT: (id:string) => `/chat/${id}`,
   ADDRESS_INFO: "/address-info",
   ORDER_HISTORY: "/order-history",
   PERSONAL_INFO: "/personal-info",
