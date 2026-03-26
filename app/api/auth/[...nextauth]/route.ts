@@ -65,15 +65,15 @@ const handler = NextAuth({
   callbacks: {
     jwt({ token, user }) {
       if (user?.accessToken) {
+        token.id = user.id;
         token.accessToken = user.accessToken;
       }
       return token;
     },
     session({ session, token }) {
       if (session.user) {
-        (
-          session.user as typeof session.user & { accessToken?: string }
-        ).accessToken = token.accessToken as string;
+        session.user.accessToken = token.accessToken as string;
+        session.user.id = token.id as string;
       }
       return session;
     },
@@ -104,6 +104,7 @@ const handler = NextAuth({
             },
           ).then((res) => res.json());
           user.accessToken = response.data?.accessToken;
+          user.id = response.data?.user.id;
         } else if (account?.provider === "facebook") {
           const response: IResponse<IUserJWT> = await fetch(
             `${NEXT_PUBLIC_API_URL}${URLS.LOGIN_FACEBOOK}`,
