@@ -35,7 +35,7 @@ const handler = NextAuth({
           if (!response?.data?.accessToken) return null;
           const user = response.data.user;
           return {
-            id: user._id, // 👈 BẮT BUỘC
+            id: user.id, // 👈 BẮT BUỘC
             email: user.email,
             name: user.username,
             image: user.avatar,

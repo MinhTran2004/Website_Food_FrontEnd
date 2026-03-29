@@ -39,7 +39,7 @@ const PaymentProduct: React.FC<IProduct> = ({ ...product }) => {
       validationSchema={validation}
       onSubmit={({ countProduct }) => {
         const newCart: IBodyPostCart = {
-          idProduct: product._id,
+          idProduct: product.id,
           quantity: countProduct,
         };
         mutate(newCart);

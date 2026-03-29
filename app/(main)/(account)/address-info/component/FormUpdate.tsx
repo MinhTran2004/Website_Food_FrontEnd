@@ -64,7 +64,7 @@ const FormUpdate: React.FC<Props> = ({ dataInit, onCancel, refetch }) => {
       validationSchema={validationSchema}
       onSubmit={(values) => {
         const payload = {
-          _id: dataInit._id,
+          id: dataInit.id,
           ...values,
         };
         mutate(payload);

@@ -6,15 +6,12 @@ export interface IUserJWT extends IBaseResponse {
   user: IUser;
 }
 
-export interface IBaseUser {
+export interface IUser {
+  id:string;
   avatar: string;
   email: string;
   username: string;
   provider: string;
-}
-
-export interface IUser extends IBaseUser {
-  _id: string;
 }
 
 export interface IBodyLoginRequest {

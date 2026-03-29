@@ -76,7 +76,7 @@ const AddressInfoPage = () => {
       <div className="grid grid-cols-2 gap-6">
         {data?.data?.items?.map((item) => (
           <CardAddress
-            key={item._id}
+            key={item.id}
             data={item}
             onDelete={onDeleteAddress}
             onUpdate={() => {

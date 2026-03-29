@@ -1,7 +1,7 @@
 import { IProduct } from "./product.interface";
 
 export interface ICart {
-  _id: string;
+  id: string;
   idUser: string;
   product: IProduct;
   quantity: number;

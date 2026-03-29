@@ -1,7 +1,7 @@
 import { IPagination } from "./api.interface";
 
 export interface IProduct {
-  _id: string;
+  id: string;
   name: string;
   price: number;
   discount: number;

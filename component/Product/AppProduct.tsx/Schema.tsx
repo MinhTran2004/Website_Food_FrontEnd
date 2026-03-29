@@ -16,12 +16,12 @@ const AppProductSchema: React.FC<IProduct> = ({ ...product }) => {
     image: product.image,
     offers: {
       "@type": "Offer",
-      url: `${BASE_URL}${ROUTE.PRODUCTID(product._id)}`,
+      url: `${BASE_URL}${ROUTE.PRODUCTID(product.id)}`,
       price: product.price.toString(),
       priceCurrency: "VND",
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
-      "@id": `${BASE_URL}${ROUTE.PRODUCTID(product._id)}`,
+      "@id": `${BASE_URL}${ROUTE.PRODUCTID(product.id)}`,
       image: product.image,
     },
   };

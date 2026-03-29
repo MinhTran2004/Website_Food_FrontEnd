@@ -24,7 +24,7 @@ const OrderHistoryPage = () => {
       <div className="space-y-4">
         {data?.data?.items &&
           data?.data?.items.map((item) => (
-            <AppOrderHistory key={item._id} {...item} />
+            <AppOrderHistory key={item.id} {...item} />
           ))}
       </div>
     </div>

@@ -23,7 +23,7 @@ const AppProduct: React.FC<IProduct> = (product) => {
       <AppProductSchema {...product} />
 
       <Link
-        href={ROUTE.PRODUCTID(product._id)}
+        href={ROUTE.PRODUCTID(product.id)}
         className="cursor-pointer group"
       >
         <div className="relative">
