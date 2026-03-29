@@ -55,7 +55,7 @@ const CardAddress: React.FC<Props> = ({
         <AppButton
           buttonDefault
           iconLeft={<BsTrash className="text-colorRedError" />}
-          onClick={() =>  onDelete(data._id)}
+          onClick={() =>  onDelete(data.id)}
         />
       </div>
     </div>

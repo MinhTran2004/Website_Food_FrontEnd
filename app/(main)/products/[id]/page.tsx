@@ -42,7 +42,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${productName}`,
       description: `${productName} - Giá ${product.price}đ. Đặt ngay tại FastFood, giao hàng nhanh chóng, tiện lợi.`,
-      url: `${BASE_URL}/products${product._id}`,
+      url: `${BASE_URL}/products${product.id}`,
       images: [
         {
           url: product.image,
@@ -99,7 +99,7 @@ const ProductIdPage = async ({
 
               <p className="font-medium text-sm">
                 Mã sản phẩm:{" "}
-                <span className="font-normal text-[15px]">{product._id}</span>
+                <span className="font-normal text-[15px]">{product.id}</span>
               </p>
               <p className="font-medium text-sm">
                 Danh mục:{" "}
@@ -108,7 +108,7 @@ const ProductIdPage = async ({
                 </span>
               </p>
 
-              <PaymentProduct key={product._id} {...product} />
+              <PaymentProduct key={product.id} {...product} />
             </div>
           </div>
 

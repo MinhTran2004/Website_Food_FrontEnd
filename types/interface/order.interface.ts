@@ -5,8 +5,8 @@ export type METHOD_PAYMENT = "COD" | "VNPAY";
 export type STATUS_ORDER = "prepare" | "delivery" | "Success" | "Failure";
 
 export interface IOrder {
-  _id: string;
-  products: ICart[];
+  id: string;
+  cartItems: ICart[];
   address: IAddress;
   total: number;
   method: METHOD_PAYMENT;
@@ -16,7 +16,7 @@ export interface IOrder {
 }
 
 export interface IBodyPostPaymentMethodCod {
-  products: ICart[];
+  cartItems: ICart[];
   address: IAddress;
   total: number;
   paymentMethods: METHOD_PAYMENT;

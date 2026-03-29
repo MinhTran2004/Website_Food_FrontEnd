@@ -7,6 +7,7 @@ import { Metadata, Viewport } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+import { Analytics } from '@vercel/analytics/next';
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -77,7 +78,7 @@ export default function RootLayout({
             <Providers>
               <AuthNotification />
               <main>{children}</main>
-              {/* <Analytics /> */}
+              <Analytics />
             </Providers>
           </LoadingProvider>
         </ToastProvider>

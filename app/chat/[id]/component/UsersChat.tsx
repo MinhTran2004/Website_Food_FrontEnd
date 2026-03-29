@@ -16,7 +16,7 @@ const UsersChat: React.FC<Props> = ({ rooms }) => {
         <AppChat
           key={items.message._id}
           room={items}
-          status={path.id === items.user._id}
+          status={path.id === items.user.id}
         />
       ))}
     </div>

@@ -6,8 +6,7 @@ import { ApiServerURL } from "@/service/index.service";
 import { URLS } from "@/service/url.service";
 import {
   FILTER_PRICE,
-  TYPE_CATEGORY,
-  TYPE_CATEGORY_PRODUCT
+  TYPE_CATEGORY
 } from "@/types/contanst/product.constants";
 import { IProduct } from "@/types/interface/product.interface";
 import { Metadata } from "next";
@@ -71,7 +70,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
           {Array.isArray(data.data.items) &&
             data.data.items.map((item: IProduct) => (
-              <AppProduct key={item._id} {...item} />
+              <AppProduct key={item.id} {...item} />
             ))}
         </div>
       </div>

@@ -44,7 +44,7 @@ const SearchChat: React.FC<Props> = ({ setSearch, data }) => {
       {isOpen && (
         <div className="w-full h-full absolute bg-white z-50">
           {data.map((item) => (
-            <AppUserSearch key={item._id} {...item} />
+            <AppUserSearch key={item.id} {...item} />
           ))}
         </div>
       )}

@@ -1,5 +1,5 @@
 export interface IAddress {
-  _id: string;
+  id: string;
   idUser: string;
   nameAddress: string;
   phone: string;
@@ -20,6 +20,6 @@ export interface IBodyPostAddress {
 }
 
 export interface IBodyPatchAddress extends IBodyPostAddress {
-  _id:string;
+  id:string;
   isDefault: boolean;
 }

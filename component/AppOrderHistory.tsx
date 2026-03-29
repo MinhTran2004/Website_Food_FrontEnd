@@ -9,11 +9,11 @@ import AppLine from "./AppLine";
 import AppButton from "./Button/AppButton";
 import ProductOrder from "./Product/ProductOrder";
 
-const AppOrderHistory: React.FC<IOrder> = (props) => {
+const AppOrderHistory: React.FC<IOrder> = (order) => {
   const [isShowBody, setIsShowBody] = useState<boolean>(false);
 
-  const address = `${props.address.addressDetail}, ${props.address.city}`;
-  console.log(props);
+  const address = `${order.address.addressDetail}, ${order.address.city}`;
+  console.log(order);
   
 
   return (
@@ -24,9 +24,9 @@ const AppOrderHistory: React.FC<IOrder> = (props) => {
           <BsBoxSeam size={16} />
 
           <div className="space-y-1">
-            <p className="font-medium text-base">#{props._id}</p>
+            <p className="font-medium text-base">#{order.id}</p>
             <p className="text-sm text-colorGray">
-              {formatDate(props.createdAt)}
+              {formatDate(order.createdAt)}
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const AppOrderHistory: React.FC<IOrder> = (props) => {
             <p className="text-sm text-center py-1 bg-colorGreenLight text-colorGreenSuccess font-medium rounded-full">
               Đã giao
             </p>
-            <p className="font-medium">{formatVND(props.total)}</p>
+            <p className="font-medium">{formatVND(order.total)}</p>
           </div>
 
           {isShowBody ? (
@@ -62,8 +62,8 @@ const AppOrderHistory: React.FC<IOrder> = (props) => {
           <p className="font-medium text-lg">Chi Tiết Sản Phẩm</p>
 
           <div className="my-2 space-y-1 pb-3">
-            {props.products.map((item) => (
-              <ProductOrder key={item._id} {...item} />
+            {order.cartItems.map((item) => (
+              <ProductOrder key={item.id} {...item} />
             ))}
           </div>
 
@@ -73,7 +73,7 @@ const AppOrderHistory: React.FC<IOrder> = (props) => {
 
           <div className="my-3 space-y-1">
             <p>Địa chỉ: {address}</p>
-            <p>Số điện thoại: {props.address.phone}</p>
+            <p>Số điện thoại: {order.address.phone}</p>
           </div>
         </div>
       )}

@@ -53,8 +53,8 @@ const CartPage = () => {
   const onMinus = useCallback((cart: ICart) => {
     if (cart.quantity > 1) {
       updatdeQuantity({
-        idCart: cart._id,
-        idProduct: cart.product._id,
+        idCart: cart.id,
+        idProduct: cart.product.id,
         quantity: cart.quantity - 1,
       });
     }
@@ -62,8 +62,8 @@ const CartPage = () => {
 
   const onAdd = useCallback((cart: ICart) => {
     updatdeQuantity({
-      idCart: cart._id,
-      idProduct: cart.product._id,
+      idCart: cart.id,
+      idProduct: cart.product.id,
       quantity: cart.quantity + 1,
     });
   }, []);
@@ -81,7 +81,7 @@ const CartPage = () => {
   });
 
   const onDelete = useCallback((cart: ICart) => {
-    deleteCart(cart._id);
+    deleteCart(cart.id);
   }, []);
 
   //payment

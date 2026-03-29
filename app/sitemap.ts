@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const productPages = flastProduct
     .map((item) => ({
-      url: `${BASE_URL}/products/${item?._id}`,
+      url: `${BASE_URL}/products/${item?.id}`,
       priority: 0.8,
       //   lastModified: `${item.updateAt}`,
     }))

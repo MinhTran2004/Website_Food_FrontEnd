@@ -47,7 +47,7 @@ const Payment: React.FC<Props> = ({ address, carts, total, onPayment }) => {
           onPayment({
             address: address,
             paymentMethods: "COD",
-            products: carts,
+            cartItems: carts,
             total: total,
           })
         }

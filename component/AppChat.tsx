@@ -15,7 +15,7 @@ const AppChat: React.FC<Props> = ({ room, status }) => {
   
   return (
     <Link
-      href={ROUTE.CHAT(room.user._id)}
+      href={ROUTE.CHAT(room.user.id)}
       className={clsx(
         "flex border-b p-1.5 items-center border-colorGray gap-3 cursor-pointer",
         status && "bg-gray-100",
