@@ -7,7 +7,9 @@ interface Props {
 }
 
 const UsersChat: React.FC<Props> = ({ rooms }) => {
-  if (rooms.length !== 0 && rooms[0].message === null) return;
+  console.log('rooms', rooms);
+  
+  if (rooms !== undefined && rooms.length !== 0 && rooms[0] === null) return;
   const path = useParams();
   
   return (

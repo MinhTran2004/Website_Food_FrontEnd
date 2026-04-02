@@ -78,7 +78,7 @@ export default function RootLayout({
             <Providers>
               <AuthNotification />
               <main>{children}</main>
-              <Analytics />
+              {/* <Analytics /> */}
             </Providers>
           </LoadingProvider>
         </ToastProvider>

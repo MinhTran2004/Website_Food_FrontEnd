@@ -1,33 +1,34 @@
 "use client";
 
+import { newMessage, sendMessage } from "@/config/socket/event/chat.event";
+import { useSocket } from "@/config/socket/useSocket";
 import { chatService } from "@/service/chat.service";
 import { userService } from "@/service/user.service";
-import {
-  IMessage,
-  IMessageFirstRoom,
-  IRoom,
-} from "@/types/interface/message.interface";
+import { IMessage } from "@/types/interface/message.interface";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { notFound, useParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { io, Socket } from "socket.io-client";
+import { useEffect, useState } from "react";
 import HeaderChat from "./component/HeaderChat";
 import MessengerChat from "./component/MessengerChat";
 import SearchChat from "./component/SearchChat";
 import SendChat from "./component/SendChat";
 import UsersChat from "./component/UsersChat";
+import { joinRoom, joinRoomFristChat } from "@/config/socket/event/room.event";
+import { offSocket } from "@/config/socket/event";
+import { SocketEvents } from "@/config/socket/type";
 
 export default function ChatPage() {
-  const { data } = useSession();
   const { id } = useParams();
+  const { data } = useSession();
 
-  const queryClient = useQueryClient();
-  const socketRef = useRef<Socket | null>(null);
 
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<IMessage[]>([]);
   const [search, setSearch] = useState<string>("");
+
+  const queryClient = useQueryClient();
+  
 
   //check user receiver
   const { data: user, isSuccess } = useQuery({
@@ -56,97 +57,64 @@ export default function ChatPage() {
     queryFn: () => chatService.getListMessageByIdReceiver(id as string),
   });
 
+  useSocket(data?.user.accessToken ?? "");
+
   // ================= SOCKET CONNECT =================
   useEffect(() => {
-    if (!data?.user?.accessToken) return;
-
-    const socket = io(process.env.NEXT_PUBLIC_API_URL, {
-      auth: { token: data.user.accessToken },
+    newMessage((newMessage) => {
+      setMessages((prev) => [...prev, newMessage]);
     });
 
-    socketRef.current = socket;
-
-    socket.on("connect", () => {
-      console.log("Socket connected:", socket.id);
-    });
-
-    socket.on("newMessage", (msg: IMessage) => {
-      setMessages((prev) => [...prev, msg]);
-    });
-
-    socket.on("connect_error", (err) => {
-      console.error("Socket connect error:", err.message);
-    });
-
-    socket.on("reloadRooms", (room: IRoom) => {
-      const roomId = room._id;
-
-      //khi chay lại sẽ rời khỏi phòng idReceiver vì chưa có roomID
-      socket.emit("joinRoom", roomId);
-
-      queryClient.setQueryData(["list-room-user"], refetch());
+    joinRoomFristChat((room) => {
+      if (room._id) {
+        const roomId = room._id;
+        joinRoom(roomId);
+        queryClient.setQueryData(["list-room-user"], refetch());
+      }
     });
 
     return () => {
-      socket.off("newMessage");
-      socket.off("reloadRooms");
-      socket.disconnect();
-      socketRef.current = null;
+      offSocket(SocketEvents.NEW_MESSAGE);
+      offSocket(SocketEvents.JOIN_ROOM_FRIST_CHAT);
     };
   }, [data]); // dependency rõ ràng hơn
 
   // ================= JOIN ROOM =================
   useEffect(() => {
     const roomId = listUserChat?.data?.room?._id;
-    const socket = socketRef.current;
 
-    if (!socket) return;
+    if (!id) return;
 
     if (!roomId) {
-      socket.emit("joinRoom", id); // dùng tạm
+      joinRoom(id as string); // dùng tạm
       return;
     }
 
-    if (!roomId) return;
-
-    // Đợi socket connect rồi mới join
-    const joinRoom = () => {
-      socket.emit("joinRoom", roomId);
-    };
-
-    if (socket.connected) {
-      joinRoom();
-    } else {
-      socket.once("connect", joinRoom); // chờ connect xong mới join
-    }
-
+    joinRoom(roomId);
     setMessages(listUserChat?.data?.messages || []);
 
     return () => {
-      // Cleanup: leave room cũ khi đổi room
-      socket.emit("leaveRoom", roomId);
-      socket.off("connect", joinRoom);
+      offSocket(SocketEvents.JOIN_ROOM);
     };
   }, [listUserChat]);
 
   // ================= SEND MESSAGE =================
-  const sendMessage = () => {
+  const handleSendMessage = () => {
     if (!message.trim()) return;
-    if (!socketRef.current) return;
-    socketRef.current.emit("sendMessage", {
-      receiverId: id,
+
+    sendMessage({
+      receiverId: id as string,
       message,
     });
 
     setMessage("");
   };
 
-  if (!id) return null;
-  // border-colorGray
+  
   return (
     <div className="h-screen flex">
       {/* LEFT CHAT */}
-      <div className="w-xl border-r h-screen">
+      <div className="w-xl border-r border-colorGray h-screen">
         <SearchChat
           data={dataSearch?.data?.items || []}
           setSearch={setSearch}
@@ -163,7 +131,7 @@ export default function ChatPage() {
         <SendChat
           value={message}
           onMessage={(text) => setMessage(text)}
-          onSend={sendMessage}
+          onSend={handleSendMessage}
         />
       </div>
     </div>
